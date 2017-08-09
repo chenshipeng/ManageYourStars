@@ -17,3 +17,9 @@ class NetworkRequest {
         return NetworkRequestShareInstance
     }
 }
+
+extension NetworkRequest{
+    func getRequest(urlString:String,params:[String:Any],success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
+        
+    }
+}
