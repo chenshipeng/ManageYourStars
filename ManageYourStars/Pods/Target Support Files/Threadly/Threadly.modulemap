@@ -1,0 +1,6 @@
+framework module Threadly {
+  umbrella header "Threadly-umbrella.h"
+
+  export *
+  module * { export * }
+}

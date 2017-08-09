@@ -1,0 +1,6 @@
+framework module ShiftOperations {
+  umbrella header "ShiftOperations-umbrella.h"
+
+  export *
+  module * { export * }
+}

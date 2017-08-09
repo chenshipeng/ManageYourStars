@@ -1,0 +1,19 @@
+source 'https://github.com/CocoaPods/Specs.Git'
+platform:ios,'8.0'
+use_frameworks!
+target 'ManageYourStars' do
+pod 'Alamofire'
+pod 'SwiftyJSON'
+pod 'PermissionScope'
+pod 'SwiftyUserDefaults'
+pod 'Kingfisher'
+pod 'Hero'
+pod 'RandomKit'
+pod 'Onboard'
+pod 'ImageViewer'
+pod 'Realm'
+pod 'SnapKit'
+pod 'Reusable'
+pod 'SwiftDate'
+pod 'EZSwiftExtensions'
+end
