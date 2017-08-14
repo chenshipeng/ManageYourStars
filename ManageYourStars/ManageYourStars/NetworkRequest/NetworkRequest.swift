@@ -21,5 +21,54 @@ class NetworkRequest {
 extension NetworkRequest{
     func getRequest(urlString:String,params:[String:Any],success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
         
+        Alamofire.request(urlString,method:.get,parameters:params).responseJSON{(response) in
+        
+            switch response.result{
+                
+            case .success(let value):
+                if let value = response.result.value as? [String:AnyObject] {
+                    success(value)
+                }
+                let json = JSON(value)
+                print(json)
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
+    
+    func postRequest(urlString:String,params:[String:AnyObject],success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
+        Alamofire.request(urlString,method:.post,parameters:params).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                if let value = response.result.value as? [String:AnyObject]{
+                    success(value)
+                    let json = JSON(value)
+                    print(json)
+                }
+            case .failure(let error):
+                failure(error)
+                print("error:\(error)")
+            }
+        }
+    }
+    
+    func uploadImageRequest(urlString:String,params:[String:AnyObject],data:[Data],name:[String],success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
+        
+        let headers = ["content-type":"multipart/form-data"]
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            
+        }, to: urlString, encodingCompletion: {encodingResult in
+        
+            switch encodingResult{
+            case .success(let upload,_,_):
+                upload.responseJSON(completionHandler: { (response) in
+                    print("response")
+                })
+            case .failure(let encodingError):
+                print(encodingError)
+            }
+            
+        })
     }
 }
