@@ -16,4 +16,5 @@ pod 'SnapKit'
 pod 'Reusable'
 pod 'SwiftDate'
 pod 'EZSwiftExtensions'
+pod 'SVProgressHUD'
 end

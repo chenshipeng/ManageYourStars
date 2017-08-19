@@ -37,6 +37,23 @@ extension NetworkRequest{
         }
     }
     
+    func getRequestReturnString(urlString:String,params:[String:Any],success:@escaping(_ response:String)->(),failure:@escaping(_ error:Error)->()) {
+        
+        Alamofire.request(urlString,method:.get,parameters:params).responseJSON{(response) in
+            
+            switch response.result{
+                
+            case .success(let value):
+                if let value = response.result.value as? String {
+                    success(value)
+                }
+                
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
+    
     func postRequest(urlString:String,params:[String:AnyObject],success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
         Alamofire.request(urlString,method:.post,parameters:params).responseJSON { (response) in
             switch response.result{
