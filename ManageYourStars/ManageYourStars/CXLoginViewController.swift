@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import SVProgressHUD
 class CXLoginViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -29,10 +29,11 @@ class CXLoginViewController: UIViewController {
                       "redirect_uri":"https://github.com/chenshipeng",
                       "code":code]
         
-        
+        SVProgressHUD.show()
         Alamofire.request(url, method: .get, parameters: params).responseString { (response) in
             print(response)
             if (response.value) != nil {
+                SVProgressHUD.dismiss()
                 let string = response.value
                 if let str = string{
                     for i in 0..<str.characters.count - 13 {
@@ -46,6 +47,9 @@ class CXLoginViewController: UIViewController {
                     }
                 }
                 
+            }else{
+             
+                SVProgressHUD.showError(withStatus: "登录失败!")
             }
             
         }
@@ -70,8 +74,11 @@ class CXLoginViewController: UIViewController {
 extension CXLoginViewController:UIWebViewDelegate{
     func webViewDidStartLoad(_ webView: UIWebView) {
         print("web view did start load")
+        SVProgressHUD.show()
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+
         print("web view did finished load")
         if let url = webView.request?.url?.absoluteString {
             
@@ -90,6 +97,7 @@ extension CXLoginViewController:UIWebViewDelegate{
     }
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         print("web view did fail to load")
+        SVProgressHUD.dismiss()
     }
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         return true
