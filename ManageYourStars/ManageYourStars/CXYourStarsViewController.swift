@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import Alamofire
 class CXYourStarsViewController: UITableViewController {
     
     
@@ -18,17 +19,32 @@ class CXYourStarsViewController: UITableViewController {
 
         if UserDefaults.standard.object(forKey: "access_token") != nil {
             //进入个人详情页面
-            let url = "https://api.github.com/users/chenshipeng/repos?sort=updated"
-            let params = ["page":"1"]
-            SVProgressHUD.show()
-            NetworkRequest().getRequest(urlString: url, params: params, success: { (response) in
-                SVProgressHUD.dismiss()
-                
-                print("\(response)")
-            }, failure: { (error) in
-                SVProgressHUD.showError(withStatus: error as! String)
-                
+            let url = "https://api.github.com/users/chenshipeng/starred"
+            Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
+                if response.result.isSuccess {
+                    if let array = response.result.value as? Array<Any> {
+                        print("\(array.count)")
+                    }
+                    print("response is \(String(describing: response.result.value))")
+                }else{
+                    
+                    print("error is \(String(describing: response.result.error))")
+                }
             })
+//            let params = ["page":"1"]
+            
+//            SVProgressHUD.show()
+//
+//            NetworkRequest().getRequest(urlString: url, params: params, success: { (response) in
+//                SVProgressHUD.dismiss()
+//
+//                print("\(response)")
+//            }, failure: { (error) in
+//                SVProgressHUD.dismiss()
+//                print("error is \(error)")
+//                SVProgressHUD.showError(withStatus: error as! String)
+//
+//            })
         }
     }
 
@@ -46,7 +62,7 @@ class CXYourStarsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 20
+        return 0
     }
 
     

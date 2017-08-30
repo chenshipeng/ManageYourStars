@@ -25,7 +25,7 @@ extension NetworkRequest{
         
             switch response.result{
                 
-            case .success(let value):
+            case .success( _):
                 if let value = response.result.value as? [String:AnyObject] {
                     success(value)
                 }
@@ -42,7 +42,7 @@ extension NetworkRequest{
             
             switch response.result{
                 
-            case .success(let value):
+            case .success( _):
                 if let value = response.result.value as? String {
                     success(value)
                 }
