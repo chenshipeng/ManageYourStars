@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EE3690EA8B4D142B70C861EEC1F464D9"
+               BlueprintIdentifier = "D65C1F7FE46056DF0C30C02957660F2F"
                BuildableName = "Pods_ManageYourStars.framework"
                BlueprintName = "Pods-ManageYourStars"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EE3690EA8B4D142B70C861EEC1F464D9"
+            BlueprintIdentifier = "D65C1F7FE46056DF0C30C02957660F2F"
             BuildableName = "Pods_ManageYourStars.framework"
             BlueprintName = "Pods-ManageYourStars"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class CXYourStarsViewController: UITableViewController {
     
     
@@ -17,7 +17,18 @@ class CXYourStarsViewController: UITableViewController {
         super.viewDidLoad()
 
         if UserDefaults.standard.object(forKey: "access_token") != nil {
-            
+            //进入个人详情页面
+            let url = "https://api.github.com/users/chenshipeng/repos?sort=updated"
+            let params = ["page":"1"]
+            SVProgressHUD.show()
+            NetworkRequest().getRequest(urlString: url, params: params, success: { (response) in
+                SVProgressHUD.dismiss()
+                
+                print("\(response)")
+            }, failure: { (error) in
+                SVProgressHUD.showError(withStatus: error as! String)
+                
+            })
         }
     }
 

@@ -7,7 +7,10 @@
 //
 
 import UIKit
-
+import SVProgressHUD
+import Alamofire
+import SwiftyJSON
+import HandyJSON
 class CXMoreViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -63,6 +66,22 @@ class CXMoreViewController: UITableViewController {
                 navigationController?.pushViewController(loginVC, animated: true)
             }else{
                 //进入个人详情页面
+                let url = "https://api.github.com/user"
+                let params = ["access_token":UserDefaults.standard.object(forKey: "access_token")!]
+                
+                SVProgressHUD.show()
+                NetworkRequest().getRequest(urlString: url, params: params, success: { (response) in
+                    SVProgressHUD.dismiss()
+                    
+                    print("\(response)")
+                }, failure: { (error) in
+                    SVProgressHUD.showError(withStatus: error as! String)
+
+                })
+                
+                
+                
+                
             }
             
         }

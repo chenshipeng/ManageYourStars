@@ -17,5 +17,6 @@ pod 'Reusable'
 pod 'SwiftDate'
 pod 'EZSwiftExtensions'
 pod 'SVProgressHUD'
+pod 'HandyJSON'
 end
 

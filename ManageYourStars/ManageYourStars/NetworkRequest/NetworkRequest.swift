@@ -19,7 +19,7 @@ class NetworkRequest {
 }
 
 extension NetworkRequest{
-    func getRequest(urlString:String,params:[String:Any],success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
+    func getRequest(urlString:String,params:[String:Any]?,success:@escaping(_ response:[String:AnyObject])->(),failure:@escaping(_ error:Error)->()) {
         
         Alamofire.request(urlString,method:.get,parameters:params).responseJSON{(response) in
         
@@ -29,8 +29,7 @@ extension NetworkRequest{
                 if let value = response.result.value as? [String:AnyObject] {
                     success(value)
                 }
-                let json = JSON(value)
-                print(json)
+                
             case .failure(let error):
                 failure(error)
             }
