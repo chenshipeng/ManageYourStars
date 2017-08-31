@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08E88E1F58050300F9F8F1 /* CXUserModel.swift */; };
 		9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */; };
 		9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1C011F492C3900466385 /* CXMoreOtherTableViewCell.swift */; };
 		9C0C1C041F492EFD00466385 /* CXDiscoveryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */; };
 		9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D39181F48059900920923 /* CXMoreViewController.swift */; };
 		9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391A1F48069A00920923 /* CXLoginViewController.swift */; };
 		9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */; };
+		9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */; };
+		9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC3D1F579F19005D6FB9 /* Owner.swift */; };
+		9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */; };
+		9C64DC441F57F948005D6FB9 /* CXRepositoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC431F57F948005D6FB9 /* CXRepositoriesTableViewController.swift */; };
 		9CB5EF911F3AE7F700819E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */; };
 		9CB5EF931F3AE7F700819E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5EF921F3AE7F700819E9F /* ViewController.swift */; };
 		9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB5EF941F3AE7F700819E9F /* Main.storyboard */; };
@@ -25,12 +30,17 @@
 /* Begin PBXFileReference section */
 		26CDF28B936BF7F936D6EBB0 /* Pods_ManageYourStars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManageYourStars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F352CFAED2E43B27E16F95C /* Pods-ManageYourStars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageYourStars.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManageYourStars/Pods-ManageYourStars.debug.xcconfig"; sourceTree = "<group>"; };
+		9C08E88E1F58050300F9F8F1 /* CXUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXUserModel.swift; sourceTree = "<group>"; };
 		9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXProfileLoginTableViewCell.swift; sourceTree = "<group>"; };
 		9C0C1C011F492C3900466385 /* CXMoreOtherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMoreOtherTableViewCell.swift; sourceTree = "<group>"; };
 		9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXDiscoveryTableViewController.swift; sourceTree = "<group>"; };
 		9C3D39181F48059900920923 /* CXMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXMoreViewController.swift; sourceTree = "<group>"; };
 		9C3D391A1F48069A00920923 /* CXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXLoginViewController.swift; sourceTree = "<group>"; };
 		9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXYourStarsViewController.swift; sourceTree = "<group>"; };
+		9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredModel.swift; sourceTree = "<group>"; };
+		9C64DC3D1F579F19005D6FB9 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXStarTableViewCell.swift; sourceTree = "<group>"; };
+		9C64DC431F57F948005D6FB9 /* CXRepositoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXRepositoriesTableViewController.swift; sourceTree = "<group>"; };
 		9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageYourStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB5EF921F3AE7F700819E9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +108,11 @@
 				9CB5EF941F3AE7F700819E9F /* Main.storyboard */,
 				9C3D39181F48059900920923 /* CXMoreViewController.swift */,
 				9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */,
+				9C64DC431F57F948005D6FB9 /* CXRepositoriesTableViewController.swift */,
+				9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */,
+				9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */,
+				9C08E88E1F58050300F9F8F1 /* CXUserModel.swift */,
+				9C64DC3D1F579F19005D6FB9 /* Owner.swift */,
 				9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */,
 				9C3D391A1F48069A00920923 /* CXLoginViewController.swift */,
 				9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */,
@@ -210,6 +225,7 @@
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Onboard/Onboard.framework",
 				"${BUILT_PRODUCTS_DIR}/PermissionScope/PermissionScope.framework",
 				"${BUILT_PRODUCTS_DIR}/RandomKit/RandomKit.framework",
@@ -231,6 +247,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Onboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PermissionScope.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RandomKit.framework",
@@ -275,12 +292,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */,
+				9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */,
 				9CB5EF931F3AE7F700819E9F /* ViewController.swift in Sources */,
 				9C0C1C041F492EFD00466385 /* CXDiscoveryTableViewController.swift in Sources */,
+				9C64DC441F57F948005D6FB9 /* CXRepositoriesTableViewController.swift in Sources */,
+				9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */,
+				9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */,
 				9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */,
 				9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */,
 				9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */,
 				9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */,
+				9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */,
 				9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */,
 				9CB5EF911F3AE7F700819E9F /* AppDelegate.swift in Sources */,
 			);

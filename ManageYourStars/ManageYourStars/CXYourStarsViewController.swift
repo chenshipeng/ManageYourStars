@@ -9,42 +9,59 @@
 import UIKit
 import SVProgressHUD
 import Alamofire
+import Kingfisher
+import MJRefresh
 class CXYourStarsViewController: UITableViewController {
     
     
-    var stars = [String:Any]()
+    var stars = [StarredModel?]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.tableFooterView = UIView()
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.refreshData()
+        })
+        self.tableView.mj_header.beginRefreshing()
 
+        
+    }
+    
+    func refreshData(){
         if UserDefaults.standard.object(forKey: "access_token") != nil {
-            //进入个人详情页面
-            let url = "https://api.github.com/users/chenshipeng/starred"
-            Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-                if response.result.isSuccess {
-                    if let array = response.result.value as? Array<Any> {
-                        print("\(array.count)")
-                    }
-                    print("response is \(String(describing: response.result.value))")
-                }else{
+            self.stars.removeAll()
+            SVProgressHUD.show()
+            if let login =  UserDefaults.standard.object(forKey: "currentLogin") {
+                
+                let url = "https://api.github.com/users/" + "\(login)/starred"
+                Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
                     
-                    print("error is \(String(describing: response.result.error))")
-                }
-            })
-//            let params = ["page":"1"]
+                    self.tableView.mj_header.endRefreshing()
+                    
+                    if response.result.isSuccess {
+                        SVProgressHUD.dismiss()
+                        if let array = response.result.value as? Array<Any> {
+                            print("\(array.count)")
+                            if let arr = [StarredModel].deserialize(from: response.result.value as? NSArray){
+                                self.stars.append(contentsOf: arr)
+                            }
+                            print("stars count is \(self.stars.count)")
+                        }
+                        self.tableView.reloadData()
+                        print("response is \(String(describing: response.result.value))")
+                    }else{
+                        SVProgressHUD.dismiss()
+                        SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                        print("error is \(String(describing: response.result.error))")
+                    }
+                })
+            }
             
-//            SVProgressHUD.show()
-//
-//            NetworkRequest().getRequest(urlString: url, params: params, success: { (response) in
-//                SVProgressHUD.dismiss()
-//
-//                print("\(response)")
-//            }, failure: { (error) in
-//                SVProgressHUD.dismiss()
-//                print("error is \(error)")
-//                SVProgressHUD.showError(withStatus: error as! String)
-//
-//            })
+            
         }
     }
 
@@ -56,19 +73,19 @@ class CXYourStarsViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.stars.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "starsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "starsCell", for: indexPath) as! CXStarTableViewCell
 
+        let model:StarredModel = self.stars[indexPath.row]!
+        cell.starModel = model
 
         return cell
     }

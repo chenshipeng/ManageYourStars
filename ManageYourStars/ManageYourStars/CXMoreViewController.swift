@@ -59,7 +59,7 @@ class CXMoreViewController: UITableViewController {
     }
      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             if UserDefaults.standard.object(forKey: "access_token") == nil {
                 let loginVC = CXLoginViewController()
                 loginVC.hidesBottomBarWhenPushed = true
@@ -70,17 +70,25 @@ class CXMoreViewController: UITableViewController {
                 let params = ["access_token":UserDefaults.standard.object(forKey: "access_token")!]
                 
                 SVProgressHUD.show()
-                NetworkRequest().getRequest(urlString: url, params: params, success: { (response) in
-                    SVProgressHUD.dismiss()
-                    
-                    print("\(response)")
-                }, failure: { (error) in
-                    SVProgressHUD.showError(withStatus: error as! String)
+                Alamofire.request(url, method: .get, parameters: params).responseString(completionHandler: { (response) in
 
+                    if response.result.isSuccess {
+                        SVProgressHUD.dismiss()
+                        if let arr = CXUserModel.deserialize(from: response.result.value){
+                            if let login = arr.login{
+                                UserDefaults.standard.set(login, forKey: "currentLogin")
+                                
+                            }
+                        }
+                        self.tableView.reloadData()
+                        print("response is \(String(describing: response.result.value))")
+                    }else{
+                        SVProgressHUD.dismiss()
+                        SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                    }
                 })
                 
-                
-                
+
                 
             }
             

@@ -18,5 +18,6 @@ pod 'SwiftDate'
 pod 'EZSwiftExtensions'
 pod 'SVProgressHUD'
 pod 'HandyJSON'
+pod 'MJRefresh'
 end
 
