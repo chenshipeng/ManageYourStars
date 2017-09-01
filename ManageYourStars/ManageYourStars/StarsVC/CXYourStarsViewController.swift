@@ -38,7 +38,8 @@ class CXYourStarsViewController: UITableViewController {
             if let login =  UserDefaults.standard.object(forKey: "currentLogin") {
                 
                 let url = "https://api.github.com/users/" + "\(login)/starred"
-                Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
+                let params = ["language":"Swift"]
+                Alamofire.request(url, method: .get, parameters: params).responseJSON(completionHandler: { (response) in
                     
                     self.tableView.mj_header.endRefreshing()
                     

@@ -13,6 +13,7 @@ class CXLoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Login"
         
         
         let url = "https://github.com/login/oauth/authorize?client_id=d67855104c8fb56c68e0&redirect_uri=https://github.com/chenshipeng&scpoe=user,public_repo"
@@ -41,6 +42,7 @@ class CXLoginViewController: UIViewController {
                             let token = (str as NSString).substring(with: NSMakeRange(i + 13, 40))
                             print("token is \(token)")
                             UserDefaults.standard.set(token, forKey: "access_token")
+                            NotificationCenter.default.post(name: Notification.Name(rawValue:"refreshMoreVC"), object: nil)
                             self.navigationController?.popViewController(animated: true)
                             return
                         }
@@ -48,7 +50,7 @@ class CXLoginViewController: UIViewController {
                 }
                 
             }else{
-             
+                SVProgressHUD.dismiss()
                 SVProgressHUD.showError(withStatus: "登录失败!")
             }
             

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08E88E1F58050300F9F8F1 /* CXUserModel.swift */; };
+		9C08E8921F59383700F9F8F1 /* Stars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C08E8911F59383700F9F8F1 /* Stars.storyboard */; };
+		9C08E8941F59385400F9F8F1 /* Repositories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C08E8931F59385400F9F8F1 /* Repositories.storyboard */; };
+		9C08E8961F59386E00F9F8F1 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C08E8951F59386E00F9F8F1 /* Discovery.storyboard */; };
+		9C08E8981F59387F00F9F8F1 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C08E8971F59387F00F9F8F1 /* More.storyboard */; };
+		9C08E89B1F59397900F9F8F1 /* CXAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08E8991F59397900F9F8F1 /* CXAboutMeViewController.swift */; };
+		9C08E89C1F59397900F9F8F1 /* CXAboutMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C08E89A1F59397900F9F8F1 /* CXAboutMeViewController.xib */; };
 		9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */; };
 		9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1C011F492C3900466385 /* CXMoreOtherTableViewCell.swift */; };
 		9C0C1C041F492EFD00466385 /* CXDiscoveryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */; };
@@ -31,6 +37,12 @@
 		26CDF28B936BF7F936D6EBB0 /* Pods_ManageYourStars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManageYourStars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F352CFAED2E43B27E16F95C /* Pods-ManageYourStars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageYourStars.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManageYourStars/Pods-ManageYourStars.debug.xcconfig"; sourceTree = "<group>"; };
 		9C08E88E1F58050300F9F8F1 /* CXUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXUserModel.swift; sourceTree = "<group>"; };
+		9C08E8911F59383700F9F8F1 /* Stars.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stars.storyboard; sourceTree = "<group>"; };
+		9C08E8931F59385400F9F8F1 /* Repositories.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Repositories.storyboard; sourceTree = "<group>"; };
+		9C08E8951F59386E00F9F8F1 /* Discovery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discovery.storyboard; sourceTree = "<group>"; };
+		9C08E8971F59387F00F9F8F1 /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		9C08E8991F59397900F9F8F1 /* CXAboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXAboutMeViewController.swift; sourceTree = "<group>"; };
+		9C08E89A1F59397900F9F8F1 /* CXAboutMeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXAboutMeViewController.xib; sourceTree = "<group>"; };
 		9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXProfileLoginTableViewCell.swift; sourceTree = "<group>"; };
 		9C0C1C011F492C3900466385 /* CXMoreOtherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMoreOtherTableViewCell.swift; sourceTree = "<group>"; };
 		9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXDiscoveryTableViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +54,7 @@
 		9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXStarTableViewCell.swift; sourceTree = "<group>"; };
 		9C64DC431F57F948005D6FB9 /* CXRepositoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXRepositoriesTableViewController.swift; sourceTree = "<group>"; };
 		9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageYourStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB5EF921F3AE7F700819E9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CB5EF951F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CB5EF971F3AE7F700819E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,26 +114,64 @@
 		9CB5EF8F1F3AE7F600819E9F /* ManageYourStars */ = {
 			isa = PBXGroup;
 			children = (
+				9CCDA4101F594777006A15D4 /* StarsVC */,
+				9CCDA4111F594792006A15D4 /* RepositoriesVC */,
+				9CCDA4121F5947A3006A15D4 /* DiscoveryVC */,
+				9CCDA40F1F594757006A15D4 /* MoreVC */,
 				9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */,
 				9CB5EF921F3AE7F700819E9F /* ViewController.swift */,
 				9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */,
 				9CB5EF941F3AE7F700819E9F /* Main.storyboard */,
-				9C3D39181F48059900920923 /* CXMoreViewController.swift */,
-				9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */,
-				9C64DC431F57F948005D6FB9 /* CXRepositoriesTableViewController.swift */,
-				9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */,
-				9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */,
-				9C08E88E1F58050300F9F8F1 /* CXUserModel.swift */,
-				9C64DC3D1F579F19005D6FB9 /* Owner.swift */,
-				9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */,
-				9C3D391A1F48069A00920923 /* CXLoginViewController.swift */,
-				9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */,
-				9C0C1C011F492C3900466385 /* CXMoreOtherTableViewCell.swift */,
 				9CB5EF971F3AE7F700819E9F /* Assets.xcassets */,
 				9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */,
 				9CB5EF9C1F3AE7F700819E9F /* Info.plist */,
 			);
 			path = ManageYourStars;
+			sourceTree = "<group>";
+		};
+		9CCDA40F1F594757006A15D4 /* MoreVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C08E8971F59387F00F9F8F1 /* More.storyboard */,
+				9C3D39181F48059900920923 /* CXMoreViewController.swift */,
+				9C08E8991F59397900F9F8F1 /* CXAboutMeViewController.swift */,
+				9C08E89A1F59397900F9F8F1 /* CXAboutMeViewController.xib */,
+				9C08E88E1F58050300F9F8F1 /* CXUserModel.swift */,
+				9C3D391A1F48069A00920923 /* CXLoginViewController.swift */,
+				9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */,
+				9C0C1C011F492C3900466385 /* CXMoreOtherTableViewCell.swift */,
+			);
+			path = MoreVC;
+			sourceTree = "<group>";
+		};
+		9CCDA4101F594777006A15D4 /* StarsVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C08E8911F59383700F9F8F1 /* Stars.storyboard */,
+				9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */,
+				9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */,
+				9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */,
+				9C64DC3D1F579F19005D6FB9 /* Owner.swift */,
+			);
+			path = StarsVC;
+			sourceTree = "<group>";
+		};
+		9CCDA4111F594792006A15D4 /* RepositoriesVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C08E8931F59385400F9F8F1 /* Repositories.storyboard */,
+				9C64DC431F57F948005D6FB9 /* CXRepositoriesTableViewController.swift */,
+			);
+			path = RepositoriesVC;
+			sourceTree = "<group>";
+		};
+		9CCDA4121F5947A3006A15D4 /* DiscoveryVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C08E8951F59386E00F9F8F1 /* Discovery.storyboard */,
+				9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */,
+			);
+			path = DiscoveryVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,9 +238,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C08E8941F59385400F9F8F1 /* Repositories.storyboard in Resources */,
+				9C08E8921F59383700F9F8F1 /* Stars.storyboard in Resources */,
+				9C08E8981F59387F00F9F8F1 /* More.storyboard in Resources */,
+				9C08E89C1F59397900F9F8F1 /* CXAboutMeViewController.xib in Resources */,
 				9CB5EF9B1F3AE7F700819E9F /* LaunchScreen.storyboard in Resources */,
 				9CB5EF981F3AE7F700819E9F /* Assets.xcassets in Resources */,
 				9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */,
+				9C08E8961F59386E00F9F8F1 /* Discovery.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +354,7 @@
 				9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */,
 				9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */,
 				9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */,
+				9C08E89B1F59397900F9F8F1 /* CXAboutMeViewController.swift in Sources */,
 				9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */,
 				9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */,
 				9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */,
@@ -440,9 +496,10 @@
 			baseConfigurationReference = 5F352CFAED2E43B27E16F95C /* Pods-ManageYourStars.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csp.ManageYourStars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -455,9 +512,10 @@
 			baseConfigurationReference = 9F3A81B4719DA20FAD6561F9 /* Pods-ManageYourStars.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csp.ManageYourStars;
 				PRODUCT_NAME = "$(TARGET_NAME)";

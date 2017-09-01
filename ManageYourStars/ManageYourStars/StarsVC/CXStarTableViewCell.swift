@@ -15,6 +15,7 @@ class CXStarTableViewCell: UITableViewCell {
     @IBOutlet weak var ownerLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
     var starModel:StarredModel?{
         didSet{
             
@@ -30,6 +31,11 @@ class CXStarTableViewCell: UITableViewCell {
                 
             }else{
                 print("avatar url is \(String(describing: starModel?.owner?.avatar_url))")
+            }
+            if let language = starModel?.language{
+                print("language is \(language)")
+                self.languageLabel.text = "Language:" + language
+
             }
         }
     }
