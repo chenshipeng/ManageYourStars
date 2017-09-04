@@ -17,6 +17,8 @@ class CXMoreViewController: UITableViewController {
         super.viewDidLoad()
         self.title = "More"
         
+        self.tableView.register(CXProfileLoginTableViewCell.self, forCellReuseIdentifier: "moreCell")
+        
         if UserDefaults.standard.object(forKey: "access_token") != nil{
             getUserInfo()
 
@@ -46,7 +48,7 @@ class CXMoreViewController: UITableViewController {
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "moreCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "moreCell", for: indexPath) as! CXProfileLoginTableViewCell
         switch indexPath.section {
         case 0:
             if let userName = UserDefaults.standard.object(forKey: "currentLogin"){

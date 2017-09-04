@@ -77,7 +77,7 @@ class CXRepositoriesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "starsCell", for: indexPath) as! CXStarTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath) as! CXRespositoriesTableViewCell
         
         let model:StarredModel = self.repositories[indexPath.row]!
         cell.starModel = model

@@ -80,7 +80,6 @@ class CXYourStarsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.stars.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "starsCell", for: indexPath) as! CXStarTableViewCell
@@ -90,8 +89,8 @@ class CXYourStarsViewController: UITableViewController {
 
         return cell
     }
-    
 
+    
    
     /*
     // MARK: - Navigation
