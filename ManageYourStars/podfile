@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.Git'
-platform:ios,'8.0'
+platform:ios,'9.0'
 use_frameworks!
 target 'ManageYourStars' do
 pod 'Alamofire'
@@ -19,5 +19,6 @@ pod 'EZSwiftExtensions'
 pod 'SVProgressHUD'
 pod 'HandyJSON'
 pod 'MJRefresh'
+pod 'ForceBlur','~>1.0'
 end
 

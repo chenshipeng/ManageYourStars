@@ -7,19 +7,41 @@
 //
 
 import UIKit
+import ForceBlur
 class CXUserViewController: UIViewController {
+    var starModel:StarredModel?
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet var tabBarView: TabBarView!
+    @IBOutlet weak var backImageView: ForceBlurImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        avatarImageView.layer.cornerRadius = 40.0
+        avatarImageView.layer.masksToBounds = true
 
-        // Do any additional setup after loading the view.
+        if let avatar_url = starModel?.owner?.avatar_url {
+            avatarImageView.kf.setImage(with: URL(string:avatar_url))
+            backImageView.kf.setImage(with: URL(string:avatar_url))
+
+        }
+        nameLabel.text = starModel?.owner?.login
+        
+//        tabBarView.countArray = [starModel.re]
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+
     }
 
+    @IBAction func pop(_ sender: Any) {
+        
+        navigationController?.popViewController(animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

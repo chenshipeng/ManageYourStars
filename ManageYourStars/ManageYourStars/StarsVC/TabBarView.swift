@@ -1,24 +1,10 @@
-//  MIT License
-
-//  Copyright (c) 2017 Haik Aslanyan
-
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-
-//  The above copyright notice and this permission notice shall be included in all
-//  copies or substantial portions of the Software.
-
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//  SOFTWARE.
+//
+//  TabBarView.swift
+//  ManageYourStars
+//
+//  Created by 陈仕鹏 on 2017/9/5.
+//  Copyright © 2017年 csp. All rights reserved.
+//
 
 import UIKit
 
@@ -30,9 +16,19 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
     @IBOutlet weak var whiteBarLeadingConstraint: NSLayoutConstraint!
     private let desArray = ["Repositories", "Following", "Follower"]
     var selectedIndex = 0
+    var countArray = [Int](){
+        didSet{
+            self.collectionView.reloadData()
+        }
+    }
     
     //MARK: Methods
     func customization() {
+        if let coll = self.collectionView {
+            print("\(coll)")
+        }else{
+            print("collection view is nill")
+        }
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.backgroundColor = UIColor.white
@@ -59,6 +55,25 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
         let des = self.desArray[indexPath.row]
         if self.selectedIndex == indexPath.row {
             
+            if countArray.count > 0 {
+                cell.countLabel.text = "\(countArray[indexPath.row])"
+                cell.countLabel.textColor = UIColor(red: 160.0/255, green: 32/255.0, blue: 24/255.0, alpha: 1.0)
+                cell.desLabel.textColor = UIColor(red: 160.0/255, green: 32/255.0, blue: 24/255.0, alpha: 1.0)
+
+            }else{
+                cell.countLabel.text = "0"
+                cell.countLabel.textColor = UIColor.black
+                cell.desLabel.textColor = UIColor.black
+            }
+            
+        }else{
+            if countArray.count > 0 {
+                cell.countLabel.text = "\(countArray[indexPath.row])"
+
+            }
+            cell.countLabel.text = "0"
+            cell.countLabel.textColor = UIColor.black
+            cell.desLabel.textColor = UIColor.black
         }
         
         cell.desLabel.text = des;
@@ -66,7 +81,7 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: collectionView.bounds.width / 4, height: collectionView.bounds.height)
+        return CGSize.init(width: collectionView.bounds.width / 3, height: collectionView.bounds.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -89,8 +104,8 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
 
 //TabBarCell Class
 class TabBarCellCollectionViewCell: UICollectionViewCell {
-//    @IBOutlet weak var icon: UIImageView!
+    //    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var desLabel: UILabel!
-
+    
 }

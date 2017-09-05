@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (4.5.0)
   - EZSwiftExtensions (1.11)
+  - ForceBlur (1.0):
+    - ForceBlur/Core (= 1.0)
+  - ForceBlur/Core (1.0)
   - HandyJSON (1.7.2)
   - Hero (0.3.6)
   - ImageViewer (4.1.0)
@@ -30,6 +33,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - EZSwiftExtensions
+  - ForceBlur (~> 1.0)
   - HandyJSON
   - Hero
   - ImageViewer
@@ -49,6 +53,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   EZSwiftExtensions: 84000042202d9fd574f626cda3064143f27fa767
+  ForceBlur: e1810ef389d97a35c89f242cc2e3aa57b79a1e5a
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
   ImageViewer: 163e5832e0a09e31a3e3482cce6e5e9029356174
@@ -67,6 +72,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   Threadly: b772ed7c1ff4a3f03eb4600bbc5ef83b3be5cb29
 
-PODFILE CHECKSUM: 7b77674bb656adde78e686f424d4298093be4d8f
+PODFILE CHECKSUM: ed572ead999ddaa9596bce652925ef030995d058
 
 COCOAPODS: 1.3.1

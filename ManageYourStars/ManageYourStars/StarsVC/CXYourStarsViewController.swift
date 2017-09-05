@@ -90,16 +90,29 @@ class CXYourStarsViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "pushToUserVC", sender: indexPath.row)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return false
+    }
     
    
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "pushToUserVC" {
+            let vc = segue.destination as! CXUserViewController
+            let row = sender as! Int
+            let model:StarredModel = self.stars[row]!
+            vc.starModel = model
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            
+        }
     }
-    */
+
 
 }

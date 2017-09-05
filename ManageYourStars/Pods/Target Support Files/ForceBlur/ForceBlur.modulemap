@@ -1,0 +1,6 @@
+framework module ForceBlur {
+  umbrella header "ForceBlur-umbrella.h"
+
+  export *
+  module * { export * }
+}
