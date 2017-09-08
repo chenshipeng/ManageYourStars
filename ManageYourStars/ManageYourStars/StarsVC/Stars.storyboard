@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +16,7 @@
         <scene sceneID="Dsv-9d-Sj6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FEJ-X9-jKM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stars" image="github160" selectedImage="github160" id="2ay-Pm-pNo"/>
+                    <tabBarItem key="tabBarItem" title="Stars" image="github160" id="2ay-Pm-pNo"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="109-5i-cBa">
@@ -68,6 +69,9 @@
                                                 <constraint firstAttribute="height" constant="60" id="D5e-HX-Cd7"/>
                                                 <constraint firstAttribute="width" constant="60" id="hh3-qA-vqK"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="UserAvatar"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKk-Jp-aNd">
                                             <rect key="frame" x="82" y="30" width="200" height="31.5"/>
@@ -116,7 +120,10 @@
                                     <outlet property="nameLabel" destination="i37-1o-Vyb" id="PFF-Sf-ewy"/>
                                     <outlet property="ownerLabel" destination="QKk-Jp-aNd" id="grA-Bj-UCD"/>
                                     <outlet property="starsLabel" destination="HOD-Ra-grO" id="TWv-nU-WxL"/>
-                                    <segue destination="dtD-ps-ADX" kind="show" identifier="pushToUserVC" id="quO-jV-KdR"/>
+                                    <segue destination="dtD-ps-ADX" kind="presentation" identifier="pushToUserVC" id="quO-jV-KdR">
+                                        <segue key="commit" inheritsFrom="parent" id="Kiw-tx-2mM"/>
+                                        <segue key="preview" inheritsFrom="commit" id="RF1-7d-iGz"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -127,6 +134,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Stars" id="aLs-5R-AdA"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gN4-zP-D7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,6 +166,9 @@
                                             <constraint firstAttribute="height" constant="80" id="bV2-tn-IUY"/>
                                             <constraint firstAttribute="width" constant="80" id="eGe-LI-LCB"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="UserAvatar"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1C0-av-FJQ">
                                         <rect key="frame" x="168.5" y="127" width="37.5" height="18"/>
@@ -286,6 +299,9 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="avatarImageView" destination="XTr-jH-ou5" id="JUp-x4-gx1"/>
                         <outlet property="backImageView" destination="Ttf-Fe-QRk" id="UbY-c1-VuC"/>
@@ -302,4 +318,7 @@
         <image name="github160" width="30" height="30"/>
         <image name="ic_arrow_back_white_48pt" width="48" height="48"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="quO-jV-KdR"/>
+    </inferredMetricsTieBreakers>
 </document>

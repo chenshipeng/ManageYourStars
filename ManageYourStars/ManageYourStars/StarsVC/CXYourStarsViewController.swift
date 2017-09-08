@@ -19,6 +19,10 @@ class CXYourStarsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 11.0, *) {
+            self.tableView.contentInsetAdjustmentBehavior = .never
+            self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+        }
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200
@@ -26,11 +30,19 @@ class CXYourStarsViewController: UITableViewController {
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.refreshData()
         })
-        self.tableView.mj_header.beginRefreshing()
+        if UserDefaults.standard.object(forKey: "access_token") != nil {
+            self.tableView.mj_header.beginRefreshing()
+
+        }
 
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
+    }
+
     func refreshData(){
         if UserDefaults.standard.object(forKey: "access_token") != nil {
             self.stars.removeAll()

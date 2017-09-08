@@ -13,7 +13,7 @@
         <scene sceneID="IiU-ha-nOR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DWg-x8-OUg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Repositories" image="github160" selectedImage="github160" id="XFm-YR-AzI"/>
+                    <tabBarItem key="tabBarItem" title="Repositories" image="github160" id="XFm-YR-AzI"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RWJ-Ih-lI7">

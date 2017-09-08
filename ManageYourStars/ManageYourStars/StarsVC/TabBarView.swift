@@ -16,7 +16,7 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
     @IBOutlet weak var whiteBarLeadingConstraint: NSLayoutConstraint!
     private let desArray = ["Repositories", "Following", "Follower"]
     var selectedIndex = 0
-    var countArray = [Int](){
+    var countArray = [String](){
         didSet{
             self.collectionView.reloadData()
         }
@@ -70,8 +70,10 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
             if countArray.count > 0 {
                 cell.countLabel.text = "\(countArray[indexPath.row])"
 
+            }else{
+                cell.countLabel.text = "0"
+
             }
-            cell.countLabel.text = "0"
             cell.countLabel.textColor = UIColor.black
             cell.desLabel.textColor = UIColor.black
         }

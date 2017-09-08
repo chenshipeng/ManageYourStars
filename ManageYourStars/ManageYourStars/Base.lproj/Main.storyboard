@@ -55,7 +55,7 @@
         <scene sceneID="41b-tG-EX5">
             <objects>
                 <viewControllerPlaceholder storyboardName="Stars" id="BJK-hW-jbC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RPb-N8-YD7"/>
+                    <tabBarItem key="tabBarItem" title="Stars" image="github60" id="RPb-N8-YD7"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEL-LM-GjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,7 +65,7 @@
         <scene sceneID="yFy-6n-NWE">
             <objects>
                 <viewControllerPlaceholder storyboardName="Repositories" id="nVT-lz-Cn8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oze-Zy-BmU"/>
+                    <tabBarItem key="tabBarItem" title="Repositories" image="github160" springLoaded="YES" id="oze-Zy-BmU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yo4-Ub-ZMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +75,7 @@
         <scene sceneID="O3C-qG-jkn">
             <objects>
                 <viewControllerPlaceholder storyboardName="Discovery" id="Wbn-5C-FIy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ebk-Xg-9mM"/>
+                    <tabBarItem key="tabBarItem" title="Discovery" image="github60" id="ebk-Xg-9mM"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0YZ-Eh-LnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,11 +85,16 @@
         <scene sceneID="GuF-5P-FBL">
             <objects>
                 <viewControllerPlaceholder storyboardName="More" id="g1G-PG-hkQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6qQ-9K-Ybi"/>
+                    <tabBarItem key="tabBarItem" title="More" image="more" id="6qQ-9K-Ybi"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kM-hh-AKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="718" y="409"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="github160" width="30" height="30"/>
+        <image name="github60" width="30" height="30"/>
+        <image name="more" width="30" height="30"/>
+    </resources>
 </document>

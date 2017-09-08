@@ -13,7 +13,7 @@
         <scene sceneID="pcW-01-sXg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f7Q-oL-mbM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="more" selectedImage="more" id="h3x-i7-Lat"/>
+                    <tabBarItem key="tabBarItem" title="More" image="more" id="h3x-i7-Lat"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dE0-q8-Zvd">

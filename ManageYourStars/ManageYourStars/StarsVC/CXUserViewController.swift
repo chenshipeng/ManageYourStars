@@ -8,6 +8,8 @@
 
 import UIKit
 import ForceBlur
+import Alamofire
+import SVProgressHUD
 class CXUserViewController: UIViewController {
     var starModel:StarredModel?
 
@@ -15,6 +17,7 @@ class CXUserViewController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet var tabBarView: TabBarView!
     @IBOutlet weak var backImageView: ForceBlurImageView!
+    var repositoriesArr = [Repository?]()
     
     
     override func viewDidLoad() {
@@ -29,8 +32,109 @@ class CXUserViewController: UIViewController {
         }
         nameLabel.text = starModel?.owner?.login
         
-//        tabBarView.countArray = [starModel.re]
         
+        self.getUserInfo()
+        
+    }
+    func getUserInfo(){
+        //进入个人详情页面
+        guard let currentLogin = starModel?.owner?.login  else {
+            return
+        }
+        let url = "https://api.github.com/users" + "\(String(describing: currentLogin))"
+        
+        
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil).responseString(completionHandler: { (response) in
+            
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                if let arr = CXUserModel.deserialize(from: response.result.value){
+                    self.tabBarView.countArray = [arr.public_repos!,arr.following!,arr.followers!]
+
+                }
+                print("response is \(String(describing: response.result.value))")
+            }else{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+            }
+        })
+    }
+    func getUserReposotories(){
+        //进入个人详情页面
+        self.repositoriesArr.removeAll()
+        guard let currentLogin = starModel?.owner?.login  else {
+            return
+        }
+        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))/repos?sort=updated&page=" + "1"
+        print("url is \(url)")
+        
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
+            
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                if let arr = [Repository].deserialize(from: response.result.value as? NSArray){
+                    self.repositoriesArr.append(contentsOf:arr)
+                }
+                
+                print("response is \(self.repositoriesArr))")
+            }else{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+            }
+        })
+    }
+    func getUserFollowings(){
+        //进入个人详情页面
+        self.repositoriesArr.removeAll()
+        guard let currentLogin = starModel?.owner?.login  else {
+            return
+        }
+        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))/following?page=" + "1"
+        print("url is \(url)")
+        
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
+            
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                if let arr = [Repository].deserialize(from: response.result.value as? NSArray){
+                    self.repositoriesArr.append(contentsOf:arr)
+                }
+                
+                print("response is \(self.repositoriesArr))")
+            }else{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+            }
+        })
+    }
+    
+    func getUserFollowers(){
+        //进入个人详情页面
+        self.repositoriesArr.removeAll()
+        guard let currentLogin = starModel?.owner?.login  else {
+            return
+        }
+        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))/followers?page=" + "1"
+        print("url is \(url)")
+        
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
+            
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                if let arr = [Repository].deserialize(from: response.result.value as? NSArray){
+                    self.repositoriesArr.append(contentsOf:arr)
+                }
+                
+                print("response is \(self.repositoriesArr))")
+            }else{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+            }
+        })
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -40,7 +144,12 @@ class CXUserViewController: UIViewController {
 
     @IBAction func pop(_ sender: Any) {
         
-        navigationController?.popViewController(animated: true)
+        if let navigationController = navigationController, navigationController.viewControllers.first != self {
+            navigationController.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

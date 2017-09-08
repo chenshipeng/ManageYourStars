@@ -20,5 +20,6 @@ pod 'SVProgressHUD'
 pod 'HandyJSON'
 pod 'MJRefresh'
 pod 'ForceBlur','~>1.0'
+pod 'RAMAnimatedTabBarController'
 end
 
