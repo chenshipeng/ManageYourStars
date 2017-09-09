@@ -37,6 +37,8 @@
 		9CF6C0AA1F638B350013A4BE /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */; };
 		9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */; };
 		9CF6C0AE1F6393E50013A4BE /* FollowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */; };
+		9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */; };
+		9CF6C0B41F63B44A0013A4BE /* RepositoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C0B21F63B44A0013A4BE /* RepositoryDetailViewController.xib */; };
 		9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */; };
 		F97EE8095EE4706B0207D72A /* Pods_ManageYourStars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CDF28B936BF7F936D6EBB0 /* Pods_ManageYourStars.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
 		9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowCell.xib; sourceTree = "<group>"; };
+		9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
+		9CF6C0B21F63B44A0013A4BE /* RepositoryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailViewController.xib; sourceTree = "<group>"; };
 		9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = NetworkRequest/NetworkRequest.swift; sourceTree = "<group>"; };
 		9F3A81B4719DA20FAD6561F9 /* Pods-ManageYourStars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageYourStars.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManageYourStars/Pods-ManageYourStars.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,15 +169,11 @@
 			children = (
 				9C08E8911F59383700F9F8F1 /* Stars.storyboard */,
 				9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */,
-				9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */,
 				9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */,
-				9CF6C0A71F638B350013A4BE /* RepositoryCell.swift */,
-				9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */,
-				9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */,
-				9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */,
-				9C6073E81F5E2F8B00D4C263 /* TabBarView.swift */,
-				9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */,
-				9C64DC3D1F579F19005D6FB9 /* Owner.swift */,
+				9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */,
+				9CF6C0B21F63B44A0013A4BE /* RepositoryDetailViewController.xib */,
+				9CF6C0AF1F63B3D60013A4BE /* Views */,
+				9CF6C0B01F63B3E30013A4BE /* Models */,
 			);
 			path = StarsVC;
 			sourceTree = "<group>";
@@ -196,6 +196,28 @@
 				9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */,
 			);
 			path = DiscoveryVC;
+			sourceTree = "<group>";
+		};
+		9CF6C0AF1F63B3D60013A4BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */,
+				9CF6C0A71F638B350013A4BE /* RepositoryCell.swift */,
+				9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */,
+				9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */,
+				9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */,
+				9C6073E81F5E2F8B00D4C263 /* TabBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9CF6C0B01F63B3E30013A4BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */,
+				9C64DC3D1F579F19005D6FB9 /* Owner.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +291,7 @@
 				9C08E89C1F59397900F9F8F1 /* CXAboutMeViewController.xib in Resources */,
 				9CB5EF9B1F3AE7F700819E9F /* LaunchScreen.storyboard in Resources */,
 				9CF6C0AE1F6393E50013A4BE /* FollowCell.xib in Resources */,
+				9CF6C0B41F63B44A0013A4BE /* RepositoryDetailViewController.xib in Resources */,
 				9CB5EF981F3AE7F700819E9F /* Assets.xcassets in Resources */,
 				9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */,
 				9C08E8961F59386E00F9F8F1 /* Discovery.storyboard in Resources */,
@@ -389,6 +412,7 @@
 				9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */,
 				9C6073E91F5E2F8B00D4C263 /* TabBarView.swift in Sources */,
 				9CC057F21F62925700EBA3DA /* Repository.swift in Sources */,
+				9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */,
 				9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */,
 				9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */,
 				9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */,

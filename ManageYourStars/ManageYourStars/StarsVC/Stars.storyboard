@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -116,10 +115,6 @@
                                     <outlet property="nameLabel" destination="i37-1o-Vyb" id="PFF-Sf-ewy"/>
                                     <outlet property="ownerLabel" destination="QKk-Jp-aNd" id="grA-Bj-UCD"/>
                                     <outlet property="starsLabel" destination="HOD-Ra-grO" id="TWv-nU-WxL"/>
-                                    <segue destination="dtD-ps-ADX" kind="show" identifier="pushToUserVC" id="quO-jV-KdR">
-                                        <segue key="commit" inheritsFrom="parent" id="Kiw-tx-2mM"/>
-                                        <segue key="preview" inheritsFrom="commit" id="RF1-7d-iGz"/>
-                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -315,7 +310,4 @@
         <image name="github160" width="30" height="30"/>
         <image name="ic_arrow_back_white_48pt" width="48" height="48"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="quO-jV-KdR"/>
-    </inferredMetricsTieBreakers>
 </document>

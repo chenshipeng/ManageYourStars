@@ -22,7 +22,7 @@ class CXUserViewController: UIViewController {
     @IBOutlet var tabBarView: TabBarView!
     @IBOutlet weak var backImageView: ForceBlurImageView!
     @IBOutlet weak var tableView: UITableView!
-    var repositoriesArr = [Repository?]()
+    var repositoriesArr = [StarredModel?]()
     var followingArr = [CXUserModel?]()
     var followerArr = [CXUserModel?]()
     
@@ -38,7 +38,10 @@ class CXUserViewController: UIViewController {
       
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     func setupUI(){
         
        
@@ -122,7 +125,7 @@ class CXUserViewController: UIViewController {
             
             if response.result.isSuccess {
                 SVProgressHUD.dismiss()
-                if let arr = [Repository].deserialize(from: response.result.value as? NSArray){
+                if let arr = [StarredModel].deserialize(from: response.result.value as? NSArray){
                     print("response is \(String(describing: response.result.value))")
 
                     self.repositoriesArr.append(contentsOf:arr)
@@ -188,10 +191,7 @@ class CXUserViewController: UIViewController {
         })
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
+    
 
     @IBAction func pop(_ sender: Any) {
         
@@ -241,9 +241,10 @@ extension CXUserViewController:UITableViewDelegate,UITableViewDataSource{
             
             self.tableView.register(UINib.init(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
             let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath) as! RepositoryCell
+            cell.selectionStyle = .none
             let repository = repositoriesArr[indexPath.row]
             cell.nameLabel.text = repository?.name
-            if let login = repository?.user?.login {
+            if let login = repository?.owner?.login {
                 cell.ownerLabel.text = "owner:" + login
             }else{
                 if let login1 = self.login {
@@ -258,7 +259,7 @@ extension CXUserViewController:UITableViewDelegate,UITableViewDataSource{
                 cell.starsLabel.text = "Stars:0"
                 
             }
-            if let des = repository?.repositoryDescription {
+            if let des = repository?.description {
                 cell.descriptionLabel.text = des
                 
             }else{
@@ -271,7 +272,7 @@ extension CXUserViewController:UITableViewDelegate,UITableViewDataSource{
             self.tableView.register(UINib.init(nibName: "FollowCell", bundle: nil), forCellReuseIdentifier: "FollowCell")
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "FollowCell", for: indexPath) as! FollowCell
-           
+            cell.selectionStyle = .none
             
             let user = tabBarView.selectedIndex == 1 ? followingArr[indexPath.row] : followerArr[indexPath.row]
             cell.nameLabel.text = user?.login
@@ -293,6 +294,12 @@ extension CXUserViewController:UITableViewDelegate,UITableViewDataSource{
             let user = tabBarView.selectedIndex == 1 ? followingArr[indexPath.row] : followerArr[indexPath.row]
             vc.avatar_url = user?.avatar_url
             vc.login = user?.login
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let model:StarredModel = self.repositoriesArr[indexPath.row]!
+            
+            let vc = RepositoryDetailViewController()
+            vc.starModel = model
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
