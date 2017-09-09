@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,9 +68,6 @@
                                                 <constraint firstAttribute="height" constant="60" id="D5e-HX-Cd7"/>
                                                 <constraint firstAttribute="width" constant="60" id="hh3-qA-vqK"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="UserAvatar"/>
-                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKk-Jp-aNd">
                                             <rect key="frame" x="82" y="30" width="200" height="31.5"/>
@@ -120,7 +116,7 @@
                                     <outlet property="nameLabel" destination="i37-1o-Vyb" id="PFF-Sf-ewy"/>
                                     <outlet property="ownerLabel" destination="QKk-Jp-aNd" id="grA-Bj-UCD"/>
                                     <outlet property="starsLabel" destination="HOD-Ra-grO" id="TWv-nU-WxL"/>
-                                    <segue destination="dtD-ps-ADX" kind="presentation" identifier="pushToUserVC" id="quO-jV-KdR">
+                                    <segue destination="dtD-ps-ADX" kind="show" identifier="pushToUserVC" id="quO-jV-KdR">
                                         <segue key="commit" inheritsFrom="parent" id="Kiw-tx-2mM"/>
                                         <segue key="preview" inheritsFrom="commit" id="RF1-7d-iGz"/>
                                     </segue>
@@ -134,21 +130,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Stars" id="aLs-5R-AdA"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gN4-zP-D7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1536.8" y="-1089.8050974512744"/>
+            <point key="canvasLocation" x="1676" y="-1086"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="PwK-gJ-q4C">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="dtD-ps-ADX" customClass="CXUserViewController" customModule="ManageYourStars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CXUserViewController" hidesBottomBarWhenPushed="YES" id="dtD-ps-ADX" customClass="CXUserViewController" customModule="ManageYourStars" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IAC-Nh-aoG"/>
-                        <viewControllerLayoutGuide type="bottom" id="sNK-N5-QQu"/>
+                        <viewControllerLayoutGuide type="top" id="peY-od-BaL"/>
+                        <viewControllerLayoutGuide type="bottom" id="pfS-V1-b7d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fpF-7k-d5Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -166,9 +159,6 @@
                                             <constraint firstAttribute="height" constant="80" id="bV2-tn-IUY"/>
                                             <constraint firstAttribute="width" constant="80" id="eGe-LI-LCB"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="UserAvatar"/>
-                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1C0-av-FJQ">
                                         <rect key="frame" x="168.5" y="127" width="37.5" height="18"/>
@@ -204,10 +194,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTO-Xe-ZEO" customClass="TabBarView" customModule="ManageYourStars" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="180" width="375" height="79"/>
+                                <rect key="frame" x="0.0" y="180" width="375" height="50"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wc0-1E-PTd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RXk-Ab-cOQ">
                                             <size key="itemSize" width="50" height="50"/>
@@ -217,7 +207,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="1tD-ed-vW2" customClass="TabBarCellCollectionViewCell" customModule="ManageYourStars" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="14.5" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -253,7 +243,7 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-rE-uN6">
-                                        <rect key="frame" x="0.0" y="74" width="94" height="5"/>
+                                        <rect key="frame" x="0.0" y="45" width="94" height="5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="hIV-xz-szv"/>
@@ -267,11 +257,10 @@
                                     <constraint firstItem="gg6-rE-uN6" firstAttribute="width" secondItem="jTO-Xe-ZEO" secondAttribute="width" multiplier="0.25" id="75K-5H-Sr1"/>
                                     <constraint firstItem="gg6-rE-uN6" firstAttribute="leading" secondItem="jTO-Xe-ZEO" secondAttribute="leading" id="8vz-un-t5r"/>
                                     <constraint firstAttribute="bottom" secondItem="gg6-rE-uN6" secondAttribute="bottom" id="Pa1-xC-Dfh"/>
-                                    <constraint firstAttribute="height" constant="79" id="gUC-jf-agm"/>
+                                    <constraint firstAttribute="height" constant="50" id="gUC-jf-agm"/>
                                     <constraint firstItem="Wc0-1E-PTd" firstAttribute="leading" secondItem="jTO-Xe-ZEO" secondAttribute="leading" id="hzX-nB-woA"/>
                                     <constraint firstAttribute="trailing" secondItem="Wc0-1E-PTd" secondAttribute="trailing" id="sdb-Zu-UQP"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="4Qd-ea-eZH"/>
                                 <connections>
                                     <outlet property="collectionView" destination="Wc0-1E-PTd" id="DIh-bS-Mha"/>
                                     <outlet property="whiteBar" destination="gg6-rE-uN6" id="LBY-d8-Ngf"/>
@@ -279,39 +268,47 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SIi-ED-ayO">
-                                <rect key="frame" x="0.0" y="259" width="375" height="408"/>
+                                <rect key="frame" x="0.0" y="231" width="375" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGk-Do-gU0">
+                                <rect key="frame" x="0.0" y="230" width="375" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="7s3-ZP-n41"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sNK-N5-QQu" firstAttribute="top" secondItem="SIi-ED-ayO" secondAttribute="bottom" id="AYr-Gd-2sD"/>
+                            <constraint firstItem="RGk-Do-gU0" firstAttribute="top" secondItem="Wc0-1E-PTd" secondAttribute="bottom" id="35i-PL-ya0"/>
+                            <constraint firstItem="pfS-V1-b7d" firstAttribute="top" secondItem="SIi-ED-ayO" secondAttribute="bottom" id="AYr-Gd-2sD"/>
+                            <constraint firstAttribute="trailing" secondItem="RGk-Do-gU0" secondAttribute="trailing" id="BQh-Gz-Aav"/>
                             <constraint firstItem="jTO-Xe-ZEO" firstAttribute="leading" secondItem="fpF-7k-d5Q" secondAttribute="leading" id="GgG-yI-YJ6"/>
                             <constraint firstItem="SIi-ED-ayO" firstAttribute="leading" secondItem="fpF-7k-d5Q" secondAttribute="leading" id="L3b-8G-Tjt"/>
-                            <constraint firstItem="L2I-xS-OUj" firstAttribute="top" secondItem="IAC-Nh-aoG" secondAttribute="bottom" constant="-20" id="Mvo-hm-tg6"/>
+                            <constraint firstItem="L2I-xS-OUj" firstAttribute="top" secondItem="peY-od-BaL" secondAttribute="bottom" constant="-20" id="Mvo-hm-tg6"/>
                             <constraint firstAttribute="trailing" secondItem="L2I-xS-OUj" secondAttribute="trailing" id="TOb-zM-qYj"/>
                             <constraint firstAttribute="trailing" secondItem="SIi-ED-ayO" secondAttribute="trailing" id="Tkc-xg-poV"/>
                             <constraint firstAttribute="trailing" secondItem="jTO-Xe-ZEO" secondAttribute="trailing" id="VpU-2t-zAf"/>
+                            <constraint firstItem="RGk-Do-gU0" firstAttribute="leading" secondItem="fpF-7k-d5Q" secondAttribute="leading" id="caO-hq-uTo"/>
                             <constraint firstItem="L2I-xS-OUj" firstAttribute="leading" secondItem="fpF-7k-d5Q" secondAttribute="leading" id="dNx-cv-tdo"/>
-                            <constraint firstItem="SIi-ED-ayO" firstAttribute="top" secondItem="Wc0-1E-PTd" secondAttribute="bottom" id="nPt-rf-qII"/>
+                            <constraint firstItem="SIi-ED-ayO" firstAttribute="top" secondItem="Wc0-1E-PTd" secondAttribute="bottom" constant="1" id="nPt-rf-qII"/>
                             <constraint firstItem="jTO-Xe-ZEO" firstAttribute="top" secondItem="L2I-xS-OUj" secondAttribute="bottom" id="nl2-jl-3ZU"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="avatarImageView" destination="XTr-jH-ou5" id="JUp-x4-gx1"/>
                         <outlet property="backImageView" destination="Ttf-Fe-QRk" id="UbY-c1-VuC"/>
                         <outlet property="nameLabel" destination="1C0-av-FJQ" id="6hd-ch-GXX"/>
                         <outlet property="tabBarView" destination="jTO-Xe-ZEO" id="OKC-gt-NJL"/>
+                        <outlet property="tableView" destination="SIi-ED-ayO" id="bt6-Nk-b94"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bo1-U3-1Ah" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362" y="-1086"/>
+            <point key="canvasLocation" x="2484" y="-1086"/>
         </scene>
     </scenes>
     <resources>

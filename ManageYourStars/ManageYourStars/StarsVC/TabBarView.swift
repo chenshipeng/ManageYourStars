@@ -16,7 +16,7 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
     @IBOutlet weak var whiteBarLeadingConstraint: NSLayoutConstraint!
     private let desArray = ["Repositories", "Following", "Follower"]
     var selectedIndex = 0
-    var countArray = [String](){
+    var countArray = [String?](){
         didSet{
             self.collectionView.reloadData()
         }
@@ -53,10 +53,14 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TabBarCellCollectionViewCell
         let des = self.desArray[indexPath.row]
+        print("select index is \(self.selectedIndex)")
         if self.selectedIndex == indexPath.row {
             
             if countArray.count > 0 {
-                cell.countLabel.text = "\(countArray[indexPath.row])"
+                if let count = countArray[indexPath.row] {
+                    cell.countLabel.text = "\(count)"
+
+                }
                 cell.countLabel.textColor = UIColor(red: 160.0/255, green: 32/255.0, blue: 24/255.0, alpha: 1.0)
                 cell.desLabel.textColor = UIColor(red: 160.0/255, green: 32/255.0, blue: 24/255.0, alpha: 1.0)
 
@@ -68,7 +72,10 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
             
         }else{
             if countArray.count > 0 {
-                cell.countLabel.text = "\(countArray[indexPath.row])"
+                if let count = countArray[indexPath.row] {
+                    cell.countLabel.text = "\(count)"
+                    
+                }
 
             }else{
                 cell.countLabel.text = "0"
@@ -91,6 +98,7 @@ class TabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDa
             self.selectedIndex = indexPath.row
             NotificationCenter.default.post(name: Notification.Name.init(rawValue: "didSelectMenu"), object: nil, userInfo: ["index": self.selectedIndex])
         }
+        self.collectionView.reloadData()
     }
     
     //MARK: View LifeCycle

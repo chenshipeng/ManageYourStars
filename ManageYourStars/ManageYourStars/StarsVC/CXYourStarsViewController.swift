@@ -120,7 +120,8 @@ class CXYourStarsViewController: UITableViewController {
             let vc = segue.destination as! CXUserViewController
             let row = sender as! Int
             let model:StarredModel = self.stars[row]!
-            vc.starModel = model
+            vc.login = model.owner?.login
+            vc.avatar_url = model.owner?.avatar_url
             navigationController?.setNavigationBarHidden(true, animated: true)
             
         }
