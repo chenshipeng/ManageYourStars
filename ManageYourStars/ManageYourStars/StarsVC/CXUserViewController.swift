@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ForceBlur
 import Alamofire
 import SVProgressHUD
 class CXUserViewController: UIViewController {
@@ -20,7 +19,7 @@ class CXUserViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet var tabBarView: TabBarView!
-    @IBOutlet weak var backImageView: ForceBlurImageView!
+    @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var repositoriesArr = [StarredModel?]()
     var followingArr = [CXUserModel?]()
@@ -70,7 +69,7 @@ class CXUserViewController: UIViewController {
         self.getUserReposotories()
     }
     
-    func selectTabbarMenu(no:Notification){
+    @objc func selectTabbarMenu(no:Notification){
         let index = no.userInfo!["index"] as! Int
         
         if index == 1 && followingArr.count == 0 {

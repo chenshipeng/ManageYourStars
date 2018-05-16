@@ -23,18 +23,18 @@
 import UIKit
 
 internal class HeroAnimatorViewContext {
-  var animator: HeroAnimator?
-  var snapshot: UIView
-  var duration: TimeInterval = 0
-
+  weak var animator: HeroAnimator?
+  let snapshot: UIView
+  let appearing: Bool
   var targetState: HeroTargetState
+  var duration: TimeInterval = 0
 
   // computed
   var currentTime: TimeInterval {
     return snapshot.layer.convertTime(CACurrentMediaTime(), from: nil)
   }
   var container: UIView? {
-    return animator?.context.container
+    return animator?.hero.context.container
   }
 
   class func canAnimate(view: UIView, state: HeroTargetState, appearing: Bool) -> Bool {
@@ -44,7 +44,11 @@ internal class HeroAnimatorViewContext {
   func apply(state: HeroTargetState) {
   }
 
-  func resume(timePassed: TimeInterval, reverse: Bool) {
+  func changeTarget(state: HeroTargetState, isDestination: Bool) {
+  }
+
+  func resume(timePassed: TimeInterval, reverse: Bool) -> TimeInterval {
+    return 0
   }
 
   func seek(timePassed: TimeInterval) {
@@ -54,12 +58,14 @@ internal class HeroAnimatorViewContext {
     animator = nil
   }
 
-  func startAnimations(appearing: Bool) {
+  func startAnimations() -> TimeInterval {
+    return 0
   }
 
-  required init(animator: HeroAnimator, snapshot: UIView, targetState: HeroTargetState) {
+  required init(animator: HeroAnimator, snapshot: UIView, targetState: HeroTargetState, appearing: Bool) {
     self.animator = animator
     self.snapshot = snapshot
     self.targetState = targetState
+    self.appearing = appearing
   }
 }

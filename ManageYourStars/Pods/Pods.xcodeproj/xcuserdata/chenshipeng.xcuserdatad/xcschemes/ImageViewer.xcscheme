@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '83548DB259CDDAF1722C21C80CD1F343'
-               BlueprintName = 'ImageViewer'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ImageViewer.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "83548DB259CDDAF1722C21C80CD1F343"
+               BlueprintName = "ImageViewer"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "ImageViewer.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

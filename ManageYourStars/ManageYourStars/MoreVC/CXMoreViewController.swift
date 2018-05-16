@@ -75,7 +75,7 @@ class CXMoreViewController: UITableViewController {
         
         
     }
-    func getUserInfo(){
+    @objc func getUserInfo(){
         //进入个人详情页面
         let url = "https://api.github.com/user"
         let params = ["access_token":UserDefaults.standard.object(forKey: "access_token")!]

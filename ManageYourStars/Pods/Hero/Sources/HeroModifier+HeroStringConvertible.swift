@@ -32,7 +32,7 @@ extension HeroModifier: HeroStringConvertible {
     case "fade":
       return .fade
     case "opacity":
-      return HeroModifier.opacity(parameters.getFloat(0) ?? 1)
+      return HeroModifier.opacity(CGFloat(parameters.getFloat(0) ?? 1))
     case "position":
       return .position(CGPoint(x: parameters.getCGFloat(0) ?? 0, y: parameters.getCGFloat(1) ?? 0))
     case "size":
@@ -83,7 +83,7 @@ extension HeroModifier: HeroStringConvertible {
         let c3 = parameters.getFloat(2),
         let c4 = parameters.getFloat(3) {
         return .timingFunction(CAMediaTimingFunction(controlPoints: c1, c2, c3, c4))
-      } else if let name = parameters.get(0)?.name, let timingFunction = CAMediaTimingFunction.from(name:name) {
+      } else if let name = parameters.get(0)?.name, let timingFunction = CAMediaTimingFunction.from(name: name) {
         return .timingFunction(timingFunction)
       }
     case "arc":
@@ -101,8 +101,6 @@ extension HeroModifier: HeroStringConvertible {
       }
     case "useGlobalCoordinateSpace":
       return .useGlobalCoordinateSpace
-    case "useSameParentCoordinateSpace":
-      return .useSameParentCoordinateSpace
     case "ignoreSubviewModifiers":
       return .ignoreSubviewModifiers(recursive:parameters.getBool(0) ?? false)
     case "zPosition":

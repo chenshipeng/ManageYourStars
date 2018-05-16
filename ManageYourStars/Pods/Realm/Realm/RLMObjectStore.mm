@@ -40,6 +40,11 @@
 
 using namespace realm;
 
+@interface LinkingObjectsBase : NSObject
+@property (nonatomic, nullable) RLMWeakObjectHandle *object;
+@property (nonatomic, nullable) RLMProperty *property;
+@end
+
 void RLMRealmCreateAccessors(RLMSchema *schema) {
     const size_t bufferSize = sizeof("RLM:Managed  ") // includes null terminator
                             + std::numeric_limits<unsigned long long>::digits10
@@ -85,19 +90,17 @@ void RLMInitializeSwiftAccessorGenerics(__unsafe_unretained RLMObjectBase *const
     }
 
     for (RLMProperty *prop in object->_objectSchema.swiftGenericProperties) {
-        if (prop.type == RLMPropertyTypeArray) {
-            RLMArray *array = [[RLMManagedArray alloc] initWithParent:object property:prop];
-            [object_getIvar(object, prop.swiftIvar) set_rlmArray:array];
-        }
-        else if (prop.type == RLMPropertyTypeLinkingObjects) {
+        if (prop.type == RLMPropertyTypeLinkingObjects) {
             id linkingObjects = object_getIvar(object, prop.swiftIvar);
             [linkingObjects setObject:(id)[[RLMWeakObjectHandle alloc] initWithObject:object]];
             [linkingObjects setProperty:prop];
         }
+        else if (prop.array) {
+            RLMArray *array = [[RLMManagedArray alloc] initWithParent:object property:prop];
+            [object_getIvar(object, prop.swiftIvar) set_rlmArray:array];
+        }
         else {
-            RLMOptionalBase *optional = object_getIvar(object, prop.swiftIvar);
-            optional.property = prop;
-            optional.object = object;
+            RLMInitializeManagedOptional(object_getIvar(object, prop.swiftIvar), object, prop);
         }
     }
 }
@@ -162,7 +165,6 @@ RLMObjectBase *RLMCreateObjectInRealmWithValue(RLMRealm *realm, NSString *classN
                             (unsigned long long)info.objectSchema->persisted_properties.size());
     }
 
-    // create the object
     RLMAccessorContext c{realm, info, false};
     RLMObjectBase *object = RLMCreateManagedAccessor(info.rlmObjectSchema.accessorClass, realm, &info);
     try {
@@ -230,10 +232,13 @@ RLMResults *RLMGetObjects(__unsafe_unretained RLMRealm *const realm,
 id RLMGetObject(RLMRealm *realm, NSString *objectClassName, id key) {
     RLMVerifyRealmRead(realm);
 
-    RLMAccessorContext *c = nullptr;
     auto& info = realm->_info[objectClassName];
+    if (RLMProperty *prop = info.propertyForPrimaryKey()) {
+        RLMValidateValueForProperty(key, info.rlmObjectSchema, prop);
+    }
     try {
-        auto obj = realm::Object::get_for_primary_key(*c, realm->_realm, *info.objectSchema,
+        RLMAccessorContext c{realm, info};
+        auto obj = realm::Object::get_for_primary_key(c, realm->_realm, *info.objectSchema,
                                                       key ?: NSNull.null);
         if (!obj.is_valid())
             return nil;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '89E285AC84D91D8901E014A004D73588'
-               BlueprintName = 'SwiftyUserDefaults'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyUserDefaults.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "867B011ED8E7D31A3C6C5F1E787BC255"
+               BlueprintName = "SwiftyUserDefaults"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SwiftyUserDefaults.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

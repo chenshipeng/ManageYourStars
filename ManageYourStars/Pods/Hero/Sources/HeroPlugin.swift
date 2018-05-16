@@ -23,7 +23,12 @@
 import UIKit
 
 open class HeroPlugin: NSObject, HeroPreprocessor, HeroAnimator {
-  weak public var context: HeroContext!
+
+  weak public var hero: HeroTransition!
+
+  public var context: HeroContext! {
+    return hero.context
+  }
 
   /**
     Determines whether or not to receive `seekTo` callback on every frame.
@@ -122,13 +127,14 @@ open class HeroPlugin: NSObject, HeroPreprocessor, HeroAnimator {
        - view: the view to override
    */
   open func apply(state: HeroTargetState, to view: UIView) {}
+  open func changeTarget(state: HeroTargetState, isDestination: Bool, to view: UIView) {}
 }
 
 // methods for enable/disable the current plugin
 extension HeroPlugin {
   public static var isEnabled: Bool {
     get {
-      return Hero.isEnabled(plugin: self)
+      return HeroTransition.isEnabled(plugin: self)
     }
     set {
       if newValue {
@@ -139,9 +145,27 @@ extension HeroPlugin {
     }
   }
   public static func enable() {
-    Hero.enable(plugin: self)
+    HeroTransition.enable(plugin: self)
   }
   public static func disable() {
-    Hero.disable(plugin: self)
+    HeroTransition.disable(plugin: self)
+  }
+}
+
+// MARK: Plugin Support
+internal extension HeroTransition {
+  static func isEnabled(plugin: HeroPlugin.Type) -> Bool {
+    return enabledPlugins.index(where: { return $0 == plugin}) != nil
+  }
+
+  static func enable(plugin: HeroPlugin.Type) {
+    disable(plugin: plugin)
+    enabledPlugins.append(plugin)
+  }
+
+  static func disable(plugin: HeroPlugin.Type) {
+    if let index = enabledPlugins.index(where: { return $0 == plugin}) {
+      enabledPlugins.remove(at: index)
+    }
   }
 }

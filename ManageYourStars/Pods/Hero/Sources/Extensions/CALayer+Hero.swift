@@ -31,4 +31,21 @@ internal extension CALayer {
     }
     return []
   }
+
+  func flatTransformTo(layer: CALayer) -> CATransform3D {
+    var layer = layer
+    var trans = layer.transform
+    while let superlayer = layer.superlayer, superlayer != self, !(superlayer.delegate is UIWindow) {
+      trans = CATransform3DConcat(superlayer.transform, trans)
+      layer = superlayer
+    }
+    return trans
+  }
+
+  func removeAllHeroAnimations() {
+    guard let keys = animationKeys() else { return }
+    for animationKey in keys where animationKey.hasPrefix("hero.") {
+      removeAnimation(forKey: animationKey)
+    }
+  }
 }

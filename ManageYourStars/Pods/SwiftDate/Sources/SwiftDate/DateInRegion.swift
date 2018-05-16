@@ -1,44 +1,18 @@
+// SwiftDate
+// Manage Date/Time & Timezone in Swift
 //
-//	SwiftDate, Full featured Swift date library for parsing, validating, manipulating, and formatting dates and timezones.
-//	Created by:				Daniele Margutti
-//	Main contributors:		Jeroen Houtzager
+// Created by: Daniele Margutti
+// Email: <hello@danielemargutti.com>
+// Web: <http://www.danielemargutti.com>
 //
-//
-//	Permission is hereby granted, free of charge, to any person obtaining a copy
-//	of this software and associated documentation files (the "Software"), to deal
-//	in the Software without restriction, including without limitation the rights
-//	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//	copies of the Software, and to permit persons to whom the Software is
-//	furnished to do so, subject to the following conditions:
-//
-//	The above copyright notice and this permission notice shall be included in
-//	all copies or substantial portions of the Software.
-//
-//	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//	THE SOFTWARE.
-
+// Licensed under MIT License.
 import Foundation
 
-///	`DateInRegion` represent a Date in a specified world region: along with absolute date it essentially encapsulate
-///	all informations about the time zone (`TimeZone`), calendar (`Calendar`) and locale (`Locale`).
-///	These info are contained inside the `.region` property.
-///
-///	Using `DateInRegion` you can:
-///		* Represent an absolute Date in a specific timezone/calendar/locale
-///		* Easy access to all date components (day,month,hour,minute etc.) of the date in specified region
-///		* Easily create a new date from string, date components or swift operators
-///		* Compare date using Swift operators like `==, !=, <, >, <=, >=` and several
-///			additional methods like `isInWeekend,isYesterday`...
-///		* Change date by adding or subtracting elements with Swift operators
-///			(e.g. `date + 2.days + 15.minutes`)
 public class DateInRegion: CustomStringConvertible {
 	
 	/// region in which the `DateInRegion` is expressed
+	
+	/// Region in which
 	public fileprivate(set) var region: Region
 	
 	/// Absolute date represented outside the `region`
@@ -79,7 +53,7 @@ public class DateInRegion: CustomStringConvertible {
 			var formatter: ISO8601DateTimeFormatter? = nil
 			if useSharedFormatters == true {
 				let name = "SwiftDate_\(NSStringFromClass(ISO8601DateTimeFormatter.self))"
-				formatter = localThreadSingleton(key: name, create: { (Void) -> ISO8601DateTimeFormatter in
+				formatter = localThreadSingleton(key: name, create: { () -> ISO8601DateTimeFormatter in
 					return ISO8601DateTimeFormatter()
 				})
 			} else {
@@ -102,7 +76,7 @@ public class DateInRegion: CustomStringConvertible {
 			var formatter: DateFormatter? = nil
 			if useSharedFormatters == true {
 				let name = "SwiftDate_\(NSStringFromClass(DateFormatter.self))"
-				formatter = localThreadSingleton(key: name, create: { (Void) -> DateFormatter in
+				formatter = localThreadSingleton(key: name, create: { () -> DateFormatter in
 					return DateFormatter()
 				})
 			} else {
@@ -129,7 +103,7 @@ public class DateInRegion: CustomStringConvertible {
 			var formatter: DateIntervalFormatter? = nil
 			if useSharedFormatters == true {
 				let name = "SwiftDate_\(NSStringFromClass(DateIntervalFormatter.self))"
-				formatter = localThreadSingleton(key: name, create: { (Void) -> DateIntervalFormatter in
+				formatter = localThreadSingleton(key: name, create: { () -> DateIntervalFormatter in
 					return DateIntervalFormatter()
 				})
 			} else {

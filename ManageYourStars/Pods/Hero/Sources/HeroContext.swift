@@ -28,6 +28,8 @@ public class HeroContext {
   internal var snapshotViews = [UIView: UIView]()
   internal var viewAlphas = [UIView: CGFloat]()
   internal var targetStates = [UIView: HeroTargetState]()
+  internal var superviewToNoSnapshotSubviewMap: [UIView: [(Int, UIView)]] = [:]
+  internal var insertToViewFirst = false
 
   internal var defaultCoordinateSpace: HeroCoordinateSpace = .local
 
@@ -44,13 +46,18 @@ public class HeroContext {
 
   internal func process(views: [UIView], idMap: inout [String: UIView]) {
     for view in views {
-      if container.convert(view.bounds, from: view).intersects(container.bounds) {
-        if let heroID = view.heroID {
+      view.layer.removeAllHeroAnimations()
+      let targetState: HeroTargetState?
+      if let modifiers = view.hero.modifiers {
+        targetState = HeroTargetState(modifiers: modifiers)
+      } else {
+        targetState = nil
+      }
+      if targetState?.forceAnimate == true || container.convert(view.bounds, from: view).intersects(container.bounds) {
+        if let heroID = view.hero.id {
           idMap[heroID] = view
         }
-        if let modifiers = view.heroModifiers {
-          targetStates[view] = HeroTargetState(modifiers: modifiers)
-        }
+        targetStates[view] = targetState
       }
     }
   }
@@ -63,12 +70,12 @@ public class HeroContext {
   /**
    A flattened list of all views from source ViewController
    */
-  public var fromViews: [UIView]!
+  public var fromViews: [UIView] = []
 
   /**
    A flattened list of all views from destination ViewController
    */
-  public var toViews: [UIView]!
+  public var toViews: [UIView] = []
 }
 
 // public
@@ -92,7 +99,7 @@ extension HeroContext {
    - Returns: a view with the same heroID, but on different view controller, nil if not found
    */
   public func pairedView(for view: UIView) -> UIView? {
-    if let id = view.heroID {
+    if let id = view.hero.id {
       if sourceView(for: id) == view {
         return destinationView(for: id)
       } else if destinationView(for: id) == view {
@@ -121,8 +128,10 @@ extension HeroContext {
       if let snapshot = snapshotViews[containerView] {
         containerView = snapshot
       }
-    case .sameParent:
-      containerView = view.superview!
+
+      if let visualEffectView = containerView as? UIVisualEffectView {
+        containerView = visualEffectView.contentView
+      }
     case .global:
       break
     }
@@ -140,10 +149,16 @@ extension HeroContext {
 
     switch snapshotType {
     case .normal:
-      snapshot = view.snapshotView(afterScreenUpdates: true)!
+      snapshot = view.snapshotView() ?? UIView()
     case .layerRender:
       snapshot = view.slowSnapshotView()
     case .noSnapshot:
+      if view.superview != container {
+        if superviewToNoSnapshotSubviewMap[view.superview!] == nil {
+          superviewToNoSnapshotSubviewMap[view.superview!] = []
+        }
+        superviewToNoSnapshotSubviewMap[view.superview!]!.append((view.superview!.subviews.index(of: view)!, view))
+      }
       snapshot = view
     case .optimized:
       #if os(tvOS)
@@ -157,6 +172,9 @@ extension HeroContext {
           contentView.contentMode = imageView.contentMode
           contentView.tintColor = imageView.tintColor
           contentView.backgroundColor = imageView.backgroundColor
+          contentView.layer.magnificationFilter = imageView.layer.magnificationFilter
+          contentView.layer.minificationFilter = imageView.layer.minificationFilter
+          contentView.layer.minificationFilterBias = imageView.layer.minificationFilterBias
           let snapShotView = UIView()
           snapShotView.addSubview(contentView)
           snapshot = snapShotView
@@ -179,7 +197,7 @@ extension HeroContext {
           snapshot = UIVisualEffectView(effect: effectView.effect)
           snapshot.frame = effectView.bounds
         } else {
-          snapshot = view.snapshotView(afterScreenUpdates: true)!
+          snapshot = view.snapshotView() ?? UIView()
         }
       #endif
     }
@@ -190,44 +208,45 @@ extension HeroContext {
       }
     #endif
 
-    if snapshotType != .noSnapshot {
-      snapshot.layer.allowsGroupOpacity = false
-    }
-
     view.layer.cornerRadius = oldCornerRadius
     view.alpha = oldAlpha
 
-    if !(view is UINavigationBar), let contentView = snapshot.subviews.get(0) {
-      // the Snapshot's contentView must have hold the cornerRadius value,
-      // since the snapshot might not have maskToBounds set
-      contentView.layer.cornerRadius = view.layer.cornerRadius
-      contentView.layer.masksToBounds = true
-    }
-
-    snapshot.layer.cornerRadius = view.layer.cornerRadius
-    snapshot.layer.zPosition = view.layer.zPosition
-    snapshot.layer.opacity = view.layer.opacity
-    snapshot.layer.isOpaque = view.layer.isOpaque
     snapshot.layer.anchorPoint = view.layer.anchorPoint
-    snapshot.layer.masksToBounds = view.layer.masksToBounds
-    snapshot.layer.borderColor = view.layer.borderColor
-    snapshot.layer.borderWidth = view.layer.borderWidth
-    snapshot.layer.transform = view.layer.transform
-    snapshot.layer.contentsRect = view.layer.contentsRect
-    snapshot.layer.contentsScale = view.layer.contentsScale
+    snapshot.layer.position = containerView.convert(view.layer.position, from: view.superview!)
+    snapshot.layer.transform = containerView.layer.flatTransformTo(layer: view.layer)
+    snapshot.layer.bounds = view.layer.bounds
+    snapshot.hero.id = view.hero.id
 
-    if self[view]?.displayShadow ?? true {
-      snapshot.layer.shadowRadius = view.layer.shadowRadius
-      snapshot.layer.shadowOpacity = view.layer.shadowOpacity
-      snapshot.layer.shadowColor = view.layer.shadowColor
-      snapshot.layer.shadowOffset = view.layer.shadowOffset
-      snapshot.layer.shadowPath = view.layer.shadowPath
+    if snapshotType != .noSnapshot {
+      if !(view is UINavigationBar), let contentView = snapshot.subviews.get(0) {
+        // the Snapshot's contentView must have hold the cornerRadius value,
+        // since the snapshot might not have maskToBounds set
+        contentView.layer.cornerRadius = view.layer.cornerRadius
+        contentView.layer.masksToBounds = true
+      }
+
+      snapshot.layer.allowsGroupOpacity = false
+      snapshot.layer.cornerRadius = view.layer.cornerRadius
+      snapshot.layer.zPosition = view.layer.zPosition
+      snapshot.layer.opacity = view.layer.opacity
+      snapshot.layer.isOpaque = view.layer.isOpaque
+      snapshot.layer.anchorPoint = view.layer.anchorPoint
+      snapshot.layer.masksToBounds = view.layer.masksToBounds
+      snapshot.layer.borderColor = view.layer.borderColor
+      snapshot.layer.borderWidth = view.layer.borderWidth
+      snapshot.layer.contentsRect = view.layer.contentsRect
+      snapshot.layer.contentsScale = view.layer.contentsScale
+
+      if self[view]?.displayShadow ?? true {
+        snapshot.layer.shadowRadius = view.layer.shadowRadius
+        snapshot.layer.shadowOpacity = view.layer.shadowOpacity
+        snapshot.layer.shadowColor = view.layer.shadowColor
+        snapshot.layer.shadowOffset = view.layer.shadowOffset
+        snapshot.layer.shadowPath = view.layer.shadowPath
+      }
+
+      hide(view: view)
     }
-
-    snapshot.frame = containerView.convert(view.bounds, from: view)
-    snapshot.heroID = view.heroID
-
-    hide(view: view)
 
     if let pairedView = pairedView(for: view), let pairedSnapshot = snapshotViews[pairedView] {
       let siblingViews = pairedView.superview!.subviews
@@ -265,17 +284,25 @@ extension HeroContext {
       targetStates[view] = newValue
     }
   }
+
+  public func clean() {
+    for (superview, subviews) in superviewToNoSnapshotSubviewMap {
+      for (index, view) in subviews.reversed() {
+        superview.insertSubview(view, at: index)
+      }
+    }
+  }
 }
 
 // internal
 extension HeroContext {
   public func hide(view: UIView) {
-    if viewAlphas[view] == nil, self[view]?.snapshotType != .noSnapshot {
+    if viewAlphas[view] == nil {
       if view is UIVisualEffectView {
         view.isHidden = true
         viewAlphas[view] = 1
       } else {
-        viewAlphas[view] = view.isOpaque ? .infinity : view.alpha
+        viewAlphas[view] = view.alpha
         view.alpha = 0
       }
     }
@@ -284,9 +311,6 @@ extension HeroContext {
     if let oldAlpha = viewAlphas[view] {
       if view is UIVisualEffectView {
         view.isHidden = false
-      } else if oldAlpha == .infinity {
-        view.alpha = 1
-        view.isOpaque = true
       } else {
         view.alpha = oldAlpha
       }
@@ -307,13 +331,21 @@ extension HeroContext {
   }
 
   internal func removeAllSnapshots() {
-    for snapshot in snapshotViews.values {
-      snapshot.removeFromSuperview()
+    for (view, snapshot) in snapshotViews {
+      if view != snapshot {
+        snapshot.removeFromSuperview()
+      } else {
+        view.layer.removeAllHeroAnimations()
+      }
     }
   }
   internal func removeSnapshots(rootView: UIView) {
-    if let snapshot = snapshotViews[rootView], snapshot != rootView {
-      snapshot.removeFromSuperview()
+    if let snapshot = snapshotViews[rootView] {
+      if rootView != snapshot {
+        snapshot.removeFromSuperview()
+      } else {
+        rootView.layer.removeAllHeroAnimations()
+      }
     }
     for subview in rootView.subviews {
       removeSnapshots(rootView: subview)
@@ -329,16 +361,16 @@ extension HeroContext {
     return snapshots
   }
   internal func loadViewAlpha(rootView: UIView) {
-    if let storedAlpha = rootView.heroStoredAlpha {
+    if let storedAlpha = rootView.hero.storedAlpha {
       rootView.alpha = storedAlpha
-      rootView.heroStoredAlpha = nil
+      rootView.hero.storedAlpha = nil
     }
     for subview in rootView.subviews {
       loadViewAlpha(rootView: subview)
     }
   }
   internal func storeViewAlpha(rootView: UIView) {
-    rootView.heroStoredAlpha = viewAlphas[rootView]
+    rootView.hero.storedAlpha = viewAlphas[rootView]
     for subview in rootView.subviews {
       storeViewAlpha(rootView: subview)
     }

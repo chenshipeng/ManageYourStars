@@ -9,16 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>EZSwiftExtensions.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ForceBlur.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>HandyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,22 +39,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PermissionScope.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-ManageYourStars.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>RAMAnimatedTabBarController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RandomKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -80,11 +60,6 @@
 			<false/>
 		</dict>
 		<key>SVProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ShiftOperations.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -105,11 +80,6 @@
 			<false/>
 		</dict>
 		<key>SwiftyUserDefaults.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Threadly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

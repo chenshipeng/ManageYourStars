@@ -23,10 +23,10 @@ class CXYourStarsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 11.0, *) {
-            self.tableView.contentInsetAdjustmentBehavior = .never
-            self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
-        }
+//        if #available(iOS 11.0, *) {
+//            self.tableView.contentInsetAdjustmentBehavior = .never
+//            self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+//        }
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200

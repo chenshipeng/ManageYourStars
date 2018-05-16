@@ -1,49 +1,35 @@
 PODS:
-  - Alamofire (4.5.0)
-  - EZSwiftExtensions (1.11)
-  - ForceBlur (1.0):
-    - ForceBlur/Core (= 1.0)
-  - ForceBlur/Core (1.0)
-  - HandyJSON (1.7.2)
-  - Hero (0.3.6)
-  - ImageViewer (4.1.0)
-  - Kingfisher (3.11.0)
-  - MJRefresh (3.1.12)
-  - Onboard (2.3.1)
-  - PermissionScope (1.1.1)
-  - RAMAnimatedTabBarController (2.2.1)
-  - RandomKit (5.2.3):
-    - ShiftOperations (~> 1.0.2)
-    - Threadly (~> 1.0)
-  - Realm (2.10.0):
-    - Realm/Headers (= 2.10.0)
-  - Realm/Headers (2.10.0)
-  - Reusable (4.0.0):
-    - Reusable/Storyboard (= 4.0.0)
-    - Reusable/View (= 4.0.0)
-  - Reusable/Storyboard (4.0.0)
-  - Reusable/View (4.0.0)
-  - ShiftOperations (1.0.2)
-  - SnapKit (3.2.0)
-  - SVProgressHUD (2.1.2)
-  - SwiftDate (4.1.7)
-  - SwiftyJSON (3.1.4)
-  - SwiftyUserDefaults (3.0.0)
-  - Threadly (1.2.0)
+  - Alamofire (4.7.2)
+  - HandyJSON (4.1.1)
+  - Hero (1.2.0)
+  - ImageViewer (5.0.0)
+  - Kingfisher (4.8.0)
+  - MJRefresh (3.1.15.3)
+  - Onboard (2.3.3)
+  - RAMAnimatedTabBarController (3.2.0)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - Reusable (4.0.2):
+    - Reusable/Storyboard (= 4.0.2)
+    - Reusable/View (= 4.0.2)
+  - Reusable/Storyboard (4.0.2)
+  - Reusable/View (4.0.2)
+  - SnapKit (4.0.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftDate (4.5.1)
+  - SwiftyJSON (4.1.0)
+  - SwiftyUserDefaults (3.0.1)
 
 DEPENDENCIES:
   - Alamofire
-  - EZSwiftExtensions
-  - ForceBlur (~> 1.0)
   - HandyJSON
   - Hero
   - ImageViewer
   - Kingfisher
   - MJRefresh
   - Onboard
-  - PermissionScope
   - RAMAnimatedTabBarController
-  - RandomKit
   - Realm
   - Reusable
   - SnapKit
@@ -52,29 +38,41 @@ DEPENDENCIES:
   - SwiftyJSON
   - SwiftyUserDefaults
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - HandyJSON
+    - Hero
+    - ImageViewer
+    - Kingfisher
+    - MJRefresh
+    - Onboard
+    - RAMAnimatedTabBarController
+    - Realm
+    - Reusable
+    - SnapKit
+    - SVProgressHUD
+    - SwiftDate
+    - SwiftyJSON
+    - SwiftyUserDefaults
+
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  EZSwiftExtensions: 84000042202d9fd574f626cda3064143f27fa767
-  ForceBlur: e1810ef389d97a35c89f242cc2e3aa57b79a1e5a
-  HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
-  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
-  ImageViewer: 163e5832e0a09e31a3e3482cce6e5e9029356174
-  Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  Onboard: b6871f25ac753175b2ab9a362fb2feb26a81a311
-  PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
-  RAMAnimatedTabBarController: 42c2ed8b5ff35db372cbe56a0a02dbbe3999668b
-  RandomKit: 380745911c4f7989707489b2ce297194bfcf5031
-  Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
-  Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
-  ShiftOperations: 702c9aa98d3b20d98dceb71dd8437b562f7ab3ad
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
-  Threadly: b772ed7c1ff4a3f03eb4600bbc5ef83b3be5cb29
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
+  ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  Onboard: 4d6e943e20bdd6bc229df967a347dd7514bc2a6f
+  RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 1ccb0f4b83b5e1b91e43f8b3806c597770a3e5c0
+PODFILE CHECKSUM: f45a713886fdeea15f8602c119a95c09d2cbdb30
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.2

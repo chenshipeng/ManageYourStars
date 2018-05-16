@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8F5682E0AC126B1910FC04BA8A16F382'
-               BlueprintName = 'Onboard'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Onboard.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8F5682E0AC126B1910FC04BA8A16F382"
+               BlueprintName = "Onboard"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "Onboard.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

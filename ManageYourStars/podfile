@@ -4,22 +4,27 @@ use_frameworks!
 target 'ManageYourStars' do
 pod 'Alamofire'
 pod 'SwiftyJSON'
-pod 'PermissionScope'
 pod 'SwiftyUserDefaults'
 pod 'Kingfisher'
 pod 'Hero'
-pod 'RandomKit'
 pod 'Onboard'
 pod 'ImageViewer'
 pod 'Realm'
 pod 'SnapKit'
 pod 'Reusable'
 pod 'SwiftDate'
-pod 'EZSwiftExtensions'
 pod 'SVProgressHUD'
 pod 'HandyJSON'
 pod 'MJRefresh'
-pod 'ForceBlur','~>1.0'
 pod 'RAMAnimatedTabBarController'
+end
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if target.name == 'Toast-Swift'
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '3.2'
+            end
+        end
+    end
 end
 

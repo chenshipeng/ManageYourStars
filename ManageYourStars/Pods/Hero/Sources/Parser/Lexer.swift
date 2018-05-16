@@ -19,7 +19,7 @@ public enum Token {
 
 typealias TokenGenerator = (String, CountableRange<Int>) -> Token?
 let tokenList: [(String, TokenGenerator)] = [
-  ("[ \t\n]", { _ in nil }),
+  ("[ \t\n]", { _, _ in nil }),
   ("[a-zA-Z][a-zA-Z0-9]*", { .identifier($0, $1) }),
   ("\\-?[0-9.]+", { .number(Float($0)!, $1) }),
   ("\\(", { .parensOpen($1) }),
@@ -36,7 +36,7 @@ public class Lexer {
     var tokens = [Token]()
     var content = input
 
-    while !content.characters.isEmpty {
+    while !content.isEmpty {
       var matched = false
 
       for (pattern, generator) in tokenList {
@@ -45,7 +45,7 @@ public class Lexer {
             tokens.append(t)
           }
 
-          content = content.substring(from: content.index(content.startIndex, offsetBy: m.characters.count))
+          content = String(content[content.index(content.startIndex, offsetBy: m.count)...])
           matched = true
           break
         }
@@ -54,8 +54,8 @@ public class Lexer {
       if !matched {
         let index = content.index(content.startIndex, offsetBy: 1)
         let intIndex = content.distance(from: content.startIndex, to: index)
-        tokens.append(.other(content.substring(to: index), intIndex..<intIndex+1))
-        content = content.substring(from: index)
+        tokens.append(.other(String(content[..<index]), intIndex..<intIndex+1))
+        content = String(content[index...])
       }
     }
     return tokens
