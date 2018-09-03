@@ -25,6 +25,13 @@
 		9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC3D1F579F19005D6FB9 /* Owner.swift */; };
 		9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */; };
 		9C64DC441F57F948005D6FB9 /* CXRepositoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC431F57F948005D6FB9 /* CXRepositoriesTableViewController.swift */; };
+		9C7661F1213CE26A00F4A8D3 /* CXUserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7661F0213CE26A00F4A8D3 /* CXUserListTableViewController.swift */; };
+		9C7661F4213CE29E00F4A8D3 /* CXUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7661F2213CE29E00F4A8D3 /* CXUserInfoCell.swift */; };
+		9C7661F5213CE29E00F4A8D3 /* CXUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7661F3213CE29E00F4A8D3 /* CXUserInfoCell.xib */; };
+		9C7661F8213CE50F00F4A8D3 /* CXPopularInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7661F6213CE50F00F4A8D3 /* CXPopularInfoCell.swift */; };
+		9C7661F9213CE50F00F4A8D3 /* CXPopularInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7661F7213CE50F00F4A8D3 /* CXPopularInfoCell.xib */; };
+		9C7661FC213CE7B400F4A8D3 /* CXNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7661FA213CE7B400F4A8D3 /* CXNormalCell.swift */; };
+		9C7661FD213CE7B400F4A8D3 /* CXNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7661FB213CE7B400F4A8D3 /* CXNormalCell.xib */; };
 		9C960F741F5D4E8D00F9A31E /* CXUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */; };
 		9CA3E48E1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3E48D1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift */; };
 		9CB5EF911F3AE7F700819E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */; };
@@ -38,7 +45,6 @@
 		9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */; };
 		9CF6C0AE1F6393E50013A4BE /* FollowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */; };
 		9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */; };
-		9CF6C0B41F63B44A0013A4BE /* RepositoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C0B21F63B44A0013A4BE /* RepositoryDetailViewController.xib */; };
 		9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */; };
 		F97EE8095EE4706B0207D72A /* Pods_ManageYourStars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CDF28B936BF7F936D6EBB0 /* Pods_ManageYourStars.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +70,13 @@
 		9C64DC3D1F579F19005D6FB9 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXStarTableViewCell.swift; sourceTree = "<group>"; };
 		9C64DC431F57F948005D6FB9 /* CXRepositoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXRepositoriesTableViewController.swift; sourceTree = "<group>"; };
+		9C7661F0213CE26A00F4A8D3 /* CXUserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXUserListTableViewController.swift; sourceTree = "<group>"; };
+		9C7661F2213CE29E00F4A8D3 /* CXUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXUserInfoCell.swift; sourceTree = "<group>"; };
+		9C7661F3213CE29E00F4A8D3 /* CXUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXUserInfoCell.xib; sourceTree = "<group>"; };
+		9C7661F6213CE50F00F4A8D3 /* CXPopularInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXPopularInfoCell.swift; sourceTree = "<group>"; };
+		9C7661F7213CE50F00F4A8D3 /* CXPopularInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXPopularInfoCell.xib; sourceTree = "<group>"; };
+		9C7661FA213CE7B400F4A8D3 /* CXNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXNormalCell.swift; sourceTree = "<group>"; };
+		9C7661FB213CE7B400F4A8D3 /* CXNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXNormalCell.xib; sourceTree = "<group>"; };
 		9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXUserViewController.swift; sourceTree = "<group>"; };
 		9CA3E48D1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXRespositoriesTableViewCell.swift; sourceTree = "<group>"; };
 		9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageYourStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +92,6 @@
 		9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
 		9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowCell.xib; sourceTree = "<group>"; };
 		9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
-		9CF6C0B21F63B44A0013A4BE /* RepositoryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailViewController.xib; sourceTree = "<group>"; };
 		9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = NetworkRequest/NetworkRequest.swift; sourceTree = "<group>"; };
 		9F3A81B4719DA20FAD6561F9 /* Pods-ManageYourStars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageYourStars.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManageYourStars/Pods-ManageYourStars.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +183,7 @@
 				9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */,
 				9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */,
 				9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */,
-				9CF6C0B21F63B44A0013A4BE /* RepositoryDetailViewController.xib */,
+				9C7661F0213CE26A00F4A8D3 /* CXUserListTableViewController.swift */,
 				9CF6C0AF1F63B3D60013A4BE /* Views */,
 				9CF6C0B01F63B3E30013A4BE /* Models */,
 			);
@@ -207,6 +219,12 @@
 				9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */,
 				9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */,
 				9C6073E81F5E2F8B00D4C263 /* TabBarView.swift */,
+				9C7661F2213CE29E00F4A8D3 /* CXUserInfoCell.swift */,
+				9C7661F3213CE29E00F4A8D3 /* CXUserInfoCell.xib */,
+				9C7661F6213CE50F00F4A8D3 /* CXPopularInfoCell.swift */,
+				9C7661F7213CE50F00F4A8D3 /* CXPopularInfoCell.xib */,
+				9C7661FA213CE7B400F4A8D3 /* CXNormalCell.swift */,
+				9C7661FB213CE7B400F4A8D3 /* CXNormalCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,7 +273,6 @@
 				TargetAttributes = {
 					9CB5EF8C1F3AE7F600819E9F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Y49TT6VJ7T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -290,8 +307,10 @@
 				9C08E89C1F59397900F9F8F1 /* CXAboutMeViewController.xib in Resources */,
 				9CB5EF9B1F3AE7F700819E9F /* LaunchScreen.storyboard in Resources */,
 				9CF6C0AE1F6393E50013A4BE /* FollowCell.xib in Resources */,
-				9CF6C0B41F63B44A0013A4BE /* RepositoryDetailViewController.xib in Resources */,
 				9CB5EF981F3AE7F700819E9F /* Assets.xcassets in Resources */,
+				9C7661F9213CE50F00F4A8D3 /* CXPopularInfoCell.xib in Resources */,
+				9C7661FD213CE7B400F4A8D3 /* CXNormalCell.xib in Resources */,
+				9C7661F5213CE29E00F4A8D3 /* CXUserInfoCell.xib in Resources */,
 				9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */,
 				9C08E8961F59386E00F9F8F1 /* Discovery.storyboard in Resources */,
 			);
@@ -317,6 +336,7 @@
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/SABlurImageView/SABlurImageView.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
@@ -335,6 +355,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SABlurImageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
@@ -374,8 +395,10 @@
 				9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */,
 				9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */,
 				9CB5EF931F3AE7F700819E9F /* ViewController.swift in Sources */,
+				9C7661FC213CE7B400F4A8D3 /* CXNormalCell.swift in Sources */,
 				9C0C1C041F492EFD00466385 /* CXDiscoveryTableViewController.swift in Sources */,
 				9C64DC441F57F948005D6FB9 /* CXRepositoriesTableViewController.swift in Sources */,
+				9C7661F4213CE29E00F4A8D3 /* CXUserInfoCell.swift in Sources */,
 				9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */,
 				9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */,
 				9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */,
@@ -383,12 +406,14 @@
 				9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */,
 				9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */,
 				9C6073E91F5E2F8B00D4C263 /* TabBarView.swift in Sources */,
+				9C7661F8213CE50F00F4A8D3 /* CXPopularInfoCell.swift in Sources */,
 				9CC057F21F62925700EBA3DA /* Repository.swift in Sources */,
 				9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */,
 				9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */,
 				9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */,
 				9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */,
 				9CF6C0A91F638B350013A4BE /* RepositoryCell.swift in Sources */,
+				9C7661F1213CE26A00F4A8D3 /* CXUserListTableViewController.swift in Sources */,
 				9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */,
 				9CA3E48E1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift in Sources */,
 				9C960F741F5D4E8D00F9A31E /* CXUserViewController.swift in Sources */,
@@ -533,11 +558,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = Y49TT6VJ7T;
+				DEVELOPMENT_TEAM = A823JDM22Y;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.csp.ManageYourStars;
+				PRODUCT_BUNDLE_IDENTIFIER = com.csp.GitPocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -549,11 +574,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = Y49TT6VJ7T;
+				DEVELOPMENT_TEAM = A823JDM22Y;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.csp.ManageYourStars;
+				PRODUCT_BUNDLE_IDENTIFIER = com.csp.GitPocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};

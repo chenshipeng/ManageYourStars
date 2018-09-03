@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import SVProgressHUD
+import Kingfisher
+import SABlurImageView
 class CXUserViewController: UIViewController {
 //    var starModel:StarredModel?
     
@@ -19,7 +21,7 @@ class CXUserViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet var tabBarView: TabBarView!
-    @IBOutlet weak var backImageView: UIImageView!
+    @IBOutlet weak var backImageView: SABlurImageView!
     @IBOutlet weak var tableView: UITableView!
     var repositoriesArr = [StarredModel?]()
     var followingArr = [CXUserModel?]()
@@ -55,6 +57,9 @@ class CXUserViewController: UIViewController {
         if let avatar_url = self.avatar_url {
             avatarImageView.kf.setImage(with: URL(string:avatar_url))
             backImageView.kf.setImage(with: URL(string:avatar_url))
+            backImageView.blur(0.5)
+            
+            
             
         }
         nameLabel.text = self.login

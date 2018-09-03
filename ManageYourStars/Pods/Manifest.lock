@@ -15,6 +15,7 @@ PODS:
     - Reusable/View (= 4.0.2)
   - Reusable/Storyboard (4.0.2)
   - Reusable/View (4.0.2)
+  - SABlurImageView (4.0.0)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
   - SwiftDate (4.5.1)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - RAMAnimatedTabBarController
   - Realm
   - Reusable
+  - SABlurImageView
   - SnapKit
   - SVProgressHUD
   - SwiftDate
@@ -50,6 +52,7 @@ SPEC REPOS:
     - RAMAnimatedTabBarController
     - Realm
     - Reusable
+    - SABlurImageView
     - SnapKit
     - SVProgressHUD
     - SwiftDate
@@ -67,12 +70,13 @@ SPEC CHECKSUMS:
   RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
   Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
   Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
+  SABlurImageView: 51d5c55779630cf8a6ad71a2dea2812902aa16cc
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: f45a713886fdeea15f8602c119a95c09d2cbdb30
+PODFILE CHECKSUM: cb850607438f8347508a9098ed6ceac12f32cefe
 
 COCOAPODS: 1.5.2

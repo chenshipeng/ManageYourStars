@@ -124,6 +124,7 @@ class CXYourStarsViewController: UITableViewController {
         return self.stars.count
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "starsCell", for: indexPath) as! CXStarTableViewCell
 
@@ -134,12 +135,12 @@ class CXYourStarsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc: CXUserViewController = self.storyboard?.instantiateViewController(withIdentifier: "CXUserViewController") as! CXUserViewController
+        let vc: RepositoryDetailViewController = RepositoryDetailViewController()
         let model:StarredModel = self.stars[indexPath.row]!
-        vc.login = model.owner?.login
-        vc.avatar_url = model.owner?.avatar_url
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        vc.starModel = model
         self.navigationController?.pushViewController(vc, animated: true)
+
+        
     }
     
 
