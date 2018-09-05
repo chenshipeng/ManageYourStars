@@ -307,12 +307,15 @@ extension RepositoryDetailViewController:UITableViewDelegate,UITableViewDataSour
             cell.accessoryType = .disclosureIndicator
             if indexPath.section == 1 {
                 cell.desLabel.text = "Owner"
+                cell.desImageView.image = UIImage(named: "owner")
             }
             if indexPath.section == 2 {
                 cell.desLabel.text = ["Events","Issues","Readme"][indexPath.row]
+                cell.desImageView.image = UIImage(named: ["events","issue_icon","readme"][indexPath.row])
             }
             if indexPath.section == 3{
                 cell.desLabel.text = ["Commits","Source"][indexPath.row]
+                cell.desImageView.image = UIImage(named: ["commit","source"][indexPath.row])
             }
             return cell
         }
@@ -320,6 +323,12 @@ extension RepositoryDetailViewController:UITableViewDelegate,UITableViewDataSour
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1,indexPath.row == 0 {
+            let vc = CXUserViewController()
+            vc.login = starModel?.owner?.login
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
 }

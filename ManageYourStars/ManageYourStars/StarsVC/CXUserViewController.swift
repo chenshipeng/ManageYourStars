@@ -12,26 +12,14 @@ import SVProgressHUD
 import Kingfisher
 import SABlurImageView
 class CXUserViewController: UIViewController {
-//    var starModel:StarredModel?
-    
-    
-    var avatar_url:String?
     var login:String?
-
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet var tabBarView: TabBarView!
-    @IBOutlet weak var backImageView: SABlurImageView!
-    @IBOutlet weak var tableView: UITableView!
-    var repositoriesArr = [StarredModel?]()
-    var followingArr = [CXUserModel?]()
-    var followerArr = [CXUserModel?]()
+    var tableView = UITableView()
+    var userModel = CXUserModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         self.setupUI()
-        self.addNotification()
         self.firstLoadData()
         
         
@@ -41,54 +29,25 @@ class CXUserViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     func setupUI(){
-        
-       
 
+        title = login
+
+        tableView.tableFooterView = UIView()
+        tableView.register(UINib.init(nibName: "CXUserTopCell", bundle: nil), forCellReuseIdentifier: "CXUserTopCell")
+        tableView.register(UINib.init(nibName: "CXNormalCell", bundle: nil), forCellReuseIdentifier: "CXNormalCell")
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.edges.equalTo(view)
+        }
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.estimatedRowHeight = 120
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        avatarImageView.layer.cornerRadius = 40.0
-        avatarImageView.layer.masksToBounds = true
-        
-        if let avatar_url = self.avatar_url {
-            avatarImageView.kf.setImage(with: URL(string:avatar_url))
-            backImageView.kf.setImage(with: URL(string:avatar_url))
-            backImageView.blur(0.5)
-            
-            
-            
-        }
-        nameLabel.text = self.login
     }
-    
-    func addNotification() {
-        NotificationCenter.default.addObserver(self, selector:#selector(CXUserViewController.selectTabbarMenu(no:)), name: NSNotification.Name(rawValue: "didSelectMenu"), object: nil)
-    }
-    
     func firstLoadData(){
         self.getUserInfo()
-        self.getUserReposotories()
     }
-    
-    @objc func selectTabbarMenu(no:Notification){
-        let index = no.userInfo!["index"] as! Int
-        
-        if index == 1 && followingArr.count == 0 {
-            self.getUserFollowings()
-        }
-        
-        if index == 2 && followerArr.count == 0 {
-            self.getUserFollowers()
-        }
-        
-        
-        
-        self.tableView.reloadData()
-    }
+
     
     func getUserInfo(){
         //进入个人详情页面
@@ -104,9 +63,10 @@ class CXUserViewController: UIViewController {
             
             if response.result.isSuccess {
                 SVProgressHUD.dismiss()
-                if let arr = CXUserModel.deserialize(from: response.result.value){
-                    self.tabBarView.countArray = [arr.public_repos,arr.following,arr.followers]
-
+                if let model = CXUserModel.deserialize(from: response.result.value){
+                    print("user info is %@",model.toJSON() as Any)
+                    self.userModel = model
+                    self.tableView.reloadData()
                 }
 //                print("response is \(String(describing: response.result.value))")
             }else{
@@ -115,85 +75,7 @@ class CXUserViewController: UIViewController {
             }
         })
     }
-    func getUserReposotories(){
-        //进入个人详情页面
-        self.repositoriesArr.removeAll()
-        guard let currentLogin = self.login  else {
-            return
-        }
-        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))/repos?sort=updated&page=" + "1"
-        print("url is \(url)")
-        
-        SVProgressHUD.show()
-        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-            
-            if response.result.isSuccess {
-                SVProgressHUD.dismiss()
-                if let arr = [StarredModel].deserialize(from: response.result.value as? NSArray){
-                    print("response is \(String(describing: response.result.value))")
 
-                    self.repositoriesArr.append(contentsOf:arr)
-                }
-                self.tableView.reloadData()
-            }else{
-                SVProgressHUD.dismiss()
-                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
-            }
-        })
-    }
-    func getUserFollowings(){
-        //进入个人详情页面
-        self.followingArr.removeAll()
-        guard let currentLogin = self.login  else {
-            return
-        }
-        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))/following?page=" + "1"
-        print("url is \(url)")
-        
-        SVProgressHUD.show()
-        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-            
-            if response.result.isSuccess {
-                SVProgressHUD.dismiss()
-                if let arr = [CXUserModel].deserialize(from: response.result.value as? NSArray){
-                    self.followingArr.append(contentsOf:arr)
-                }
-                self.tableView.reloadData()
-
-                print("response is \(String(describing: response.result.value))")
-            }else{
-                SVProgressHUD.dismiss()
-                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
-            }
-        })
-    }
-    
-    func getUserFollowers(){
-        //进入个人详情页面
-        self.followerArr.removeAll()
-        guard let currentLogin = self.login  else {
-            return
-        }
-        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))/followers?page=" + "1"
-        print("url is \(url)")
-        
-        SVProgressHUD.show()
-        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-            
-            if response.result.isSuccess {
-                SVProgressHUD.dismiss()
-                if let arr = [CXUserModel].deserialize(from: response.result.value as? NSArray){
-                    self.followerArr.append(contentsOf:arr)
-                }
-                self.tableView.reloadData()
-
-                print("response is \(String(describing: response.result.value))")
-            }else{
-                SVProgressHUD.dismiss()
-                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
-            }
-        })
-    }
     
     
 
@@ -210,100 +92,67 @@ class CXUserViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 extension CXUserViewController:UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch tabBarView.selectedIndex {
-        case 0:
-            return repositoriesArr.count
-        case 1:
-            return followingArr.count
-        case 2:
-            return followerArr.count
-        default:
-            return repositoriesArr.count
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 150
         }
+        return 50
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section > 0 {
+            return 10
+        }
+        return 0.0
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section > 0 {
+            let header = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 10))
+            header.backgroundColor = UIColor(red: 231.0/255.0, green: 231.0/255.0, blue: 231.0/255.0, alpha: 0.5)
+            return header
+        }
+        return nil
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+        return 3
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        if self.tabBarView.selectedIndex == 0 {
-            
-            self.tableView.register(UINib.init(nibName: "RepositoryCell", bundle: nil), forCellReuseIdentifier: "RepositoryCell")
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath) as! RepositoryCell
-            cell.selectionStyle = .none
-            let repository = repositoriesArr[indexPath.row]
-            cell.nameLabel.text = repository?.name
-            if let login = repository?.owner?.login {
-                cell.ownerLabel.text = "owner:" + login
-            }else{
-                if let login1 = self.login {
-                    cell.ownerLabel.text = "owner:" + login1
-                    
-                }
-            }
-            if let stargazers_count = repository?.stargazers_count {
-                cell.starsLabel.text = "Stars:" + "\(stargazers_count)"
-                
-            }else{
-                cell.starsLabel.text = "Stars:0"
-                
-            }
-            if let des = repository?.description {
-                cell.descriptionLabel.text = des
-                
-            }else{
-                cell.descriptionLabel.text = "no description"
-                
-            }
-            
-            return cell
-        }else{
-            self.tableView.register(UINib.init(nibName: "FollowCell", bundle: nil), forCellReuseIdentifier: "FollowCell")
 
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FollowCell", for: indexPath) as! FollowCell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CXUserTopCell", for: indexPath) as! CXUserTopCell
             cell.selectionStyle = .none
-            
-            let user = tabBarView.selectedIndex == 1 ? followingArr[indexPath.row] : followerArr[indexPath.row]
-            cell.nameLabel.text = user?.login
-            if let url = user?.avatar_url {
-                cell.avatarImage.kf.setImage(with: URL(string:(url)))
-
-            }
-            
+            cell.avatarImageView.kf.setImage(with: URL(string: userModel.avatar_url ?? ""))
+            cell.loginLabel.text = userModel.name
+            cell.aNameLabel.text = userModel.login
+            cell.followerCountLabel.text = userModel.followers
+            cell.followingCountLabel.text = userModel.following
             return cell
         }
-        
-        
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CXNormalCell", for: indexPath) as! CXNormalCell
+        cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
+        cell.desImageView.image = UIImage(named: ["events","organization","repository"][indexPath.row])
+        cell.desLabel.text = ["Events","Organizations","Repositories"][indexPath.row]
+        return cell
+
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tabBarView.selectedIndex != 0 {
-            let vc: CXUserViewController = self.storyboard?.instantiateViewController(withIdentifier: "CXUserViewController") as! CXUserViewController
-            let user = tabBarView.selectedIndex == 1 ? followingArr[indexPath.row] : followerArr[indexPath.row]
-            vc.avatar_url = user?.avatar_url
-            vc.login = user?.login
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else{
-            let model:StarredModel = self.repositoriesArr[indexPath.row]!
-            
-            let vc = RepositoryDetailViewController()
-            vc.starModel = model
+        if indexPath.section == 1,indexPath.row == 0 {
+            let vc = CXEventsController()
+            vc.login = self.login
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

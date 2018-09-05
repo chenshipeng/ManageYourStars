@@ -1,23 +1,47 @@
 //
-//  CXUserListTableViewController.swift
+//  CXEventsController.swift
 //  ManageYourStars
 //
-//  Created by chenshipeng on 2018/9/3.
+//  Created by chenshipeng on 2018/9/5.
 //  Copyright © 2018年 csp. All rights reserved.
 //
 
 import UIKit
+import Alamofire
+import SVProgressHUD
+import Kingfisher
+class CXEventsController: UITableViewController {
 
-class CXUserListTableViewController: UITableViewController {
-
+    var login:String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
+    }
+    func getData(){
+        guard let currentLogin = self.login  else {
+            return
+        }
+        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))" + "/received_events"
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        print("url is \(url)")
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil).responseString(completionHandler: { (response) in
+
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                print("events info is \(String(describing: response.result.value))")
+
+                if let model = CXUserModel.deserialize(from: response.result.value){
+
+                    self.tableView.reloadData()
+                }
+                //                print("response is \(String(describing: response.result.value))")
+            }else{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
