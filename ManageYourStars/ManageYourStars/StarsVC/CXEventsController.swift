@@ -13,30 +13,35 @@ import Kingfisher
 class CXEventsController: UITableViewController {
 
     var login:String?
+    var userSvents = [UserEvent?]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib.init(nibName: "CXEventsCell", bundle: nil), forCellReuseIdentifier: "CXEventsCell")
         getData()
     }
     func getData(){
         guard let currentLogin = self.login  else {
             return
         }
-        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))" + "/received_events"
+        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))" + "/events"
 
         print("url is \(url)")
 
         SVProgressHUD.show()
-        Alamofire.request(url, method: .get, parameters: nil).responseString(completionHandler: { (response) in
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
 
             if response.result.isSuccess {
                 SVProgressHUD.dismiss()
-                print("events info is \(String(describing: response.result.value))")
-
-                if let model = CXUserModel.deserialize(from: response.result.value){
-
-                    self.tableView.reloadData()
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
                 }
-                //                print("response is \(String(describing: response.result.value))")
+                if let array = response.result.value as? Array<Any> {
+                    print("\(array.count)")
+                    if let event = [UserEvent].deserialize(from: response.result.value as? NSArray){
+                        self.userSvents.append(contentsOf: event)
+                    }
+                }
+                self.tableView.reloadData()
             }else{
                 SVProgressHUD.dismiss()
                 SVProgressHUD.showError(withStatus: String(describing: response.result.value))
@@ -52,24 +57,53 @@ class CXEventsController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return self.userSvents.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CXEventsCell", for: indexPath) as! CXEventsCell
+        let event = userSvents[indexPath.row]
+        cell.avatarImageView.kf.setImage(with: URL(string: event?.actor?.avatar_url ?? ""))
 
         return cell
     }
-    */
+    func getActionWith(event:UserEvent)->String{
+        switch event.type {
+        case "PushEvent":
+            let user = event.actor?.login
+            let action = "pushed to"
+            let branch = event.payload?.ref?.split(separator: "/", maxSplits: Int.max, omittingEmptySubsequences: true).last
+            let location = event.repo?.name
+            
+            return "\(String(describing: user))\(action)\(String(describing: branch))\(String(describing: location))"
+            break
+        case "IssuesEvent":
+            return (event.payload?.issue?.title)!
+            break
+        default:
+            return ""
+        }
+    }
+    
+    func getMessage(with event:UserEvent) -> String {
+        switch event.type {
+        case "PushEvent":
+            return (event.payload?.commits![0].message)!
+            break
+        case "IssuesEvent":
+            return (event.payload?.issue?.title)!
+            break
+        default:
+            return ""
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

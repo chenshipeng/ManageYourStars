@@ -12,7 +12,7 @@
         <!--Stars-->
         <scene sceneID="Dsv-9d-Sj6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="FEJ-X9-jKM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FEJ-X9-jKM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Stars" image="github160" id="2ay-Pm-pNo"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -32,7 +32,7 @@
         <!--Stars-->
         <scene sceneID="Baz-Wq-Kqf">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="jdm-4B-NLq" customClass="CXYourStarsViewController" customModule="ManageYourStars" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jdm-4B-NLq" customClass="CXYourStarsViewController" customModule="ManageYourStars" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TpH-CS-dEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

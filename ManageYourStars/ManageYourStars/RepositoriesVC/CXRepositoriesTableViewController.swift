@@ -116,7 +116,7 @@ class CXRepositoriesTableViewController: UITableViewController {
 
         let vc = RepositoryDetailViewController()
         vc.starModel = model
-        vc.hidesBottomBarWhenPushed = true
+//        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

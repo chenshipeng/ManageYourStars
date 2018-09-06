@@ -17,6 +17,14 @@
 		9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */; };
 		9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1C011F492C3900466385 /* CXMoreOtherTableViewCell.swift */; };
 		9C0C1C041F492EFD00466385 /* CXDiscoveryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */; };
+		9C199CD7214166C20088E9EE /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CD0214166C10088E9EE /* Actor.swift */; };
+		9C199CD8214166C20088E9EE /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CD1214166C10088E9EE /* Author.swift */; };
+		9C199CD9214166C20088E9EE /* UserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CD2214166C10088E9EE /* UserEvent.swift */; };
+		9C199CDA214166C20088E9EE /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CD3214166C20088E9EE /* Commit.swift */; };
+		9C199CDC214166C20088E9EE /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CD5214166C20088E9EE /* Repo.swift */; };
+		9C199CDD214166C20088E9EE /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CD6214166C20088E9EE /* Payload.swift */; };
+		9C199CDF21416F090088E9EE /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CDE21416F090088E9EE /* Issue.swift */; };
+		9C199CE121416F2B0088E9EE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CE021416F2B0088E9EE /* User.swift */; };
 		9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D39181F48059900920923 /* CXMoreViewController.swift */; };
 		9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391A1F48069A00920923 /* CXLoginViewController.swift */; };
 		9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */; };
@@ -40,7 +48,6 @@
 		9C960F741F5D4E8D00F9A31E /* CXUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */; };
 		9CA3E48E1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3E48D1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift */; };
 		9CB5EF911F3AE7F700819E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */; };
-		9CB5EF931F3AE7F700819E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5EF921F3AE7F700819E9F /* ViewController.swift */; };
 		9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB5EF941F3AE7F700819E9F /* Main.storyboard */; };
 		9CB5EF9B1F3AE7F700819E9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */; };
 		9CC057F21F62925700EBA3DA /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC057F11F62925700EBA3DA /* Repository.swift */; };
@@ -66,6 +73,14 @@
 		9C0C1BFF1F49207500466385 /* CXProfileLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXProfileLoginTableViewCell.swift; sourceTree = "<group>"; };
 		9C0C1C011F492C3900466385 /* CXMoreOtherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXMoreOtherTableViewCell.swift; sourceTree = "<group>"; };
 		9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXDiscoveryTableViewController.swift; sourceTree = "<group>"; };
+		9C199CD0214166C10088E9EE /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		9C199CD1214166C10088E9EE /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		9C199CD2214166C10088E9EE /* UserEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEvent.swift; sourceTree = "<group>"; };
+		9C199CD3214166C20088E9EE /* Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
+		9C199CD5214166C20088E9EE /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		9C199CD6214166C20088E9EE /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		9C199CDE21416F090088E9EE /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		9C199CE021416F2B0088E9EE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C3D39181F48059900920923 /* CXMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXMoreViewController.swift; sourceTree = "<group>"; };
 		9C3D391A1F48069A00920923 /* CXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXLoginViewController.swift; sourceTree = "<group>"; };
 		9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXYourStarsViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +105,6 @@
 		9CA3E48D1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXRespositoriesTableViewCell.swift; sourceTree = "<group>"; };
 		9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageYourStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CB5EF921F3AE7F700819E9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CB5EF951F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CB5EF9A1F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CB5EF9C1F3AE7F700819E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,7 +173,6 @@
 				9CCDA4121F5947A3006A15D4 /* DiscoveryVC */,
 				9CCDA40F1F594757006A15D4 /* MoreVC */,
 				9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */,
-				9CB5EF921F3AE7F700819E9F /* ViewController.swift */,
 				9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */,
 				9C766214213F76FD00F4A8D3 /* Assets.xcassets */,
 				9CB5EF941F3AE7F700819E9F /* Main.storyboard */,
@@ -246,6 +259,14 @@
 			children = (
 				9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */,
 				9C64DC3D1F579F19005D6FB9 /* Owner.swift */,
+				9C199CD0214166C10088E9EE /* Actor.swift */,
+				9C199CD1214166C10088E9EE /* Author.swift */,
+				9C199CD3214166C20088E9EE /* Commit.swift */,
+				9C199CD6214166C20088E9EE /* Payload.swift */,
+				9C199CD5214166C20088E9EE /* Repo.swift */,
+				9C199CD2214166C10088E9EE /* UserEvent.swift */,
+				9C199CDE21416F090088E9EE /* Issue.swift */,
+				9C199CE021416F2B0088E9EE /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -406,21 +427,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C199CDC214166C20088E9EE /* Repo.swift in Sources */,
 				9C766218213F7F2200F4A8D3 /* CXUserTopCell.swift in Sources */,
 				9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */,
 				9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */,
-				9CB5EF931F3AE7F700819E9F /* ViewController.swift in Sources */,
+				9C199CD7214166C20088E9EE /* Actor.swift in Sources */,
 				9C7661FC213CE7B400F4A8D3 /* CXNormalCell.swift in Sources */,
 				9C0C1C041F492EFD00466385 /* CXDiscoveryTableViewController.swift in Sources */,
 				9C64DC441F57F948005D6FB9 /* CXRepositoriesTableViewController.swift in Sources */,
+				9C199CD8214166C20088E9EE /* Author.swift in Sources */,
 				9C7661F4213CE29E00F4A8D3 /* CXUserInfoCell.swift in Sources */,
 				9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */,
 				9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */,
+				9C199CD9214166C20088E9EE /* UserEvent.swift in Sources */,
+				9C199CE121416F2B0088E9EE /* User.swift in Sources */,
 				9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */,
 				9C08E89B1F59397900F9F8F1 /* CXAboutMeViewController.swift in Sources */,
 				9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */,
+				9C199CDA214166C20088E9EE /* Commit.swift in Sources */,
 				9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */,
 				9C6073E91F5E2F8B00D4C263 /* TabBarView.swift in Sources */,
+				9C199CDF21416F090088E9EE /* Issue.swift in Sources */,
 				9C7661F8213CE50F00F4A8D3 /* CXPopularInfoCell.swift in Sources */,
 				9CC057F21F62925700EBA3DA /* Repository.swift in Sources */,
 				9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */,
@@ -429,6 +456,7 @@
 				9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */,
 				9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */,
 				9CF6C0A91F638B350013A4BE /* RepositoryCell.swift in Sources */,
+				9C199CDD214166C20088E9EE /* Payload.swift in Sources */,
 				9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */,
 				9CA3E48E1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift in Sources */,
 				9C76621E213F8BCD00F4A8D3 /* CXEventsCell.swift in Sources */,
@@ -573,7 +601,6 @@
 			baseConfigurationReference = 5F352CFAED2E43B27E16F95C /* Pods-ManageYourStars.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A823JDM22Y;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -589,7 +616,6 @@
 			baseConfigurationReference = 9F3A81B4719DA20FAD6561F9 /* Pods-ManageYourStars.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A823JDM22Y;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

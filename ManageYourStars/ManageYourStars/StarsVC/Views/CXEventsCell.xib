@@ -69,6 +69,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarImageView" destination="zNz-ti-UNH" id="hAJ-PT-bZL"/>
+                <outlet property="eventLabel" destination="LjQ-tY-Cxw" id="vy3-7E-NM7"/>
+                <outlet property="eventTypeImageView" destination="pm4-m1-iLf" id="5s0-5C-l4b"/>
+                <outlet property="messageLabel" destination="tGc-He-tWe" id="BfG-0M-HW8"/>
+                <outlet property="timeLabel" destination="eow-bJ-QXR" id="v8u-Qf-BsL"/>
+            </connections>
             <point key="canvasLocation" x="-62.5" y="-20"/>
         </tableViewCell>
     </objects>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rbS-xw-HQr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Vhw-GH-wgK">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rbS-xw-HQr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="N0f-Ih-C5k">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.62745098040000002" green="0.12549019610000001" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.62745098040000002" green="0.12549019610000001" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BJK-hW-jbC" kind="relationship" relationship="viewControllers" id="pZY-Cq-LA5"/>
+                        <segue destination="nVT-lz-Cn8" kind="relationship" relationship="viewControllers" id="QFg-Ul-Y7N"/>
+                        <segue destination="Wbn-5C-FIy" kind="relationship" relationship="viewControllers" id="B4T-Yl-fr7"/>
+                        <segue destination="g1G-PG-hkQ" kind="relationship" relationship="viewControllers" id="Lef-m1-ud7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2z6-aA-iRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-160" y="170.01499250374815"/>
+        </scene>
+        <!--Stars-->
+        <scene sceneID="41b-tG-EX5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Stars" id="BJK-hW-jbC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stars" image="github60" id="RPb-N8-YD7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DEL-LM-GjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718" y="-118"/>
+        </scene>
+        <!--Repositories-->
+        <scene sceneID="yFy-6n-NWE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Repositories" id="nVT-lz-Cn8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Repositories" image="github160" springLoaded="YES" id="oze-Zy-BmU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yo4-Ub-ZMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="72"/>
+        </scene>
+        <!--Discovery-->
+        <scene sceneID="O3C-qG-jkn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discovery" id="Wbn-5C-FIy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discovery" image="github60" id="ebk-Xg-9mM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0YZ-Eh-LnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="251"/>
+        </scene>
+        <!--More-->
+        <scene sceneID="GuF-5P-FBL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="More" id="g1G-PG-hkQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="More" image="more" id="6qQ-9K-Ybi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2kM-hh-AKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718" y="409"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="github160" width="30" height="30"/>
+        <image name="github60" width="30" height="30"/>
+        <image name="more" width="30" height="30"/>
+    </resources>
+</document>
