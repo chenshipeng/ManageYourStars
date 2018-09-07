@@ -16,6 +16,8 @@ class CXEventsController: UITableViewController {
     var userSvents = [UserEvent?]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.register(UINib.init(nibName: "CXEventsCell", bundle: nil), forCellReuseIdentifier: "CXEventsCell")
         getData()
     }
@@ -70,22 +72,46 @@ class CXEventsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CXEventsCell", for: indexPath) as! CXEventsCell
         let event = userSvents[indexPath.row]
         cell.avatarImageView.kf.setImage(with: URL(string: event?.actor?.avatar_url ?? ""))
+        cell.eventLabel.text = self.getActionWith(event: event!)
+        cell.messageLabel.text = self.getMessage(with: event!)
 
         return cell
     }
     func getActionWith(event:UserEvent)->String{
         switch event.type {
         case "PushEvent":
-            let user = event.actor?.login
-            let action = "pushed to"
-            let branch = event.payload?.ref?.split(separator: "/", maxSplits: Int.max, omittingEmptySubsequences: true).last
-            let location = event.repo?.name
+            var str = ""
+            if let user = event.actor?.login {
+                str += user
+            }
+            let action = " pushed to "
+            str += action
+            if let branch = event.payload?.ref?.split(separator: "/", maxSplits: Int.max, omittingEmptySubsequences: true).last {
+                str += branch
+            }
+            if let location = event.repo?.name {
+                str += " at " + location
+            }
             
-            return "\(String(describing: user))\(action)\(String(describing: branch))\(String(describing: location))"
-            break
+            return str
+//            break
         case "IssuesEvent":
-            return (event.payload?.issue?.title)!
-            break
+            var str = ""
+            if let user = event.actor?.login{
+                str += user
+            }
+            if let action = event.payload?.action {
+                str += " " + action
+            }
+            if let IssueNumber = event.payload?.issue?.number{
+                str += " " + "#" + String(IssueNumber)
+            }
+            if let location = event.repo?.name{
+                str += " in " + location
+            }
+            
+            return str
+//            break
         default:
             return ""
         }
@@ -95,10 +121,10 @@ class CXEventsController: UITableViewController {
         switch event.type {
         case "PushEvent":
             return (event.payload?.commits![0].message)!
-            break
+//            break
         case "IssuesEvent":
             return (event.payload?.issue?.title)!
-            break
+//            break
         default:
             return ""
         }
