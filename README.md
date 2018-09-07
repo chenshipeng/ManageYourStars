@@ -1,3 +1,3 @@
 # ManageYourStars
 ## Description
-manage your stars on github
+ManageYourStars is an iOS app that shows your github infomations.
