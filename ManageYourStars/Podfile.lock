@@ -18,7 +18,7 @@ PODS:
   - SABlurImageView (4.0.0)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
-  - SwiftDate (4.5.1)
+  - SwiftDate (5.0.7)
   - SwiftyJSON (4.1.0)
   - SwiftyUserDefaults (3.0.1)
 
@@ -36,7 +36,7 @@ DEPENDENCIES:
   - SABlurImageView
   - SnapKit
   - SVProgressHUD
-  - SwiftDate
+  - SwiftDate (~> 5.0.4)
   - SwiftyJSON
   - SwiftyUserDefaults
 
@@ -73,10 +73,10 @@ SPEC CHECKSUMS:
   SABlurImageView: 51d5c55779630cf8a6ad71a2dea2812902aa16cc
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
+  SwiftDate: f053fb89250c59af5eff777f3b832d2b9dd57403
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: cb850607438f8347508a9098ed6ceac12f32cefe
+PODFILE CHECKSUM: dd8e117275418f29c349fcb283302b207fb097a8
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

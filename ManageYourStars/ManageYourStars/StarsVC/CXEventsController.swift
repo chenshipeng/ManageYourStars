@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 import Kingfisher
+import SwiftDate
 class CXEventsController: UITableViewController {
 
     var login:String?
@@ -74,6 +75,9 @@ class CXEventsController: UITableViewController {
         cell.avatarImageView.kf.setImage(with: URL(string: event?.actor?.avatar_url ?? ""))
         cell.eventLabel.text = self.getActionWith(event: event!)
         cell.messageLabel.text = self.getMessage(with: event!)
+        if let dateStr = event?.created_at,let date = dateStr.toDate()?.date {
+            cell.timeLabel.text =  timeAgoSince(date)
+        }
 
         return cell
     }

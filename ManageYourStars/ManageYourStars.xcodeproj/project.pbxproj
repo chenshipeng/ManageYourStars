@@ -25,6 +25,7 @@
 		9C199CDD214166C20088E9EE /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CD6214166C20088E9EE /* Payload.swift */; };
 		9C199CDF21416F090088E9EE /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CDE21416F090088E9EE /* Issue.swift */; };
 		9C199CE121416F2B0088E9EE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CE021416F2B0088E9EE /* User.swift */; };
+		9C199CE721425B640088E9EE /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CE621425B640088E9EE /* TimeAgo.swift */; };
 		9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D39181F48059900920923 /* CXMoreViewController.swift */; };
 		9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391A1F48069A00920923 /* CXLoginViewController.swift */; };
 		9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */; };
@@ -81,6 +82,7 @@
 		9C199CD6214166C20088E9EE /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		9C199CDE21416F090088E9EE /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		9C199CE021416F2B0088E9EE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9C199CE621425B640088E9EE /* TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
 		9C3D39181F48059900920923 /* CXMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXMoreViewController.swift; sourceTree = "<group>"; };
 		9C3D391A1F48069A00920923 /* CXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXLoginViewController.swift; sourceTree = "<group>"; };
 		9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXYourStarsViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				9CCDA40F1F594757006A15D4 /* MoreVC */,
 				9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */,
 				9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */,
+				9C199CE621425B640088E9EE /* TimeAgo.swift */,
 				9C766214213F76FD00F4A8D3 /* Assets.xcassets */,
 				9CB5EF941F3AE7F700819E9F /* Main.storyboard */,
 				9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */,
@@ -306,6 +309,7 @@
 				TargetAttributes = {
 					9CB5EF8C1F3AE7F600819E9F = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -429,6 +433,7 @@
 			files = (
 				9C199CDC214166C20088E9EE /* Repo.swift in Sources */,
 				9C766218213F7F2200F4A8D3 /* CXUserTopCell.swift in Sources */,
+				9C199CE721425B640088E9EE /* TimeAgo.swift in Sources */,
 				9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */,
 				9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */,
 				9C199CD7214166C20088E9EE /* Actor.swift in Sources */,
@@ -601,12 +606,15 @@
 			baseConfigurationReference = 5F352CFAED2E43B27E16F95C /* Pods-ManageYourStars.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A823JDM22Y;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csp.GitPocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -616,12 +624,14 @@
 			baseConfigurationReference = 9F3A81B4719DA20FAD6561F9 /* Pods-ManageYourStars.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A823JDM22Y;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csp.GitPocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
