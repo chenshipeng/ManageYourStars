@@ -30,6 +30,9 @@
 		9C199CEB214607E80088E9EE /* Forkee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CEA214607E80088E9EE /* Forkee.swift */; };
 		9C199CED214639DB0088E9EE /* EventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CEC214639DB0088E9EE /* EventAction.swift */; };
 		9C199CEF214639E70088E9EE /* EventMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CEE214639E70088E9EE /* EventMessage.swift */; };
+		9C199CF1214669CC0088E9EE /* EvetAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CF0214669CC0088E9EE /* EvetAvatar.swift */; };
+		9C199CF321466D350088E9EE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CF221466D350088E9EE /* Comment.swift */; };
+		9C199CF5214673B20088E9EE /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CF4214673B20088E9EE /* PullRequest.swift */; };
 		9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D39181F48059900920923 /* CXMoreViewController.swift */; };
 		9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391A1F48069A00920923 /* CXLoginViewController.swift */; };
 		9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */; };
@@ -91,6 +94,9 @@
 		9C199CEA214607E80088E9EE /* Forkee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forkee.swift; sourceTree = "<group>"; };
 		9C199CEC214639DB0088E9EE /* EventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAction.swift; sourceTree = "<group>"; };
 		9C199CEE214639E70088E9EE /* EventMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMessage.swift; sourceTree = "<group>"; };
+		9C199CF0214669CC0088E9EE /* EvetAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvetAvatar.swift; sourceTree = "<group>"; };
+		9C199CF221466D350088E9EE /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		9C199CF4214673B20088E9EE /* PullRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
 		9C3D39181F48059900920923 /* CXMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXMoreViewController.swift; sourceTree = "<group>"; };
 		9C3D391A1F48069A00920923 /* CXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXLoginViewController.swift; sourceTree = "<group>"; };
 		9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXYourStarsViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				9C199CE621425B640088E9EE /* TimeAgo.swift */,
 				9C199CEC214639DB0088E9EE /* EventAction.swift */,
 				9C199CEE214639E70088E9EE /* EventMessage.swift */,
+				9C199CF0214669CC0088E9EE /* EvetAvatar.swift */,
 				9C766214213F76FD00F4A8D3 /* Assets.xcassets */,
 				9CB5EF941F3AE7F700819E9F /* Main.storyboard */,
 				9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */,
@@ -271,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */,
+				9C199CF221466D350088E9EE /* Comment.swift */,
 				9C64DC3D1F579F19005D6FB9 /* Owner.swift */,
 				9C199CD0214166C10088E9EE /* Actor.swift */,
 				9C199CD1214166C10088E9EE /* Author.swift */,
@@ -282,6 +290,7 @@
 				9C199CE021416F2B0088E9EE /* User.swift */,
 				9C199CE8214607B80088E9EE /* License.swift */,
 				9C199CEA214607E80088E9EE /* Forkee.swift */,
+				9C199CF4214673B20088E9EE /* PullRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -448,6 +457,7 @@
 				9C199CE721425B640088E9EE /* TimeAgo.swift in Sources */,
 				9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */,
 				9C199CEF214639E70088E9EE /* EventMessage.swift in Sources */,
+				9C199CF5214673B20088E9EE /* PullRequest.swift in Sources */,
 				9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */,
 				9C199CD7214166C20088E9EE /* Actor.swift in Sources */,
 				9C7661FC213CE7B400F4A8D3 /* CXNormalCell.swift in Sources */,
@@ -469,10 +479,12 @@
 				9C6073E91F5E2F8B00D4C263 /* TabBarView.swift in Sources */,
 				9C199CDF21416F090088E9EE /* Issue.swift in Sources */,
 				9C199CED214639DB0088E9EE /* EventAction.swift in Sources */,
+				9C199CF1214669CC0088E9EE /* EvetAvatar.swift in Sources */,
 				9C7661F8213CE50F00F4A8D3 /* CXPopularInfoCell.swift in Sources */,
 				9CC057F21F62925700EBA3DA /* Repository.swift in Sources */,
 				9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */,
 				9C76621B213F8B7B00F4A8D3 /* CXEventsController.swift in Sources */,
+				9C199CF321466D350088E9EE /* Comment.swift in Sources */,
 				9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */,
 				9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */,
 				9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */,

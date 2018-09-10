@@ -99,6 +99,7 @@ class CXEventsController: UITableViewController {
         if let dateStr = event?.created_at,let date = dateStr.toDate()?.date {
             cell.timeLabel.text =  timeAgoSince(date)
         }
+        cell.eventTypeImageView.image = image(for: event!)
 
         return cell
     }

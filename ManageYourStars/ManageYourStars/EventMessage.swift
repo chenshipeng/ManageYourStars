@@ -19,6 +19,10 @@ extension CXEventsController{
         //            break
         case "CreateEvent":
             return event.payload?.description ?? ""
+        case "CommitCommentEvent":
+            return event.payload?.comment?.body ?? ""
+        case "PullRequestEvent":
+            return event.payload?.pull_request?.body ?? ""
         default:
             return ""
         }

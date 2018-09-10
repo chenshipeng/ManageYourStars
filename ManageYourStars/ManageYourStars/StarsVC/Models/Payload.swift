@@ -24,6 +24,8 @@ struct Payload: HandyJSON {
     var issue:Issue?
     var forkee:Forkee?
     var description:String?
+    var comment:Comment?
+    var pull_request:PullRequest?
 
 }
 

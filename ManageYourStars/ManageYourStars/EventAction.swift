@@ -98,6 +98,39 @@ extension CXEventsController{
             }
             
             return str
+        case "CommitCommentEvent":
+            var str = ""
+            if let user = event.actor?.login{
+                str += user
+            }
+            let action = " commented on commit "
+            str += action
+            if let commitId = event.payload?.comment?.commit_id{
+                str += " " + commitId
+            }
+            if let source = event.repo?.name {
+                str += " on " + source
+            }
+            
+            return str
+        case "PullRequestEvent":
+            var str = ""
+            if let user = event.actor?.login{
+                str += user
+            }
+            if let action = event.payload?.action {
+                str += " " + action
+            }
+            str += " pull request"
+            if let number = event.payload?.pull_request?.number {
+                str += " " + number
+            }
+            
+            if let location = event.repo?.name {
+                str += " with " + location
+            }
+            
+            return str
         default:
             return ""
         }
