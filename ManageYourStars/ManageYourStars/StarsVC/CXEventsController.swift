@@ -11,27 +11,43 @@ import Alamofire
 import SVProgressHUD
 import Kingfisher
 import SwiftDate
+import MJRefresh
 class CXEventsController: UITableViewController {
 
+    var page = 1
     var login:String?
     var userSvents = [UserEvent?]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Events"
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.register(UINib.init(nibName: "CXEventsCell", bundle: nil), forCellReuseIdentifier: "CXEventsCell")
-        getData()
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.refreshData(loadMore:false)
+        })
+        self.tableView.mj_header.beginRefreshing()
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+            self.refreshData(loadMore:true)
+        })
     }
-    func getData(){
+    func refreshData(loadMore:Bool){
+        if loadMore {
+            page = page + 1
+        }else{
+            page = 1
+        }
         guard let currentLogin = self.login  else {
             return
         }
-        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))" + "/events"
+        let url = "https://api.github.com/users/" + "\(String(describing: currentLogin))" + "/events" + "?page=\(page)"
 
         print("url is \(url)")
 
         SVProgressHUD.show()
         Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
 
             if response.result.isSuccess {
                 SVProgressHUD.dismiss()
@@ -46,8 +62,13 @@ class CXEventsController: UITableViewController {
                 }
                 self.tableView.reloadData()
             }else{
+                if loadMore {
+                    self.page = self.page - 1
+                }
                 SVProgressHUD.dismiss()
                 SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                print("error is \(String(describing: response.result.error))")
+                
             }
         })
     }
@@ -73,109 +94,15 @@ class CXEventsController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CXEventsCell", for: indexPath) as! CXEventsCell
         let event = userSvents[indexPath.row]
         cell.avatarImageView.kf.setImage(with: URL(string: event?.actor?.avatar_url ?? ""))
-        cell.eventLabel.text = self.getActionWith(event: event!)
-        cell.messageLabel.text = self.getMessage(with: event!)
+        cell.eventLabel.text = getActionWith(event: event!)
+        cell.messageLabel.text = getMessage(with: event!)
         if let dateStr = event?.created_at,let date = dateStr.toDate()?.date {
             cell.timeLabel.text =  timeAgoSince(date)
         }
 
         return cell
     }
-    func getActionWith(event:UserEvent)->String{
-        switch event.type {
-        case "PushEvent":
-            var str = ""
-            if let user = event.actor?.login {
-                str += user
-            }
-            let action = " pushed to "
-            str += action
-            if let branch = event.payload?.ref?.split(separator: "/", maxSplits: Int.max, omittingEmptySubsequences: true).last {
-                str += branch
-            }
-            if let location = event.repo?.name {
-                str += " at " + location
-            }
-            
-            return str
-//            break
-        case "IssuesEvent":
-            var str = ""
-            if let user = event.actor?.login{
-                str += user
-            }
-            if let action = event.payload?.action {
-                str += " " + action
-            }
-            if let IssueNumber = event.payload?.issue?.number{
-                str += " " + "#" + String(IssueNumber)
-            }
-            if let location = event.repo?.name{
-                str += " in " + location
-            }
-            
-            return str
-        case "IssueCommentEvent":
-            var str = ""
-            if let user = event.actor?.login{
-                str += user
-            }
-            let action = " commented on issue "
-            str += action
-            if let IssueNumber = event.payload?.issue?.number{
-                str += " " + "#" + String(IssueNumber)
-            }
-            if let location = event.repo?.name{
-                str += " in " + location
-            }
-            
-            return str
-        case "WatchEvent":
-            var str = ""
-            if let user = event.actor?.login{
-                str += user
-            }
-            if let action = event.payload?.action {
-                str += " " + action
-            }
-            if let location = event.repo?.name {
-                str += " " + location
-            }
-            
-            return str
-        case "ForkEvent":
-            var str = ""
-            if let user = event.actor?.login{
-                str += user
-            }
-            let action = " forked "
-            str += action
-            if let source = event.repo?.name {
-                str += " " + source
-            }
-            if let location = event.payload?.forkee?.full_name {
-                str += " to " + location
-            }
-            
-            return str
-//            break
-        default:
-            return ""
-        }
-    }
     
-    func getMessage(with event:UserEvent) -> String {
-        switch event.type {
-        case "PushEvent":
-            return (event.payload?.commits![0].message)!
-//            break
-        case "IssuesEvent":
-            return (event.payload?.issue?.title)!
-//            break
-        default:
-            return ""
-        }
-    }
     
 
     /*

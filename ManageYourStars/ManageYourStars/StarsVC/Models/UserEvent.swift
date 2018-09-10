@@ -11,7 +11,6 @@
 import Foundation
 import HandyJSON
 
-
 struct UserEvent: HandyJSON {
     var repo: Repo?
     var id: String?
