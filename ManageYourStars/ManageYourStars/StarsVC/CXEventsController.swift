@@ -115,6 +115,49 @@ class CXEventsController: UITableViewController {
             }
             
             return str
+        case "IssueCommentEvent":
+            var str = ""
+            if let user = event.actor?.login{
+                str += user
+            }
+            let action = " commented on issue "
+            str += action
+            if let IssueNumber = event.payload?.issue?.number{
+                str += " " + "#" + String(IssueNumber)
+            }
+            if let location = event.repo?.name{
+                str += " in " + location
+            }
+            
+            return str
+        case "WatchEvent":
+            var str = ""
+            if let user = event.actor?.login{
+                str += user
+            }
+            if let action = event.payload?.action {
+                str += " " + action
+            }
+            if let location = event.repo?.name {
+                str += " " + location
+            }
+            
+            return str
+        case "ForkEvent":
+            var str = ""
+            if let user = event.actor?.login{
+                str += user
+            }
+            let action = " forked "
+            str += action
+            if let source = event.repo?.name {
+                str += " " + source
+            }
+            if let location = event.payload?.forkee?.full_name {
+                str += " to " + location
+            }
+            
+            return str
 //            break
         default:
             return ""

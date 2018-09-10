@@ -26,6 +26,8 @@
 		9C199CDF21416F090088E9EE /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CDE21416F090088E9EE /* Issue.swift */; };
 		9C199CE121416F2B0088E9EE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CE021416F2B0088E9EE /* User.swift */; };
 		9C199CE721425B640088E9EE /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CE621425B640088E9EE /* TimeAgo.swift */; };
+		9C199CE9214607B80088E9EE /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CE8214607B80088E9EE /* License.swift */; };
+		9C199CEB214607E80088E9EE /* Forkee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199CEA214607E80088E9EE /* Forkee.swift */; };
 		9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D39181F48059900920923 /* CXMoreViewController.swift */; };
 		9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391A1F48069A00920923 /* CXLoginViewController.swift */; };
 		9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */; };
@@ -83,6 +85,8 @@
 		9C199CDE21416F090088E9EE /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		9C199CE021416F2B0088E9EE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C199CE621425B640088E9EE /* TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
+		9C199CE8214607B80088E9EE /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		9C199CEA214607E80088E9EE /* Forkee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forkee.swift; sourceTree = "<group>"; };
 		9C3D39181F48059900920923 /* CXMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXMoreViewController.swift; sourceTree = "<group>"; };
 		9C3D391A1F48069A00920923 /* CXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXLoginViewController.swift; sourceTree = "<group>"; };
 		9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXYourStarsViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 				9C199CD2214166C10088E9EE /* UserEvent.swift */,
 				9C199CDE21416F090088E9EE /* Issue.swift */,
 				9C199CE021416F2B0088E9EE /* User.swift */,
+				9C199CE8214607B80088E9EE /* License.swift */,
+				9C199CEA214607E80088E9EE /* Forkee.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -444,11 +450,13 @@
 				9C7661F4213CE29E00F4A8D3 /* CXUserInfoCell.swift in Sources */,
 				9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */,
 				9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */,
+				9C199CE9214607B80088E9EE /* License.swift in Sources */,
 				9C199CD9214166C20088E9EE /* UserEvent.swift in Sources */,
 				9C199CE121416F2B0088E9EE /* User.swift in Sources */,
 				9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */,
 				9C08E89B1F59397900F9F8F1 /* CXAboutMeViewController.swift in Sources */,
 				9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */,
+				9C199CEB214607E80088E9EE /* Forkee.swift in Sources */,
 				9C199CDA214166C20088E9EE /* Commit.swift in Sources */,
 				9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */,
 				9C6073E91F5E2F8B00D4C263 /* TabBarView.swift in Sources */,
