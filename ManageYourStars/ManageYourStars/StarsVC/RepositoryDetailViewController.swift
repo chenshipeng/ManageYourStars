@@ -25,18 +25,6 @@ class RepositoryDetailViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        
-//        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-//            self.refreshData(loadMore:false)
-//        })
-//        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-//            self.refreshData(loadMore:true)
-//        })
-//        if UserDefaults.standard.object(forKey: "access_token") != nil {
-//            self.tableView.mj_header.beginRefreshing()
-//
-//        }
-//
 
         
     }
@@ -61,187 +49,6 @@ class RepositoryDetailViewController: UIViewController {
         tableView.register(UINib(nibName: "CXPopularInfoCell", bundle: nil), forCellReuseIdentifier: "CXPopularInfoCell")
         tableView.register(UINib(nibName: "CXNormalCell", bundle: nil), forCellReuseIdentifier: "CXNormalCell")
 
-    }
-
-    func getRepoInfo(){
-//        guard let name = self.starModel?.owner?.login  else {
-//            return
-//        }
-//
-//        guard let repo = self.starModel?.name  else {
-//            return
-//        }
-//        let url = "https://api.github.com/repos/" + "\(String(describing: name))/" + "\(String(describing: repo))"
-//
-//        print("url is \(url)")
-//
-//        SVProgressHUD.show()
-//        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-//            self.tableView.mj_header.endRefreshing()
-//            self.tableView.mj_footer.endRefreshing()
-//            if response.result.isSuccess {
-//                SVProgressHUD.dismiss()
-//                if !loadMore {
-//                    self.contributors.removeAll()
-//                }
-//                if let arr = [CXUserModel].deserialize(from: response.result.value as? NSArray){
-//
-//                    self.contributors.append(contentsOf:arr)
-//                }
-//                self.tableView.reloadData()
-//                print("response is \(String(describing: response.result.value))")
-//            }else{
-//
-//                if loadMore {
-//                    self.page1 = self.page1 - 1
-//                }
-//                SVProgressHUD.dismiss()
-//                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
-//            }
-//        })
-    }
-    func getContributors(loadMore:Bool) {
-        //进入个人详情页面
-//        guard let name = self.starModel?.owner?.login  else {
-//            return
-//        }
-//
-//        guard let repo = self.starModel?.name  else {
-//            return
-//        }
-//
-//        if isRefresh1 {
-//            return
-//        }
-//
-//        if loadMore {
-//            page1 = page1 + 1
-//        }else{
-//            page1 = 1
-//        }
-//
-//        let url = "https://api.github.com/repos/" + "\(String(describing: name))/" + "\(String(describing: repo))/contributors" + "?page=\(page1)"
-//
-//        print("url is \(url)")
-//
-//        SVProgressHUD.show()
-//        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-//            self.tableView.mj_header.endRefreshing()
-//            self.tableView.mj_footer.endRefreshing()
-//            if response.result.isSuccess {
-//                SVProgressHUD.dismiss()
-//                if !loadMore {
-//                    self.contributors.removeAll()
-//                }
-//                if let arr = [CXUserModel].deserialize(from: response.result.value as? NSArray){
-//
-//                    self.contributors.append(contentsOf:arr)
-//                }
-//                self.tableView.reloadData()
-//                print("response is \(String(describing: response.result.value))")
-//            }else{
-//
-//                if loadMore {
-//                    self.page1 = self.page1 - 1
-//                }
-//                SVProgressHUD.dismiss()
-//                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
-//            }
-//        })
-    }
-    func getForks(loadMore:Bool){
-        //进入个人详情页面
-//        guard let name = self.starModel?.owner?.login  else {
-//            return
-//        }
-//
-//        guard let repo = self.starModel?.name  else {
-//            return
-//        }
-//        if isRefresh2 {
-//            return
-//        }
-//
-//        if loadMore {
-//            page2 = page2 + 1
-//        }else{
-//            page2 = 1
-//        }
-//        let url = "https://api.github.com/repos/" + "\(String(describing: name))/" + "\(String(describing: repo))/forks" + "?page=\(page2)"
-//
-//        print("url is \(url)")
-//
-//        SVProgressHUD.show()
-//        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-//            self.tableView.mj_header.endRefreshing()
-//            self.tableView.mj_footer.endRefreshing()
-//            if response.result.isSuccess {
-//                SVProgressHUD.dismiss()
-//                if !loadMore {
-//                    self.forks.removeAll()
-//                }
-//                if let arr = [StarredModel].deserialize(from: response.result.value as? NSArray){
-//
-//                    self.forks.append(contentsOf:arr)
-//                }
-//                self.tableView.reloadData()
-//                print("response is \(String(describing: response.result.value))")
-//            }else{
-//
-//                if loadMore {
-//                    self.page2 = self.page2 - 1
-//                }
-//                SVProgressHUD.dismiss()
-//                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
-//            }
-//        })
-    }
-    func getStargazers(loadMore:Bool) {
-        //进入个人详情页面
-//        guard let name = self.starModel?.owner?.login  else {
-//            return
-//        }
-//
-//        guard let repo = self.starModel?.name  else {
-//            return
-//        }
-//        if isRefresh3 {
-//            return
-//        }
-//
-//        if loadMore {
-//            page3 = page3 + 1
-//        }else{
-//            page3 = 1
-//        }
-//        let url = "https://api.github.com/repos/" + "\(String(describing: name))/" + "\(String(describing: repo))/stargazers" + "?page=\(page3)"
-//
-//        print("url is \(url)")
-//
-//        SVProgressHUD.show()
-//        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-//            self.tableView.mj_header.endRefreshing()
-//            self.tableView.mj_footer.endRefreshing()
-//            if response.result.isSuccess {
-//                SVProgressHUD.dismiss()
-//                if !loadMore {
-//                    self.stargazers.removeAll()
-//                }
-//                if let arr = [CXUserModel].deserialize(from: response.result.value as? NSArray){
-//
-//                    self.stargazers.append(contentsOf:arr)
-//                }
-//                self.tableView.reloadData()
-//                print("response is \(String(describing: response.result.value))")
-//            }else{
-//
-//                if loadMore {
-//                    self.page3 = self.page3 - 1
-//                }
-//                SVProgressHUD.dismiss()
-//                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
-//            }
-//        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -326,6 +133,18 @@ extension RepositoryDetailViewController:UITableViewDelegate,UITableViewDataSour
         if indexPath.section == 1,indexPath.row == 0 {
             let vc = CXUserViewController()
             vc.login = starModel?.owner?.login
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.section == 2,indexPath.row == 0 {
+            let vc = CXRepoEventsListController()
+            vc.starModel = starModel
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.section == 2,indexPath.row == 1 {
+            let vc = CXIssueListController()
+            vc.starModel = starModel
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }

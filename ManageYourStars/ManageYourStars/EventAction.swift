@@ -8,8 +8,8 @@
 
 import Foundation
 import HandyJSON
-extension CXEventsController{
-    public func getActionWith(event:UserEvent)->String{
+class EventAction: NSObject {
+    public static func getActionWith(event:UserEvent)->String{
         switch event.type {
         case "PushEvent":
             var str = ""
@@ -113,7 +113,7 @@ extension CXEventsController{
             }
             
             return str
-        case "PullRequestEvent":
+        case "PullRequestEvent","PullRequestReviewCommentEvent":
             var str = ""
             if let user = event.actor?.login{
                 str += user
@@ -135,6 +135,4 @@ extension CXEventsController{
             return ""
         }
     }
-    
-
 }

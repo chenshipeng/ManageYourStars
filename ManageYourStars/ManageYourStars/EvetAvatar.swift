@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-extension CXEventsController{
-    public func image(for event:UserEvent) -> UIImage?{
+class EventAvatar{
+    public static func image(for event:UserEvent) -> UIImage?{
         switch event.type {
         case "PushEvent":
             return UIImage(named: "commit")

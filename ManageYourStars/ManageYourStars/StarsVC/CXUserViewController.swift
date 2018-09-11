@@ -155,5 +155,16 @@ extension CXUserViewController:UITableViewDelegate,UITableViewDataSource{
             vc.login = self.login
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        if indexPath.section == 1,indexPath.row == 1 {
+            let vc = CXOrganizationListController()
+            vc.login = self.login
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.section == 1,indexPath.row == 2 {
+            let vc = CXRepositoriesListController()
+            vc.login = login
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
