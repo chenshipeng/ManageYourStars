@@ -124,16 +124,17 @@ class CXRepositoriesListController: UITableViewController {
         cell.avatarImageView.kf.setImage(with: URL(string: model.owner?.avatar_url ?? ""))
         cell.nameLabel.text = model.name
         cell.dseLabel.text = model.description
-        cell.starsLabel.text = "\(model.stargazers_count ?? 0)"
-        cell.pullRequestLabel.text = "\(model.forks_count ?? 0)"
+        cell.starsLabel.text = model.stargazers_count ?? ""
+        cell.pullRequestLabel.text = model.forks_count ?? ""
         cell.orgLabel.text = model.owner?.login
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CXUserViewController()
-        vc.login = repositories[indexPath.row]?.owner?.login
+        let vc: RepositoryDetailViewController = RepositoryDetailViewController()
+        let model:Repo = self.repositories[indexPath.row]!
+        vc.starModel = model
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         

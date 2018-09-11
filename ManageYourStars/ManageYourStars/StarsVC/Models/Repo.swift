@@ -42,7 +42,7 @@ struct Repo: HandyJSON {
     var license: License?
     var notifications_url: String?
     var ssh_url: String?
-    var stargazers_count: Int?
+    var stargazers_count: String?
     var issue_comment_url: String?
     var compare_url: String?
     var languages_url: String?
@@ -57,7 +57,7 @@ struct Repo: HandyJSON {
     var assignees_url: String?
     var open_issues_count: Int?
     var labels_url: String?
-    var forks_count: Int?
+    var forks_count: String?
     var events_url: String?
     var blobs_url: String?
     var has_downloads: Bool?
@@ -81,7 +81,7 @@ struct Repo: HandyJSON {
     var has_wiki: Bool?
     var git_commits_url: String?
     var commits_url: String?
-    var watchers_count: Int?
+    var watchers_count: String?
     var deployments_url: String?
     var merges_url: String?
     var node_id: String?

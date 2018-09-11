@@ -42,6 +42,9 @@
 		9C199D0321475F850088E9EE /* CXReposotoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C199D0121475F850088E9EE /* CXReposotoryListCell.xib */; };
 		9C199D052147696B0088E9EE /* CXRepoEventsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199D042147696B0088E9EE /* CXRepoEventsListController.swift */; };
 		9C199D0721476D060088E9EE /* CXIssueListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199D0621476D060088E9EE /* CXIssueListController.swift */; };
+		9C199D0C214775560088E9EE /* CXIssueListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199D0A214775560088E9EE /* CXIssueListCell.swift */; };
+		9C199D0D214775560088E9EE /* CXIssueListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C199D0B214775560088E9EE /* CXIssueListCell.xib */; };
+		9C199D0F2147A33C0088E9EE /* CXReadmeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C199D0E2147A33C0088E9EE /* CXReadmeController.swift */; };
 		9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D39181F48059900920923 /* CXMoreViewController.swift */; };
 		9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391A1F48069A00920923 /* CXLoginViewController.swift */; };
 		9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */; };
@@ -115,6 +118,9 @@
 		9C199D0121475F850088E9EE /* CXReposotoryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXReposotoryListCell.xib; sourceTree = "<group>"; };
 		9C199D042147696B0088E9EE /* CXRepoEventsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXRepoEventsListController.swift; sourceTree = "<group>"; };
 		9C199D0621476D060088E9EE /* CXIssueListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXIssueListController.swift; sourceTree = "<group>"; };
+		9C199D0A214775560088E9EE /* CXIssueListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXIssueListCell.swift; sourceTree = "<group>"; };
+		9C199D0B214775560088E9EE /* CXIssueListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXIssueListCell.xib; sourceTree = "<group>"; };
+		9C199D0E2147A33C0088E9EE /* CXReadmeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXReadmeController.swift; sourceTree = "<group>"; };
 		9C3D39181F48059900920923 /* CXMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXMoreViewController.swift; sourceTree = "<group>"; };
 		9C3D391A1F48069A00920923 /* CXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXLoginViewController.swift; sourceTree = "<group>"; };
 		9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXYourStarsViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +154,7 @@
 		9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
 		9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowCell.xib; sourceTree = "<group>"; };
 		9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
-		9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = NetworkRequest/NetworkRequest.swift; sourceTree = "<group>"; };
+		9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		9F3A81B4719DA20FAD6561F9 /* Pods-ManageYourStars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageYourStars.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManageYourStars/Pods-ManageYourStars.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +187,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C199D08214772D00088E9EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C08E8911F59383700F9F8F1 /* Stars.storyboard */,
+				9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */,
+				9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */,
+				9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */,
+				9C76621A213F8B7B00F4A8D3 /* CXEventsController.swift */,
+				9C199CF621474CBF0088E9EE /* CXOrganizationListController.swift */,
+				9C199CFA214754D60088E9EE /* OrgInfoTableViewController.swift */,
+				9C199CFC214759050088E9EE /* CXMemberListController.swift */,
+				9C199CFE21475E7D0088E9EE /* CXRepositoriesListController.swift */,
+				9C199D042147696B0088E9EE /* CXRepoEventsListController.swift */,
+				9C199D0621476D060088E9EE /* CXIssueListController.swift */,
+				9C199D0E2147A33C0088E9EE /* CXReadmeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9C199D09214772F80088E9EE /* General */ = {
+			isa = PBXGroup;
+			children = (
+				9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */,
+				9C199CE621425B640088E9EE /* TimeAgo.swift */,
+				9C199CEC214639DB0088E9EE /* EventAction.swift */,
+				9C199CEE214639E70088E9EE /* EventMessage.swift */,
+				9C199CF0214669CC0088E9EE /* EvetAvatar.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		9CB5EF841F3AE7F600819E9F = {
 			isa = PBXGroup;
 			children = (
@@ -207,11 +244,7 @@
 				9CCDA4121F5947A3006A15D4 /* DiscoveryVC */,
 				9CCDA40F1F594757006A15D4 /* MoreVC */,
 				9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */,
-				9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */,
-				9C199CE621425B640088E9EE /* TimeAgo.swift */,
-				9C199CEC214639DB0088E9EE /* EventAction.swift */,
-				9C199CEE214639E70088E9EE /* EventMessage.swift */,
-				9C199CF0214669CC0088E9EE /* EvetAvatar.swift */,
+				9C199D09214772F80088E9EE /* General */,
 				9C766214213F76FD00F4A8D3 /* Assets.xcassets */,
 				9CB5EF941F3AE7F700819E9F /* Main.storyboard */,
 				9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */,
@@ -238,17 +271,7 @@
 		9CCDA4101F594777006A15D4 /* StarsVC */ = {
 			isa = PBXGroup;
 			children = (
-				9C08E8911F59383700F9F8F1 /* Stars.storyboard */,
-				9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */,
-				9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */,
-				9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */,
-				9C76621A213F8B7B00F4A8D3 /* CXEventsController.swift */,
-				9C199CF621474CBF0088E9EE /* CXOrganizationListController.swift */,
-				9C199CFA214754D60088E9EE /* OrgInfoTableViewController.swift */,
-				9C199CFC214759050088E9EE /* CXMemberListController.swift */,
-				9C199CFE21475E7D0088E9EE /* CXRepositoriesListController.swift */,
-				9C199D042147696B0088E9EE /* CXRepoEventsListController.swift */,
-				9C199D0621476D060088E9EE /* CXIssueListController.swift */,
+				9C199D08214772D00088E9EE /* Controllers */,
 				9CF6C0AF1F63B3D60013A4BE /* Views */,
 				9CF6C0B01F63B3E30013A4BE /* Models */,
 			);
@@ -296,6 +319,8 @@
 				9C76621D213F8BCD00F4A8D3 /* CXEventsCell.xib */,
 				9C199D0021475F850088E9EE /* CXReposotoryListCell.swift */,
 				9C199D0121475F850088E9EE /* CXReposotoryListCell.xib */,
+				9C199D0A214775560088E9EE /* CXIssueListCell.swift */,
+				9C199D0B214775560088E9EE /* CXIssueListCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -397,6 +422,7 @@
 				9CF6C0AE1F6393E50013A4BE /* FollowCell.xib in Resources */,
 				9C76621F213F8BCD00F4A8D3 /* CXEventsCell.xib in Resources */,
 				9C7661F9213CE50F00F4A8D3 /* CXPopularInfoCell.xib in Resources */,
+				9C199D0D214775560088E9EE /* CXIssueListCell.xib in Resources */,
 				9C7661FD213CE7B400F4A8D3 /* CXNormalCell.xib in Resources */,
 				9C7661F5213CE29E00F4A8D3 /* CXUserInfoCell.xib in Resources */,
 				9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */,
@@ -493,6 +519,7 @@
 				9C199CFB214754D60088E9EE /* OrgInfoTableViewController.swift in Sources */,
 				9C64DC441F57F948005D6FB9 /* CXRepositoriesTableViewController.swift in Sources */,
 				9C199CD8214166C20088E9EE /* Author.swift in Sources */,
+				9C199D0F2147A33C0088E9EE /* CXReadmeController.swift in Sources */,
 				9C7661F4213CE29E00F4A8D3 /* CXUserInfoCell.swift in Sources */,
 				9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */,
 				9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */,
@@ -520,6 +547,7 @@
 				9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */,
 				9C76621B213F8B7B00F4A8D3 /* CXEventsController.swift in Sources */,
 				9C199CF321466D350088E9EE /* Comment.swift in Sources */,
+				9C199D0C214775560088E9EE /* CXIssueListCell.swift in Sources */,
 				9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */,
 				9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */,
 				9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */,

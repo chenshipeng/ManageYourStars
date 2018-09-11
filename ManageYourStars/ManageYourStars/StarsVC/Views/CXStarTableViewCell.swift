@@ -18,7 +18,7 @@ class CXStarTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
-    var starModel:StarredModel?{
+    var starModel:Repo?{
         didSet{
             
             self.nameLabel?.text = starModel?.name

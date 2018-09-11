@@ -12,7 +12,7 @@ import Alamofire
 import Kingfisher
 import MJRefresh
 class CXRepositoriesTableViewController: UITableViewController {
-    var repositories = [StarredModel?]()
+    var repositories = [Repo?]()
     var page = 1
     var language = "Swift"
     var isRefresh = false
@@ -66,7 +66,7 @@ class CXRepositoriesTableViewController: UITableViewController {
                         SVProgressHUD.dismiss()
                         if let array = response.result.value as? Array<Any> {
                             print("\(array.count)")
-                            if let arr = [StarredModel].deserialize(from: response.result.value as? NSArray){
+                            if let arr = [Repo].deserialize(from: response.result.value as? NSArray){
                                 self.repositories.append(contentsOf: arr)
                             }
                             print("repositories count is \(self.repositories.count)")
@@ -105,14 +105,14 @@ class CXRepositoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath) as! CXRespositoriesTableViewCell
         
-        let model:StarredModel = self.repositories[indexPath.row]!
+        let model:Repo = self.repositories[indexPath.row]!
         cell.starModel = model
         
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let model:StarredModel = self.repositories[indexPath.row]!
+        let model:Repo = self.repositories[indexPath.row]!
 
         let vc = RepositoryDetailViewController()
         vc.starModel = model

@@ -19,9 +19,9 @@ struct Repository: HandyJSON {
     var isFork:Bool?
     var credited_at:String?
     var homePage:String?
-    var stargazers_count:Int?
+    var stargazers_count:String?
     var language:String?
-    var forks_count:Int?
+    var forks_count:String?
     var user:CXUserModel?
     var mirror_url:String?
     var parentWithDict:String?

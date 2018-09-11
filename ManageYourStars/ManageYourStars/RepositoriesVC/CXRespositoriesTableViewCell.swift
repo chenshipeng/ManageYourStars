@@ -16,7 +16,7 @@ class CXRespositoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
-    var starModel:StarredModel?{
+    var starModel:Repo?{
         didSet{
             
             self.nameLabel?.text = starModel?.name
@@ -33,7 +33,6 @@ class CXRespositoriesTableViewCell: UITableViewCell {
                 print("avatar url is \(String(describing: starModel?.owner?.avatar_url))")
             }
             if let language = starModel?.language{
-                print("language is \(language)")
                 self.languageLabel.text = "Language:" + language
 
             }

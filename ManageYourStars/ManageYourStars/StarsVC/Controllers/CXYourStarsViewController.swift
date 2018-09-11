@@ -14,10 +14,10 @@ import MJRefresh
 class CXYourStarsViewController: UITableViewController {
     
     
-    var stars = [StarredModel?]()
+    var stars = [Repo?]()
     
     var page = 1
-    var language = "Swift"
+    var language = "swift"
     var isRefresh = false
 
     override func viewDidLoad() {
@@ -27,7 +27,8 @@ class CXYourStarsViewController: UITableViewController {
 //            self.tableView.contentInsetAdjustmentBehavior = .never
 //            self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
 //        }
-        
+        self.navigationController?.navigationBar.tintColor = .black
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: self.navigationItem.backBarButtonItem?.style ?? .plain, target: nil, action: nil)
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200
         self.tableView.tableFooterView = UIView()
@@ -68,7 +69,7 @@ class CXYourStarsViewController: UITableViewController {
             SVProgressHUD.show()
             if let login =  UserDefaults.standard.object(forKey: "currentLogin") {
                 
-                let url = "https://api.github.com/users/" + "\(login)/starred" + "?page=\(page)" + "&language=\(language)" + "&sort=stars&order=desc"
+                let url = "https://api.github.com/users/" + "\(login)/starred" + "?page=\(page)" + "&sort=stars&order=desc" + "&q=language:\(language)"
                 print("stared url is \(url)")
                 isRefresh = true
 
@@ -84,7 +85,7 @@ class CXYourStarsViewController: UITableViewController {
                         SVProgressHUD.dismiss()
                         if let array = response.result.value as? Array<Any> {
                             print("\(array.count)")
-                            if let arr = [StarredModel].deserialize(from: response.result.value as? NSArray){
+                            if let arr = [Repo].deserialize(from: response.result.value as? NSArray){
                                 self.stars.append(contentsOf: arr)
                             }
                             print("stars count is \(self.stars.count)")
@@ -128,7 +129,7 @@ class CXYourStarsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "starsCell", for: indexPath) as! CXStarTableViewCell
 
-        let model:StarredModel = self.stars[indexPath.row]!
+        let model:Repo = self.stars[indexPath.row]!
         cell.starModel = model
 
         return cell
@@ -136,7 +137,7 @@ class CXYourStarsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc: RepositoryDetailViewController = RepositoryDetailViewController()
-        let model:StarredModel = self.stars[indexPath.row]!
+        let model:Repo = self.stars[indexPath.row]!
         vc.starModel = model
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)

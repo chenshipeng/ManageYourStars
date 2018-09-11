@@ -1,5 +1,5 @@
 //
-//  CXRepoEventsListController.swift
+//  CXIssueListController.swift
 //  ManageYourStars
 //
 //  Created by 陈仕鹏 on 2018/9/11.
@@ -12,17 +12,17 @@ import SVProgressHUD
 import Kingfisher
 import SwiftDate
 import MJRefresh
-class CXRepoEventsListController: UITableViewController {
+class CXIssueListController: UITableViewController {
 
     var page = 1
-    var starModel:StarredModel?
-    var userSvents = [UserEvent?]()
+    var starModel:Repo?
+    var issueArray = [Issue?]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Events"
+        title = "Issues"
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.register(UINib.init(nibName: "CXEventsCell", bundle: nil), forCellReuseIdentifier: "CXEventsCell")
+        self.tableView.register(UINib.init(nibName: "CXIssueListCell", bundle: nil), forCellReuseIdentifier: "CXIssueListCell")
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.refreshData(loadMore:false)
         })
@@ -37,9 +37,9 @@ class CXRepoEventsListController: UITableViewController {
         }else{
             page = 1
         }
-        guard let url = starModel?.events_url else {
-            return
-        }
+        guard let login = starModel?.owner?.login else { return }
+        guard let name = starModel?.name else { return }
+        let url = "https://api.github.com/repos/\(login)/\(name)/issues"
         
         print("url is \(String(describing: url))")
         
@@ -55,8 +55,8 @@ class CXRepoEventsListController: UITableViewController {
                 }
                 if let array = response.result.value as? Array<Any> {
                     print("\(array.count)")
-                    if let event = [UserEvent].deserialize(from: response.result.value as? NSArray){
-                        self.userSvents.append(contentsOf: event)
+                    if let event = [Issue].deserialize(from: response.result.value as? NSArray){
+                        self.issueArray.append(contentsOf: event)
                     }
                 }
                 self.tableView.reloadData()
@@ -85,20 +85,19 @@ class CXRepoEventsListController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.userSvents.count
+        return self.issueArray.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CXEventsCell", for: indexPath) as! CXEventsCell
-        let event = userSvents[indexPath.row]
-        cell.avatarImageView.kf.setImage(with: URL(string: event?.actor?.avatar_url ?? ""))
-        cell.eventLabel.text = EventAction.getActionWith(event: event!)
-        cell.messageLabel.text = EventMessage.getMessage(with: event!)
-        if let dateStr = event?.created_at,let date = dateStr.toDate()?.date {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CXIssueListCell", for: indexPath) as! CXIssueListCell
+        let issue = issueArray[indexPath.row]
+        cell.numberLabel.text = "#\(issue?.number ?? 0)"
+        cell.desLabel.text = issue?.title
+        cell.statusLabel.text = issue?.state
+        if let dateStr = issue?.created_at,let date = dateStr.toDate()?.date {
             cell.timeLabel.text =  timeAgoSince(date)
         }
-        cell.eventTypeImageView.image = EventAvatar.image(for: event!)
         
         return cell
     }

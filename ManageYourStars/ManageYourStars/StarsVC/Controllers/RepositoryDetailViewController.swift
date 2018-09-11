@@ -13,8 +13,8 @@ import MJRefresh
 import SnapKit
 class RepositoryDetailViewController: UIViewController {
 
-    public var starModel:StarredModel?
-    
+    public var starModel:Repo?
+    var starred = false
     private var tableView:UITableView = UITableView()
     
     var contributors = [CXUserModel?]()
@@ -25,7 +25,56 @@ class RepositoryDetailViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        checkIfStaredRepo()
 
+        
+    }
+    func checkIfStaredRepo() {
+        guard let currentLogin = self.starModel?.owner?.login,let name = starModel?.name ,let token=UserDefaults.standard.object(forKey: "access_token") as? String else {
+            return
+        }
+        
+        let url = "https://api.github.com/user/starred" + "/\(String(describing: currentLogin))" + "/\(name)" + "?access_token=\(token)"
+        
+        print("url is \(url)")
+        
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
+            
+            
+            
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                if response.response?.statusCode == 404 {
+                    self.starred =  false
+                    
+                }
+                if response.response?.statusCode == 204 {
+                    self.starred =  true
+                }
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+//                if let array = response.result.value as? Array<Any> {
+//                    print("\(array.count)")
+//                    if let org = [Org].deserialize(from: response.result.value as? NSArray){
+//                        self.orgArray.append(contentsOf: org)
+//                    }
+//                }
+//                self.tableView.reloadData()
+            }else{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                print("error is \(String(describing: response.result.error))")
+                
+            }
+        })
+    }
+    func addRightItem(with starred:Bool) {
+        let bar = UIBarButtonItem.init(title: "Star", style: .plain, target: self, action: #selector(starTheRepo))
+        navigationItem.rightBarButtonItem = bar
+    }
+    @objc func starTheRepo(){
         
     }
     override func viewWillAppear(_ animated: Bool) {
