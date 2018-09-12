@@ -36,7 +36,7 @@ class CXYourStarsViewController: UITableViewController {
             self.refreshData(loadMore:false)
         })
         if UserDefaults.standard.object(forKey: "access_token") != nil {
-            self.tableView.mj_header.beginRefreshing()
+            self.refreshData(loadMore:false)
 
         }
 

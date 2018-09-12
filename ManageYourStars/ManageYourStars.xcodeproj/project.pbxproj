@@ -48,6 +48,8 @@
 		9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D39181F48059900920923 /* CXMoreViewController.swift */; };
 		9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391A1F48069A00920923 /* CXLoginViewController.swift */; };
 		9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */; };
+		9C5CE39A21494B1800EDDE83 /* PreLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5CE39921494B1800EDDE83 /* PreLogin.storyboard */; };
+		9C5CE39C21494B3500EDDE83 /* CXPreLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5CE39B21494B3500EDDE83 /* CXPreLoginController.swift */; };
 		9C6073E91F5E2F8B00D4C263 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6073E81F5E2F8B00D4C263 /* TabBarView.swift */; };
 		9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */; };
 		9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C64DC3D1F579F19005D6FB9 /* Owner.swift */; };
@@ -124,6 +126,8 @@
 		9C3D39181F48059900920923 /* CXMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXMoreViewController.swift; sourceTree = "<group>"; };
 		9C3D391A1F48069A00920923 /* CXLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXLoginViewController.swift; sourceTree = "<group>"; };
 		9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXYourStarsViewController.swift; sourceTree = "<group>"; };
+		9C5CE39921494B1800EDDE83 /* PreLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLogin.storyboard; sourceTree = "<group>"; };
+		9C5CE39B21494B3500EDDE83 /* CXPreLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXPreLoginController.swift; sourceTree = "<group>"; };
 		9C6073E81F5E2F8B00D4C263 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredModel.swift; sourceTree = "<group>"; };
 		9C64DC3D1F579F19005D6FB9 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
@@ -244,10 +248,12 @@
 				9CCDA4121F5947A3006A15D4 /* DiscoveryVC */,
 				9CCDA40F1F594757006A15D4 /* MoreVC */,
 				9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */,
+				9C5CE39B21494B3500EDDE83 /* CXPreLoginController.swift */,
 				9C199D09214772F80088E9EE /* General */,
 				9C766214213F76FD00F4A8D3 /* Assets.xcassets */,
 				9CB5EF941F3AE7F700819E9F /* Main.storyboard */,
 				9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */,
+				9C5CE39921494B1800EDDE83 /* PreLogin.storyboard */,
 				9CB5EF9C1F3AE7F700819E9F /* Info.plist */,
 			);
 			path = ManageYourStars;
@@ -422,6 +428,7 @@
 				9CF6C0AE1F6393E50013A4BE /* FollowCell.xib in Resources */,
 				9C76621F213F8BCD00F4A8D3 /* CXEventsCell.xib in Resources */,
 				9C7661F9213CE50F00F4A8D3 /* CXPopularInfoCell.xib in Resources */,
+				9C5CE39A21494B1800EDDE83 /* PreLogin.storyboard in Resources */,
 				9C199D0D214775560088E9EE /* CXIssueListCell.xib in Resources */,
 				9C7661FD213CE7B400F4A8D3 /* CXNormalCell.xib in Resources */,
 				9C7661F5213CE29E00F4A8D3 /* CXUserInfoCell.xib in Resources */,
@@ -546,6 +553,7 @@
 				9CC057F21F62925700EBA3DA /* Repository.swift in Sources */,
 				9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */,
 				9C76621B213F8B7B00F4A8D3 /* CXEventsController.swift in Sources */,
+				9C5CE39C21494B3500EDDE83 /* CXPreLoginController.swift in Sources */,
 				9C199CF321466D350088E9EE /* Comment.swift in Sources */,
 				9C199D0C214775560088E9EE /* CXIssueListCell.swift in Sources */,
 				9C0C1C021F492C3900466385 /* CXMoreOtherTableViewCell.swift in Sources */,

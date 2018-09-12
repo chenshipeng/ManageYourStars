@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ybU-Iw-1pA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pre Login Controller-->
+        <scene sceneID="1f8-4o-Zmh">
+            <objects>
+                <viewController id="ybU-Iw-1pA" customClass="CXPreLoginController" customModule="ManageYourStars" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fgb-q0-4ZO"/>
+                        <viewControllerLayoutGuide type="bottom" id="hl9-Kd-K6O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y3E-DT-e2K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCR-fx-ivO">
+                                <rect key="frame" x="147.5" y="253.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="QMu-a3-N2Q"/>
+                                    <constraint firstAttribute="height" constant="80" id="pki-6j-pTw"/>
+                                </constraints>
+                                <state key="normal" image="github"/>
+                                <connections>
+                                    <action selector="loginBtnClicked:" destination="ybU-Iw-1pA" eventType="touchUpInside" id="5s9-qv-CVH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYr-FN-xOe">
+                                <rect key="frame" x="170" y="285.5" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OYr-FN-xOe" firstAttribute="centerY" secondItem="Y3E-DT-e2K" secondAttribute="centerY" constant="-40" id="8bv-0J-5Bx"/>
+                            <constraint firstItem="sCR-fx-ivO" firstAttribute="centerX" secondItem="Y3E-DT-e2K" secondAttribute="centerX" id="DUS-Hp-bYK"/>
+                            <constraint firstItem="OYr-FN-xOe" firstAttribute="centerX" secondItem="Y3E-DT-e2K" secondAttribute="centerX" id="IQo-dW-45W"/>
+                            <constraint firstItem="sCR-fx-ivO" firstAttribute="centerY" secondItem="Y3E-DT-e2K" secondAttribute="centerY" constant="-40" id="dC5-jN-hZW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4a-TZ-3mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="140"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="github" width="1024" height="1024"/>
+    </resources>
+</document>

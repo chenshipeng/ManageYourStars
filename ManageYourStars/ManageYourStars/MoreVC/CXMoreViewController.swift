@@ -131,10 +131,21 @@ class CXMoreViewController: UITableViewController {
         navigationController?.pushViewController(aboutMe, animated: true)
     }
     func doLogout(){
+        URLCache.shared.removeAllCachedResponses()
+        URLCache.shared.diskCapacity = 0
+        URLCache.shared.memoryCapacity = 0
+        
+        if let cookies =  HTTPCookieStorage.shared.cookies{
+            for cookie in cookies {
+                HTTPCookieStorage.shared.deleteCookie(cookie)
+            }
+        }
         UserDefaults.standard.set(nil, forKey: "access_token")
         UserDefaults.standard.set(nil, forKey: "currentLogin")
         UserDefaults.standard.set(nil, forKey: "avatar_url")
         tableView.reloadData()
+        let application = UIApplication.shared.delegate as! AppDelegate
+        application.setupRootVC()
     }
   
 
