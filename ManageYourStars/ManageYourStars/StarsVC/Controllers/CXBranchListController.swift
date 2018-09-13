@@ -12,14 +12,15 @@ import Alamofire
 import Kingfisher
 import MJRefresh
 class CXBranchListController: UITableViewController {
-    var commits = [Commit?]()
     public var starModel:Repo?
+    var branches = [Branch?]()
     var page = 1
     var language = "swift"
     var isRefresh = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "branchCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200
         self.tableView.tableFooterView = UIView()
@@ -58,8 +59,8 @@ class CXBranchListController: UITableViewController {
             
             SVProgressHUD.show()
             if let login =  starModel?.owner?.login,let repoName = starModel?.name {
-                
-                let url = "https://api.github.com/repos/" + "\(login)/\(repoName)/commits" + "?page=\(page)"
+                let url = "https://api.github.com/repos/" + "\(login)/\(repoName)/branches"
+//                let url = "https://api.github.com/repos/" + "\(login)/\(repoName)/commits" + "?page=\(page)"
                 print("stared url is \(url)")
                 isRefresh = true
                 
@@ -71,15 +72,15 @@ class CXBranchListController: UITableViewController {
 
                     if response.result.isSuccess {
                         if !loadMore {
-                            self.commits.removeAll()
+                            self.branches.removeAll()
                         }
                         SVProgressHUD.dismiss()
                         if let array = response.result.value as? Array<Any> {
                             print("\(array.count)")
-                            if let arr = [Commit].deserialize(from: response.result.value as? NSArray){
-                                self.commits.append(contentsOf: arr)
+                            if let arr = [Branch].deserialize(from: response.result.value as? NSArray){
+                                self.branches.append(contentsOf: arr)
                             }
-                            print("stars count is \(self.commits.count)")
+                            print("branches count is \(self.branches.count)")
                         }
                         self.tableView.reloadData()
                         self.isRefresh = false
@@ -107,22 +108,22 @@ class CXBranchListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.commits.count
+        return self.branches.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "starsCell", for: indexPath) as! CXStarTableViewCell
-        
-        let model:Commit = self.commits[indexPath.row]!
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "branchCell", for: indexPath) 
+        let model:Branch = self.branches[indexPath.row]!
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = model.name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc: RepositoryDetailViewController = RepositoryDetailViewController()
-        let model:Commit = self.commits[indexPath.row]!
-//        vc.starModel = model
+        let vc: CXCommitListController = CXCommitListController()
+        vc.starModel = starModel
+        vc.branch = self.branches[indexPath.row]
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         

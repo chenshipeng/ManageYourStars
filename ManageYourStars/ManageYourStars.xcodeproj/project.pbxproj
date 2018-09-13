@@ -77,6 +77,11 @@
 		9CA49E1C214A195A00305063 /* Committer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E1B214A195A00305063 /* Committer.swift */; };
 		9CA49E1E214A197C00305063 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E1D214A197C00305063 /* Tree.swift */; };
 		9CA49E20214A199B00305063 /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E1F214A199B00305063 /* Parent.swift */; };
+		9CA49E22214A35FD00305063 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E21214A35FD00305063 /* Branch.swift */; };
+		9CA49E24214A376C00305063 /* CXCommitListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E23214A376C00305063 /* CXCommitListController.swift */; };
+		9CA49E27214A387A00305063 /* CXCommitListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E25214A387A00305063 /* CXCommitListCell.swift */; };
+		9CA49E28214A387A00305063 /* CXCommitListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA49E26214A387A00305063 /* CXCommitListCell.xib */; };
+		9CA49E2A214A3F7300305063 /* InnerCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E29214A3F7300305063 /* InnerCommit.swift */; };
 		9CB5EF911F3AE7F700819E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */; };
 		9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB5EF941F3AE7F700819E9F /* Main.storyboard */; };
 		9CB5EF9B1F3AE7F700819E9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */; };
@@ -163,6 +168,11 @@
 		9CA49E1B214A195A00305063 /* Committer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Committer.swift; sourceTree = "<group>"; };
 		9CA49E1D214A197C00305063 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		9CA49E1F214A199B00305063 /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
+		9CA49E21214A35FD00305063 /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
+		9CA49E23214A376C00305063 /* CXCommitListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXCommitListController.swift; sourceTree = "<group>"; };
+		9CA49E25214A387A00305063 /* CXCommitListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXCommitListCell.swift; sourceTree = "<group>"; };
+		9CA49E26214A387A00305063 /* CXCommitListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXCommitListCell.xib; sourceTree = "<group>"; };
+		9CA49E29214A3F7300305063 /* InnerCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCommit.swift; sourceTree = "<group>"; };
 		9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageYourStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB5EF951F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,6 +226,7 @@
 				9CA49E13214A0A4F00305063 /* CXUserListController.swift */,
 				9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */,
 				9CA49E15214A157A00305063 /* CXBranchListController.swift */,
+				9CA49E23214A376C00305063 /* CXCommitListController.swift */,
 				9C76621A213F8B7B00F4A8D3 /* CXEventsController.swift */,
 				9C199CF621474CBF0088E9EE /* CXOrganizationListController.swift */,
 				9C199CFA214754D60088E9EE /* OrgInfoTableViewController.swift */,
@@ -326,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				9C64DC401F57E71F005D6FB9 /* CXStarTableViewCell.swift */,
+				9CA49E25214A387A00305063 /* CXCommitListCell.swift */,
+				9CA49E26214A387A00305063 /* CXCommitListCell.xib */,
 				9CF6C0A71F638B350013A4BE /* RepositoryCell.swift */,
 				9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */,
 				9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */,
@@ -361,9 +374,11 @@
 				9C199CD1214166C10088E9EE /* Author.swift */,
 				9CA49E19214A193100305063 /* Verification.swift */,
 				9CA49E1B214A195A00305063 /* Committer.swift */,
+				9CA49E21214A35FD00305063 /* Branch.swift */,
 				9CA49E1D214A197C00305063 /* Tree.swift */,
 				9CA49E1F214A199B00305063 /* Parent.swift */,
 				9C199CD3214166C20088E9EE /* Commit.swift */,
+				9CA49E29214A3F7300305063 /* InnerCommit.swift */,
 				9C199CD6214166C20088E9EE /* Payload.swift */,
 				9C199CD5214166C20088E9EE /* Repo.swift */,
 				9C199CD2214166C10088E9EE /* UserEvent.swift */,
@@ -458,6 +473,7 @@
 				9C7661F5213CE29E00F4A8D3 /* CXUserInfoCell.xib in Resources */,
 				9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */,
 				9C08E8961F59386E00F9F8F1 /* Discovery.storyboard in Resources */,
+				9CA49E28214A387A00305063 /* CXCommitListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,11 +580,13 @@
 				9C199CD9214166C20088E9EE /* UserEvent.swift in Sources */,
 				9C199CE121416F2B0088E9EE /* User.swift in Sources */,
 				9C199D0221475F850088E9EE /* CXReposotoryListCell.swift in Sources */,
+				9CA49E2A214A3F7300305063 /* InnerCommit.swift in Sources */,
 				9CA49E1E214A197C00305063 /* Tree.swift in Sources */,
 				9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */,
 				9C08E89B1F59397900F9F8F1 /* CXAboutMeViewController.swift in Sources */,
 				9C199D0721476D060088E9EE /* CXIssueListController.swift in Sources */,
 				9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */,
+				9CA49E27214A387A00305063 /* CXCommitListCell.swift in Sources */,
 				9C199CEB214607E80088E9EE /* Forkee.swift in Sources */,
 				9C199CDA214166C20088E9EE /* Commit.swift in Sources */,
 				9C199CF92147521A0088E9EE /* Org.swift in Sources */,
@@ -594,9 +612,11 @@
 				9C64DC3E1F579F19005D6FB9 /* Owner.swift in Sources */,
 				9CF6C0A91F638B350013A4BE /* RepositoryCell.swift in Sources */,
 				9C199CF721474CBF0088E9EE /* CXOrganizationListController.swift in Sources */,
+				9CA49E22214A35FD00305063 /* Branch.swift in Sources */,
 				9C199CDD214166C20088E9EE /* Payload.swift in Sources */,
 				9C3D39191F48059900920923 /* CXMoreViewController.swift in Sources */,
 				9CA3E48E1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift in Sources */,
+				9CA49E24214A376C00305063 /* CXCommitListController.swift in Sources */,
 				9C76621E213F8BCD00F4A8D3 /* CXEventsCell.swift in Sources */,
 				9C960F741F5D4E8D00F9A31E /* CXUserViewController.swift in Sources */,
 				9CB5EF911F3AE7F700819E9F /* AppDelegate.swift in Sources */,

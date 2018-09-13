@@ -33,6 +33,7 @@ struct Author: HandyJSON {
     var node_id: String?
     var url: String?
     var events_url: String?
+    var date:String?
 }
 
 

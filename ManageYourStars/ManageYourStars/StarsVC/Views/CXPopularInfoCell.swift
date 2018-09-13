@@ -18,6 +18,7 @@ class CXPopularInfoCell: UITableViewCell {
     @IBOutlet weak var watchDesLabel: UILabel!
     @IBOutlet weak var starsBackView: UIView!
     @IBOutlet weak var forksBackView: UIView!
+    @IBOutlet weak var watchesBackView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

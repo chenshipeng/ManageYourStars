@@ -195,6 +195,11 @@ extension RepositoryDetailViewController:UITableViewDelegate,UITableViewDataSour
                     vc.isFork = true
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
+                cell.watchesBackView.addTapGesture { (tap) in
+                    let vc = CXUserListController()
+                    vc.action = self.starModel?.subscribers_url
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
                 cell.watchCountLabel.text = starModel?.watchers_count
                 return cell
             }

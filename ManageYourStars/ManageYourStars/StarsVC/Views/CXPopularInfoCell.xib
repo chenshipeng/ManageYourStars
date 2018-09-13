@@ -113,6 +113,7 @@
                 <outlet property="starsBackView" destination="RMh-xf-5wl" id="wyB-gv-Cvw"/>
                 <outlet property="watchCountLabel" destination="obr-c2-gml" id="jB0-Yi-8QR"/>
                 <outlet property="watchDesLabel" destination="jIy-Lj-qrk" id="pfr-Qx-dGl"/>
+                <outlet property="watchesBackView" destination="8ZN-nS-IoP" id="mDL-BE-9ra"/>
             </connections>
             <point key="canvasLocation" x="66" y="74.5"/>
         </tableViewCell>
