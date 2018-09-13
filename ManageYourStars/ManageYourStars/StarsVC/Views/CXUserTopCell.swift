@@ -15,6 +15,9 @@ class CXUserTopCell: UITableViewCell {
     @IBOutlet weak var aNameLabel: UILabel!
     @IBOutlet weak var followerCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var followersCountDesLabel: UILabel!
+    @IBOutlet weak var followingCountDesLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         avatarImageView.layer.cornerRadius = 30.0

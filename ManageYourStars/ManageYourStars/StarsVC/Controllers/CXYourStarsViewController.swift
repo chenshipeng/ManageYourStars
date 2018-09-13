@@ -69,7 +69,7 @@ class CXYourStarsViewController: UITableViewController {
             SVProgressHUD.show()
             if let login =  UserDefaults.standard.object(forKey: "currentLogin") {
                 
-                let url = "https://api.github.com/users/" + "\(login)/starred" + "?page=\(page)" + "&sort=stars&order=desc" + "&q=language:\(language)"
+                let url = "https://api.github.com/users/" + "\(login)/starred" + "?page=\(page)"
                 print("stared url is \(url)")
                 isRefresh = true
 

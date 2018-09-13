@@ -137,7 +137,29 @@ extension CXUserViewController:UITableViewDelegate,UITableViewDataSource{
             cell.loginLabel.text = userModel.name
             cell.aNameLabel.text = userModel.login
             cell.followerCountLabel.text = userModel.followers
+            cell.followerCountLabel.addTapGesture { (tap) in
+                let vc = CXUserListController()
+                vc.action = self.userModel.followers_url
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            cell.followersCountDesLabel.addTapGesture { (tap) in
+                let vc = CXUserListController()
+                vc.action = self.userModel.followers_url
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
             cell.followingCountLabel.text = userModel.following
+            cell.followingCountLabel.addTapGesture { (tap) in
+                let vc = CXUserListController()
+                vc.action = self.userModel.following_url
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            cell.followingCountDesLabel.addTapGesture { (tap) in
+                let vc = CXUserListController()
+                vc.action = self.userModel.followers_url
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            cell.locationLabel.text = userModel.location
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "CXNormalCell", for: indexPath) as! CXNormalCell

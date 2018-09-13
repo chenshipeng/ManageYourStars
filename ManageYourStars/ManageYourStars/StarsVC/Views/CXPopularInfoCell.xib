@@ -107,8 +107,10 @@
             <connections>
                 <outlet property="forkCountLabel" destination="dXO-g2-4rO" id="1gh-sA-Mhp"/>
                 <outlet property="forkDesLabel" destination="YQX-tF-Ws4" id="2LY-yv-sQN"/>
+                <outlet property="forksBackView" destination="Uyg-tp-bGV" id="knb-PK-ZAU"/>
                 <outlet property="starCountLabel" destination="Scs-dq-qaF" id="JIX-rA-lUa"/>
                 <outlet property="starDesLabel" destination="hV1-mN-Xsc" id="YUX-69-R8I"/>
+                <outlet property="starsBackView" destination="RMh-xf-5wl" id="wyB-gv-Cvw"/>
                 <outlet property="watchCountLabel" destination="obr-c2-gml" id="jB0-Yi-8QR"/>
                 <outlet property="watchDesLabel" destination="jIy-Lj-qrk" id="pfr-Qx-dGl"/>
             </connections>

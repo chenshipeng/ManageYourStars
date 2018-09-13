@@ -69,6 +69,14 @@
 		9C76621F213F8BCD00F4A8D3 /* CXEventsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C76621D213F8BCD00F4A8D3 /* CXEventsCell.xib */; };
 		9C960F741F5D4E8D00F9A31E /* CXUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */; };
 		9CA3E48E1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3E48D1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift */; };
+		9CA49E102149FC7000305063 /* Readme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E0F2149FC7000305063 /* Readme.swift */; };
+		9CA49E122149FCA000305063 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E112149FCA000305063 /* Links.swift */; };
+		9CA49E14214A0A4F00305063 /* CXUserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E13214A0A4F00305063 /* CXUserListController.swift */; };
+		9CA49E16214A157A00305063 /* CXBranchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E15214A157A00305063 /* CXBranchListController.swift */; };
+		9CA49E1A214A193100305063 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E19214A193100305063 /* Verification.swift */; };
+		9CA49E1C214A195A00305063 /* Committer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E1B214A195A00305063 /* Committer.swift */; };
+		9CA49E1E214A197C00305063 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E1D214A197C00305063 /* Tree.swift */; };
+		9CA49E20214A199B00305063 /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA49E1F214A199B00305063 /* Parent.swift */; };
 		9CB5EF911F3AE7F700819E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */; };
 		9CB5EF961F3AE7F700819E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB5EF941F3AE7F700819E9F /* Main.storyboard */; };
 		9CB5EF9B1F3AE7F700819E9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */; };
@@ -147,6 +155,14 @@
 		9C76621D213F8BCD00F4A8D3 /* CXEventsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXEventsCell.xib; sourceTree = "<group>"; };
 		9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXUserViewController.swift; sourceTree = "<group>"; };
 		9CA3E48D1F5D4AF6009836A2 /* CXRespositoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXRespositoriesTableViewCell.swift; sourceTree = "<group>"; };
+		9CA49E0F2149FC7000305063 /* Readme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readme.swift; sourceTree = "<group>"; };
+		9CA49E112149FCA000305063 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		9CA49E13214A0A4F00305063 /* CXUserListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXUserListController.swift; sourceTree = "<group>"; };
+		9CA49E15214A157A00305063 /* CXBranchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXBranchListController.swift; sourceTree = "<group>"; };
+		9CA49E19214A193100305063 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		9CA49E1B214A195A00305063 /* Committer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Committer.swift; sourceTree = "<group>"; };
+		9CA49E1D214A197C00305063 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		9CA49E1F214A199B00305063 /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
 		9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageYourStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB5EF951F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -197,7 +213,9 @@
 				9C08E8911F59383700F9F8F1 /* Stars.storyboard */,
 				9C3D391C1F48085F00920923 /* CXYourStarsViewController.swift */,
 				9C960F721F5D4E8D00F9A31E /* CXUserViewController.swift */,
+				9CA49E13214A0A4F00305063 /* CXUserListController.swift */,
 				9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */,
+				9CA49E15214A157A00305063 /* CXBranchListController.swift */,
 				9C76621A213F8B7B00F4A8D3 /* CXEventsController.swift */,
 				9C199CF621474CBF0088E9EE /* CXOrganizationListController.swift */,
 				9C199CFA214754D60088E9EE /* OrgInfoTableViewController.swift */,
@@ -335,10 +353,16 @@
 			isa = PBXGroup;
 			children = (
 				9C64DC3B1F579E58005D6FB9 /* StarredModel.swift */,
+				9CA49E0F2149FC7000305063 /* Readme.swift */,
+				9CA49E112149FCA000305063 /* Links.swift */,
 				9C199CF221466D350088E9EE /* Comment.swift */,
 				9C64DC3D1F579F19005D6FB9 /* Owner.swift */,
 				9C199CD0214166C10088E9EE /* Actor.swift */,
 				9C199CD1214166C10088E9EE /* Author.swift */,
+				9CA49E19214A193100305063 /* Verification.swift */,
+				9CA49E1B214A195A00305063 /* Committer.swift */,
+				9CA49E1D214A197C00305063 /* Tree.swift */,
+				9CA49E1F214A199B00305063 /* Parent.swift */,
 				9C199CD3214166C20088E9EE /* Commit.swift */,
 				9C199CD6214166C20088E9EE /* Payload.swift */,
 				9C199CD5214166C20088E9EE /* Repo.swift */,
@@ -448,6 +472,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ManageYourStars/Pods-ManageYourStars-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageViewer/ImageViewer.framework",
@@ -467,6 +492,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageViewer.framework",
@@ -513,9 +539,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA49E1A214A193100305063 /* Verification.swift in Sources */,
 				9C199CDC214166C20088E9EE /* Repo.swift in Sources */,
 				9C766218213F7F2200F4A8D3 /* CXUserTopCell.swift in Sources */,
 				9C199CE721425B640088E9EE /* TimeAgo.swift in Sources */,
+				9CA49E14214A0A4F00305063 /* CXUserListController.swift in Sources */,
 				9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */,
 				9C199CEF214639E70088E9EE /* EventMessage.swift in Sources */,
 				9C199CF5214673B20088E9EE /* PullRequest.swift in Sources */,
@@ -528,6 +556,7 @@
 				9C199CD8214166C20088E9EE /* Author.swift in Sources */,
 				9C199D0F2147A33C0088E9EE /* CXReadmeController.swift in Sources */,
 				9C7661F4213CE29E00F4A8D3 /* CXUserInfoCell.swift in Sources */,
+				9CA49E102149FC7000305063 /* Readme.swift in Sources */,
 				9C08E88F1F58050300F9F8F1 /* CXUserModel.swift in Sources */,
 				9C64DC411F57E71F005D6FB9 /* CXStarTableViewCell.swift in Sources */,
 				9C199CFF21475E7D0088E9EE /* CXRepositoriesListController.swift in Sources */,
@@ -535,6 +564,7 @@
 				9C199CD9214166C20088E9EE /* UserEvent.swift in Sources */,
 				9C199CE121416F2B0088E9EE /* User.swift in Sources */,
 				9C199D0221475F850088E9EE /* CXReposotoryListCell.swift in Sources */,
+				9CA49E1E214A197C00305063 /* Tree.swift in Sources */,
 				9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */,
 				9C08E89B1F59397900F9F8F1 /* CXAboutMeViewController.swift in Sources */,
 				9C199D0721476D060088E9EE /* CXIssueListController.swift in Sources */,
@@ -543,14 +573,17 @@
 				9C199CDA214166C20088E9EE /* Commit.swift in Sources */,
 				9C199CF92147521A0088E9EE /* Org.swift in Sources */,
 				9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */,
+				9CA49E1C214A195A00305063 /* Committer.swift in Sources */,
 				9C6073E91F5E2F8B00D4C263 /* TabBarView.swift in Sources */,
 				9C199CDF21416F090088E9EE /* Issue.swift in Sources */,
+				9CA49E16214A157A00305063 /* CXBranchListController.swift in Sources */,
 				9C199CFD214759050088E9EE /* CXMemberListController.swift in Sources */,
 				9C199CED214639DB0088E9EE /* EventAction.swift in Sources */,
 				9C199D052147696B0088E9EE /* CXRepoEventsListController.swift in Sources */,
 				9C199CF1214669CC0088E9EE /* EvetAvatar.swift in Sources */,
 				9C7661F8213CE50F00F4A8D3 /* CXPopularInfoCell.swift in Sources */,
 				9CC057F21F62925700EBA3DA /* Repository.swift in Sources */,
+				9CA49E122149FCA000305063 /* Links.swift in Sources */,
 				9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */,
 				9C76621B213F8B7B00F4A8D3 /* CXEventsController.swift in Sources */,
 				9C5CE39C21494B3500EDDE83 /* CXPreLoginController.swift in Sources */,
@@ -567,6 +600,7 @@
 				9C76621E213F8BCD00F4A8D3 /* CXEventsCell.swift in Sources */,
 				9C960F741F5D4E8D00F9A31E /* CXUserViewController.swift in Sources */,
 				9CB5EF911F3AE7F700819E9F /* AppDelegate.swift in Sources */,
+				9CA49E20214A199B00305063 /* Parent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +675,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -693,7 +727,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -715,7 +749,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -732,7 +766,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.csp.GitPocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

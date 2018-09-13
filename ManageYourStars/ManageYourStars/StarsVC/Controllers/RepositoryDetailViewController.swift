@@ -11,9 +11,11 @@ import SVProgressHUD
 import Alamofire
 import MJRefresh
 import SnapKit
+import EZSwiftExtensions
 class RepositoryDetailViewController: UIViewController {
 
     public var starModel:Repo?
+    private var readme:Readme?
     var starred = false
     private var tableView:UITableView = UITableView()
     
@@ -26,6 +28,7 @@ class RepositoryDetailViewController: UIViewController {
 
         setupUI()
         checkIfStaredRepo()
+        getReadme()
 
         
     }
@@ -62,6 +65,33 @@ class RepositoryDetailViewController: UIViewController {
 //                    }
 //                }
 //                self.tableView.reloadData()
+            }else{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                print("error is \(String(describing: response.result.error))")
+                
+            }
+        })
+    }
+    func getReadme(){
+        guard let currentLogin = starModel?.owner?.login,let name = starModel?.name else {
+            return
+        }
+        
+        let url = "https://api.github.com/repos" + "/\(String(describing: currentLogin))" + "/\(name)/readme"
+        
+        print("url is \(url)")
+        
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil).responseString(completionHandler: { (response) in
+            
+            
+            
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                if let readme = Readme.deserialize(from: response.result.value){
+                    self.readme = readme
+                }
             }else{
                 SVProgressHUD.dismiss()
                 SVProgressHUD.showError(withStatus: String(describing: response.result.value))
@@ -153,7 +183,18 @@ extension RepositoryDetailViewController:UITableViewDelegate,UITableViewDataSour
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CXPopularInfoCell", for: indexPath) as! CXPopularInfoCell
                 cell.selectionStyle = .none
                 cell.starCountLabel.text = starModel?.stargazers_count
+                cell.starsBackView.addTapGesture { (tap) in
+                    let vc = CXUserListController()
+                    vc.action = self.starModel?.stargazers_url
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
                 cell.forkCountLabel.text = starModel?.forks_count
+                cell.forksBackView.addTapGesture { (tap) in
+                    let vc = CXUserListController()
+                    vc.action = self.starModel?.forks_url
+                    vc.isFork = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
                 cell.watchCountLabel.text = starModel?.watchers_count
                 return cell
             }
@@ -196,6 +237,16 @@ extension RepositoryDetailViewController:UITableViewDelegate,UITableViewDataSour
             vc.starModel = starModel
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.section == 2,indexPath.row == 2 {
+            let vc = CXReadmeController()
+            vc.url = readme?._links?.html
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if indexPath.section == 3,indexPath.row == 0 {
+            let vc = CXBranchListController()
+            vc.starModel = starModel
+            navigationController?.pushViewController(vc, animated: true)
         }
         
     }

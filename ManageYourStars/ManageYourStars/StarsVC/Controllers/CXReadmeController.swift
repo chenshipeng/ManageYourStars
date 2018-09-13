@@ -15,6 +15,7 @@ class CXReadmeController: UIViewController {
     var webView = UIWebView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "README"
         webView.delegate = self
         view.addSubview(webView)
         webView.snp.makeConstraints { (make) in

@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.7.2)
-  - HandyJSON (4.1.1)
+  - EZSwiftExtensions (2.0)
+  - HandyJSON (4.1.3)
   - Hero (1.2.0)
   - ImageViewer (5.0.0)
   - Kingfisher (4.8.0)
@@ -24,7 +25,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - HandyJSON
+  - EZSwiftExtensions
+  - HandyJSON (~> 4.1.3)
   - Hero
   - ImageViewer
   - Kingfisher
@@ -43,6 +45,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - EZSwiftExtensions
     - HandyJSON
     - Hero
     - ImageViewer
@@ -61,7 +64,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  EZSwiftExtensions: f73648a591e529a1dbd83c22b19fd3e57df6fb7d
+  HandyJSON: bc81fbeb62d65ae5d5942ed29bc4a8265d18c1e8
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
@@ -77,6 +81,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: dd8e117275418f29c349fcb283302b207fb097a8
+PODFILE CHECKSUM: 45ea803b80c01b46ea3afc2364111c3487f41b33
 
 COCOAPODS: 1.5.3

@@ -18,16 +18,17 @@ class CXStarTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var forkLabel: UILabel!
     var starModel:Repo?{
         didSet{
             
             self.nameLabel?.text = starModel?.name
             if let login = starModel?.owner?.login {
-                self.ownerLabel.text = "owner:" + login
+                self.ownerLabel.text = login
                 
             }
             self.descriptionLabel.text = starModel?.description
-            self.starsLabel.text = "Stars:" + (starModel?.stargazers_count!)!
+            self.starsLabel.text = starModel?.stargazers_count ?? "0"
             if let url = starModel?.owner?.avatar_url {
                 self.avatarImage.kf.setImage(with: URL(string:(url)))
                 
@@ -36,9 +37,9 @@ class CXStarTableViewCell: UITableViewCell {
             }
             if let language = starModel?.language{
                 print("language is \(language)")
-                self.languageLabel.text = "Language:" + language
-
+                self.languageLabel.text = language
             }
+            forkLabel.text = starModel?.forks_count ?? "0"
         }
     }
     override func awakeFromNib() {

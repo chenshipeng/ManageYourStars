@@ -75,17 +75,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUu-yn-fte">
+                        <rect key="frame" x="419" y="17.5" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="p23-6R-ppJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="1fX-hi-Q8h"/>
                     <constraint firstItem="69T-pn-ded" firstAttribute="leading" secondItem="p23-6R-ppJ" secondAttribute="trailing" constant="10" id="6pw-UT-lfx"/>
                     <constraint firstItem="kWt-P6-DwM" firstAttribute="leading" secondItem="69T-pn-ded" secondAttribute="leading" id="7ar-kj-xQR"/>
                     <constraint firstItem="7u0-Of-Zgb" firstAttribute="top" secondItem="Ana-lR-bSj" secondAttribute="bottom" constant="10" id="I1z-qo-Ymz"/>
+                    <constraint firstItem="iUu-yn-fte" firstAttribute="centerY" secondItem="69T-pn-ded" secondAttribute="centerY" id="MOz-XB-W15"/>
                     <constraint firstItem="UxM-66-bTB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="OWy-Kq-OV1"/>
                     <constraint firstItem="Ana-lR-bSj" firstAttribute="top" secondItem="UxM-66-bTB" secondAttribute="bottom" constant="10" id="QMv-we-r8E"/>
                     <constraint firstItem="69T-pn-ded" firstAttribute="top" secondItem="p23-6R-ppJ" secondAttribute="top" id="SkL-Nh-Kt6"/>
                     <constraint firstAttribute="trailing" secondItem="UxM-66-bTB" secondAttribute="trailing" id="TKG-9R-cML"/>
                     <constraint firstItem="p23-6R-ppJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="UIT-ut-H2n"/>
+                    <constraint firstAttribute="trailing" secondItem="iUu-yn-fte" secondAttribute="trailing" constant="15" id="Vvc-fR-h1t"/>
                     <constraint firstItem="kWt-P6-DwM" firstAttribute="top" secondItem="69T-pn-ded" secondAttribute="bottom" constant="10" id="Y2q-re-mv3"/>
                     <constraint firstItem="osP-Jy-5QB" firstAttribute="top" secondItem="wPC-x3-iSi" secondAttribute="bottom" constant="6" id="ZRR-eQ-kOU"/>
                     <constraint firstItem="Ana-lR-bSj" firstAttribute="leading" secondItem="wAr-os-FJp" secondAttribute="trailing" constant="15" id="eun-eM-OFD"/>
@@ -103,7 +111,10 @@
                 <outlet property="aNameLabel" destination="kWt-P6-DwM" id="gaW-aA-HrS"/>
                 <outlet property="avatarImageView" destination="p23-6R-ppJ" id="Qbs-Q9-4D0"/>
                 <outlet property="followerCountLabel" destination="wPC-x3-iSi" id="5kk-UI-eCl"/>
+                <outlet property="followersCountDesLabel" destination="osP-Jy-5QB" id="FXs-Te-uwz"/>
+                <outlet property="followingCountDesLabel" destination="7u0-Of-Zgb" id="DBE-xR-r2Y"/>
                 <outlet property="followingCountLabel" destination="Ana-lR-bSj" id="mmj-JT-3yh"/>
+                <outlet property="locationLabel" destination="iUu-yn-fte" id="4IH-98-SUA"/>
                 <outlet property="loginLabel" destination="69T-pn-ded" id="Pyb-89-bzj"/>
             </connections>
             <point key="canvasLocation" x="106.5" y="107.5"/>

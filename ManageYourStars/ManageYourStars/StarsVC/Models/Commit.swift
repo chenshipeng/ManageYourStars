@@ -18,6 +18,10 @@ struct Commit: HandyJSON {
     var distinct: Bool?
     var url: String?
     var sha: String?
+    var comment_count: Int?
+    var tree: Tree?
+    var committer: Committer?
+    var verification: Verification?
 }
 
 
