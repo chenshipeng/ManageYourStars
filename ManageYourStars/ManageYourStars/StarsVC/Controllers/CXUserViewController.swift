@@ -15,12 +15,14 @@ class CXUserViewController: UIViewController {
     var login:String?
     var tableView = UITableView()
     var userModel = CXUserModel()
+    var isFollowing:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         self.setupUI()
         self.firstLoadData()
+//        checkIfFollowing()
         
         
         
@@ -75,8 +77,106 @@ class CXUserViewController: UIViewController {
             }
         })
     }
+    func checkIfFollowing(){
+        //进入个人详情页面
+        guard let selfLogin = UserDefaults.standard.object(forKey: "currentLogin") ,let currentLogin = self.login  else {
+            return
+        }
+        let url = "https://api.github.com/users/" + "\(selfLogin)/following/" + "\(String(describing: currentLogin))"
+        
+        print("url is \(url)")
+        
+        SVProgressHUD.show()
+        Alamofire.request(url, method: .get, parameters: nil).responseString(completionHandler: { (response) in
+            
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                if response.response?.statusCode == 204 {
+                    self.isFollowing = true
+                }else if response.response?.statusCode == 404 {
+                    self.isFollowing = false
+                }
+                self.addRightItem()
+            }else{
+                if response.response?.statusCode == 204 {
+                    self.isFollowing = true
+                }else if response.response?.statusCode == 404 {
+                    self.isFollowing = false
+                }
+                self.addRightItem()
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+            }
+        })
+    }
+    @objc func followUser()  {
+        if let follow = self.isFollowing ,follow == true{
+            guard let token = UserDefaults.standard.object(forKey: "access_token") ,let currentLogin = self.login  else {
+                return
+            }
+            let url = "https://api.github.com/user/following" + "/\(String(describing: currentLogin))" + "?access_token=\(String(describing: token))"
+            
+            print("url is \(url)")
+            
+            SVProgressHUD.show()
+            
+            Alamofire.request(url, method: .delete, parameters: nil,encoding: URLEncoding.queryString).responseString(completionHandler: { (response) in
+                
+                if response.result.isSuccess {
+                    SVProgressHUD.dismiss()
+                    if response.response?.statusCode == 204 {
+                        self.isFollowing = !self.isFollowing!
+                        self.addRightItem()
+                    }
+                }else{
+                    if response.response?.statusCode == 204 {
+                        self.isFollowing = !self.isFollowing!
+                        self.addRightItem()
+                    }
+                    SVProgressHUD.dismiss()
+                    SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                }
+            })
+        }else{
+            guard let token = UserDefaults.standard.object(forKey: "access_token") ,let currentLogin = self.login  else {
+                return
+            }
+            let url = "https://api.github.com/user/following" + "/\(String(describing: currentLogin))" + "?access_token=\(String(describing: token))"
+            
+            print("url is \(url)")
+            
+            SVProgressHUD.show()
+            Alamofire.request(url, method: .put, parameters: nil,encoding: URLEncoding.queryString).responseString(completionHandler: { (response) in
+                
+                if response.result.isSuccess {
+                    SVProgressHUD.dismiss()
+                    if response.response?.statusCode == 204 {
+                        self.isFollowing = !self.isFollowing!
+                        self.addRightItem()
+                    }
+                }else{
+                    if response.response?.statusCode == 204 {
+                        self.isFollowing = !self.isFollowing!
+                        self.addRightItem()
 
-    
+                    }
+                    SVProgressHUD.dismiss()
+                    SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                }
+            })
+        }
+        
+    }
+
+    func addRightItem() {
+        if let follow = isFollowing,follow == true {
+            let bar = UIBarButtonItem.init(title: "unfollow", style: .plain, target: self, action: #selector(followUser))
+            navigationItem.rightBarButtonItem = bar
+        }else{
+            let bar = UIBarButtonItem.init(title: "follow", style: .plain, target: self, action: #selector(followUser))
+            navigationItem.rightBarButtonItem = bar
+        }
+    }
     
 
     @IBAction func pop(_ sender: Any) {

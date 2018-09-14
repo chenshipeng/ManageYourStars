@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "default_picture.png",
+      "filename" : "back.png",
       "scale" : "1x"
     },
     {

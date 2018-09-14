@@ -28,7 +28,10 @@ class CXYourStarsViewController: UITableViewController {
 //            self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
 //        }
         self.navigationController?.navigationBar.tintColor = .black
-//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: self.navigationItem.backBarButtonItem?.style ?? .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: self.navigationItem.backBarButtonItem?.style ?? .plain, target: nil, action: nil)
+//        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named:"back")
+//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named:"back")
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200
         self.tableView.tableFooterView = UIView()

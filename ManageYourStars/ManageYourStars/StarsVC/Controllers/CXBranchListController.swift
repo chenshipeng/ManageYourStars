@@ -19,6 +19,7 @@ class CXBranchListController: UITableViewController {
     var isRefresh = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = starModel?.name
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "branchCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension

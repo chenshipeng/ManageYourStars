@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,16 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1104" translatesAutoresizingMaskIntoConstraints="NO" id="onn-Db-Wa0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="FlJ-Pq-gpK">
+                                <rect key="frame" x="147" y="293.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="R60-GJ-BMj"/>
+                                    <constraint firstAttribute="height" constant="80" id="m4q-li-zcI"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="onn-Db-Wa0" secondAttribute="trailing" id="9T6-hp-v7q"/>
-                            <constraint firstItem="onn-Db-Wa0" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZK9-oc-tK9"/>
-                            <constraint firstAttribute="bottom" secondItem="onn-Db-Wa0" secondAttribute="bottom" id="lyG-o4-eMg"/>
-                            <constraint firstItem="onn-Db-Wa0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="wjN-2z-W27"/>
+                            <constraint firstItem="FlJ-Pq-gpK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5p9-Tq-Zvx"/>
+                            <constraint firstItem="FlJ-Pq-gpK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tpR-nn-t7G"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -43,6 +45,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1104" width="414" height="736"/>
+        <image name="github" width="1024" height="1024"/>
     </resources>
 </document>

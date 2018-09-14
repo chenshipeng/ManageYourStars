@@ -77,7 +77,7 @@ class CXLoginViewController: UIViewController {
         let params = ["client_id":"d67855104c8fb56c68e0",
                       "client_secret":"8ea0db7827776e711f65e6520f59b4a4c080af6d",
                       "redirect_uri":"https://github.com/chenshipeng",
-                      "code":code]
+                      "code":code,"state":"1995"]
         
         SVProgressHUD.show()
         Alamofire.request(url, method: .get, parameters: params).responseString { (response) in
@@ -85,8 +85,9 @@ class CXLoginViewController: UIViewController {
             if (response.value) != nil {
                 SVProgressHUD.dismiss()
                 let string = response.value
+                print("response is \(String(describing: response.result.value))")
                 if let str = string{
-                    for i in 0..<str.characters.count - 13 {
+                    for i in 0..<str.count - 13 {
                         if (str as NSString).substring(with: NSMakeRange(i, 13)) == "access_token=" {
                             let token = (str as NSString).substring(with: NSMakeRange(i + 13, 40))
                             print("token is \(token)")
@@ -135,7 +136,7 @@ extension CXLoginViewController:UIWebViewDelegate{
         if let url = webView.request?.url?.absoluteString {
             
             print("url is \(url)")
-            for i in 0..<url.characters.count - 5 {
+            for i in 0..<url.count - 5 {
                 
                 
                 

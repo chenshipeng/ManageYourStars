@@ -20,7 +20,7 @@ class CXCommitListController: UITableViewController {
     var isRefresh = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = starModel?.name
         tableView.register(UINib.init(nibName: "CXCommitListCell", bundle: nil), forCellReuseIdentifier: "CXCommitListCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200
@@ -53,7 +53,7 @@ class CXCommitListController: UITableViewController {
         
         
         if let login =  starModel?.owner?.login,let repoName = starModel?.name,let bran = branch?.commit?.sha{
-            let url = "https://api.github.com/repos/" + "\(login)/\(repoName)/commits" + "?sha=\(String(describing: bran))"
+            let url = "https://api.github.com/repos/" + "\(login)/\(repoName)/commits" + "?sha=\(String(describing: bran))" + "&page=\(page)"
             SVProgressHUD.show()
             print("stared url is \(url)")
             isRefresh = true

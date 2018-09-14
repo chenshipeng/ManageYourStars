@@ -173,7 +173,7 @@
 		9CA49E25214A387A00305063 /* CXCommitListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXCommitListCell.swift; sourceTree = "<group>"; };
 		9CA49E26214A387A00305063 /* CXCommitListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXCommitListCell.xib; sourceTree = "<group>"; };
 		9CA49E29214A3F7300305063 /* InnerCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCommit.swift; sourceTree = "<group>"; };
-		9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageYourStars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CB5EF8D1F3AE7F600819E9F /* CXHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CXHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB5EF951F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CB5EF9A1F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 		9CB5EF8E1F3AE7F600819E9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */,
+				9CB5EF8D1F3AE7F600819E9F /* CXHub.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -395,9 +395,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9CB5EF8C1F3AE7F600819E9F /* ManageYourStars */ = {
+		9CB5EF8C1F3AE7F600819E9F /* CXHub */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CB5EF9F1F3AE7F700819E9F /* Build configuration list for PBXNativeTarget "ManageYourStars" */;
+			buildConfigurationList = 9CB5EF9F1F3AE7F700819E9F /* Build configuration list for PBXNativeTarget "CXHub" */;
 			buildPhases = (
 				74400144C64912ABA8B08502 /* [CP] Check Pods Manifest.lock */,
 				9CB5EF891F3AE7F600819E9F /* Sources */,
@@ -409,9 +409,9 @@
 			);
 			dependencies = (
 			);
-			name = ManageYourStars;
+			name = CXHub;
 			productName = ManageYourStars;
-			productReference = 9CB5EF8D1F3AE7F600819E9F /* ManageYourStars.app */;
+			productReference = 9CB5EF8D1F3AE7F600819E9F /* CXHub.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -432,7 +432,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9CB5EF881F3AE7F600819E9F /* Build configuration list for PBXProject "ManageYourStars" */;
+			buildConfigurationList = 9CB5EF881F3AE7F600819E9F /* Build configuration list for PBXProject "CXHub" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -445,7 +445,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9CB5EF8C1F3AE7F600819E9F /* ManageYourStars */,
+				9CB5EF8C1F3AE7F600819E9F /* CXHub */,
 			);
 		};
 /* End PBXProject section */
@@ -793,7 +793,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9CB5EF881F3AE7F600819E9F /* Build configuration list for PBXProject "ManageYourStars" */ = {
+		9CB5EF881F3AE7F600819E9F /* Build configuration list for PBXProject "CXHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CB5EF9D1F3AE7F700819E9F /* Debug */,
@@ -802,7 +802,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CB5EF9F1F3AE7F700819E9F /* Build configuration list for PBXNativeTarget "ManageYourStars" */ = {
+		9CB5EF9F1F3AE7F700819E9F /* Build configuration list for PBXNativeTarget "CXHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CB5EFA01F3AE7F700819E9F /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CB5EF8C1F3AE7F600819E9F"
-               BuildableName = "ManageYourStars.app"
-               BlueprintName = "ManageYourStars"
-               ReferencedContainer = "container:ManageYourStars.xcodeproj">
+               BuildableName = "CXHub.app"
+               BlueprintName = "CXHub"
+               ReferencedContainer = "container:CXHub.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CB5EF8C1F3AE7F600819E9F"
-            BuildableName = "ManageYourStars.app"
-            BlueprintName = "ManageYourStars"
-            ReferencedContainer = "container:ManageYourStars.xcodeproj">
+            BuildableName = "CXHub.app"
+            BlueprintName = "CXHub"
+            ReferencedContainer = "container:CXHub.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CB5EF8C1F3AE7F600819E9F"
-            BuildableName = "ManageYourStars.app"
-            BlueprintName = "ManageYourStars"
-            ReferencedContainer = "container:ManageYourStars.xcodeproj">
+            BuildableName = "CXHub.app"
+            BlueprintName = "CXHub"
+            ReferencedContainer = "container:CXHub.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CB5EF8C1F3AE7F600819E9F"
-            BuildableName = "ManageYourStars.app"
-            BlueprintName = "ManageYourStars"
-            ReferencedContainer = "container:ManageYourStars.xcodeproj">
+            BuildableName = "CXHub.app"
+            BlueprintName = "CXHub"
+            ReferencedContainer = "container:CXHub.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
