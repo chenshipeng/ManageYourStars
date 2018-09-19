@@ -1,13 +1,12 @@
 PODS:
   - Alamofire (4.7.2)
   - EZSwiftExtensions (2.0)
-  - HandyJSON (4.1.3)
+  - HandyJSON (4.2.0)
   - Hero (1.2.0)
   - ImageViewer (5.0.0)
   - Kingfisher (4.8.0)
   - MJRefresh (3.1.15.3)
   - Onboard (2.3.3)
-  - RAMAnimatedTabBarController (3.2.0)
   - Realm (3.5.0):
     - Realm/Headers (= 3.5.0)
   - Realm/Headers (3.5.0)
@@ -16,7 +15,6 @@ PODS:
     - Reusable/View (= 4.0.2)
   - Reusable/Storyboard (4.0.2)
   - Reusable/View (4.0.2)
-  - SABlurImageView (4.0.0)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.5)
   - SwiftDate (5.0.7)
@@ -26,16 +24,14 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - EZSwiftExtensions
-  - HandyJSON (~> 4.1.3)
+  - HandyJSON (~> 4.2.0)
   - Hero
   - ImageViewer
   - Kingfisher
   - MJRefresh
   - Onboard
-  - RAMAnimatedTabBarController
   - Realm
   - Reusable
-  - SABlurImageView
   - SnapKit
   - SVProgressHUD
   - SwiftDate (~> 5.0.4)
@@ -52,10 +48,8 @@ SPEC REPOS:
     - Kingfisher
     - MJRefresh
     - Onboard
-    - RAMAnimatedTabBarController
     - Realm
     - Reusable
-    - SABlurImageView
     - SnapKit
     - SVProgressHUD
     - SwiftDate
@@ -65,22 +59,20 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   EZSwiftExtensions: f73648a591e529a1dbd83c22b19fd3e57df6fb7d
-  HandyJSON: bc81fbeb62d65ae5d5942ed29bc4a8265d18c1e8
+  HandyJSON: 9dfc026c7d7adc1f0f8ba8b181495f0e0763b0f4
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   Onboard: 4d6e943e20bdd6bc229df967a347dd7514bc2a6f
-  RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
   Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
   Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
-  SABlurImageView: 51d5c55779630cf8a6ad71a2dea2812902aa16cc
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftDate: f053fb89250c59af5eff777f3b832d2b9dd57403
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 45ea803b80c01b46ea3afc2364111c3487f41b33
+PODFILE CHECKSUM: 758e2125b60ca020dfe3e147e3f4a9436ee4d2e3
 
 COCOAPODS: 1.5.3

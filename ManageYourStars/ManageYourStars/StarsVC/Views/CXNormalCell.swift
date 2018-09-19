@@ -14,7 +14,8 @@ class CXNormalCell: UITableViewCell {
     @IBOutlet weak var desLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        desImageView.layer.cornerRadius = 15.0
+        desImageView.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -57,19 +57,19 @@ class CXMoreViewController: UITableViewController {
                 cell.textLabel?.text = userName as? String
                 if let avatar_url = UserDefaults.standard.object(forKey: "avatar_url"){
                     cell.imageView?.kf.setImage(with: URL(string:avatar_url as! String))
+                    cell.imageView?.layer.cornerRadius = 22
+                    cell.imageView?.layer.masksToBounds = true
 
                 }
             }else{
-                cell.textLabel?.text = "登录"
+                cell.textLabel?.text = "Login"
                 cell.imageView?.image = nil
 
             }
         case 1:
-            cell.textLabel?.text = "关于"
+            cell.textLabel?.text = "Anout Me"
         case 2:
-            cell.textLabel?.text = "反馈"
-        case 3:
-            cell.textLabel?.text = "退出登录"
+            cell.textLabel?.text = "Logout"
         default:
             cell.textLabel?.text = ""
         }
@@ -113,10 +113,10 @@ class CXMoreViewController: UITableViewController {
             
         }else if indexPath.section == 1 {
             pushToAboutMe()
-        }else if indexPath.section == 3 {
-            let alert = UIAlertController(title: "Warnning", message: "确定要退出吗？", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { (action) in
+        }else if indexPath.section == 2 {
+            let alert = UIAlertController(title: "Warnning", message: "Want to logout？", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                 self.doLogout()
             }))
             self.present(alert, animated: true, completion: nil)

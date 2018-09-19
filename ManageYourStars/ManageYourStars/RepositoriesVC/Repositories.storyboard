@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DWg-x8-OUg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DWg-x8-OUg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,7 +13,7 @@
         <scene sceneID="IiU-ha-nOR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DWg-x8-OUg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Repositories" image="github160" id="XFm-YR-AzI"/>
+                    <tabBarItem key="tabBarItem" title="Repositories" image="tab-repository" id="XFm-YR-AzI"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RWJ-Ih-lI7">
@@ -32,13 +32,13 @@
         <!--Repositories-->
         <scene sceneID="nqO-K6-gEC">
             <objects>
-                <tableViewController id="gQp-Zw-XYe" customClass="CXRepositoriesTableViewController" customModule="ManageYourStars" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gQp-Zw-XYe" customClass="CXRepositoriesTableViewController" customModule="CXHub" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6BH-0M-H69">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoCell" rowHeight="124" id="jF2-uS-t0Z" customClass="CXRespositoriesTableViewCell" customModule="ManageYourStars" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoCell" rowHeight="124" id="jF2-uS-t0Z" customClass="CXRespositoriesTableViewCell" customModule="CXHub" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jF2-uS-t0Z" id="5PQ-ds-9y9">
@@ -61,20 +61,20 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dpf-nQ-Zvi">
-                                            <rect key="frame" x="8" y="31.5" width="60" height="60.5"/>
+                                            <rect key="frame" x="8" y="32" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="NTj-ES-siF"/>
                                                 <constraint firstAttribute="width" constant="60" id="ZaF-ij-o3O"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xu9-5K-e5L">
-                                            <rect key="frame" x="82" y="35" width="200" height="53"/>
+                                            <rect key="frame" x="82" y="35" width="200" height="53.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xq-hJ-B9e">
-                                            <rect key="frame" x="292" y="53" width="68" height="17"/>
+                                            <rect key="frame" x="292" y="53.5" width="68" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="Yla-gf-gGB"/>
                                             </constraints>
@@ -130,6 +130,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="github160" width="30" height="30"/>
+        <image name="tab-repository" width="21" height="21"/>
     </resources>
 </document>

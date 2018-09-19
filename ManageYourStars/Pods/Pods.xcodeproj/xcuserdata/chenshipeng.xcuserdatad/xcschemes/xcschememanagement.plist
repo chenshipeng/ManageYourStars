@@ -44,12 +44,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ManageYourStars.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RAMAnimatedTabBarController.xcscheme</key>
+		<key>Pods-CXHub.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -60,11 +55,6 @@
 			<false/>
 		</dict>
 		<key>Reusable.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SABlurImageView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

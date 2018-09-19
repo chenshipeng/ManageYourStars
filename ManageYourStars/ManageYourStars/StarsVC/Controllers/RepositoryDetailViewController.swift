@@ -27,7 +27,7 @@ class RepositoryDetailViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        checkIfStaredRepo()
+//        checkIfStaredRepo()
         getReadme()
 
         

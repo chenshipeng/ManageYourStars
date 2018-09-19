@@ -26,7 +26,7 @@ class CXEventsController: UITableViewController {
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.refreshData(loadMore:false)
         })
-        self.tableView.mj_header.beginRefreshing()
+        self.refreshData(loadMore:false)
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.refreshData(loadMore:true)
         })

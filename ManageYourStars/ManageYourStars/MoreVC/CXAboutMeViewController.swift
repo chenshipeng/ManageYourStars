@@ -10,11 +10,31 @@ import UIKit
 
 class CXAboutMeViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var versionLabel: UILabel!
+    @IBOutlet weak var githubLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "About Me"
-        // Do any additional setup after loading the view.
+        
+        
+        nameLabel.addTapGesture { (tap) in
+            let vc = CXUserViewController()
+            vc.login = "chenshipeng"
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        if let version =  Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String{
+            versionLabel.text = "CXHub\(version)"
+        }
+        githubLabel.addTapGesture { (tap) in
+            let vc = CXWebController()
+            vc.url = "https://github.com/chenshipeng"
+            vc.title = "chenshipeng"
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

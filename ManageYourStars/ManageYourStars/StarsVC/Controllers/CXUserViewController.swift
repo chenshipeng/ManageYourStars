@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 import Kingfisher
-import SABlurImageView
 class CXUserViewController: UIViewController {
     var login:String?
     var tableView = UITableView()
@@ -240,23 +239,35 @@ extension CXUserViewController:UITableViewDelegate,UITableViewDataSource{
             cell.followerCountLabel.addTapGesture { (tap) in
                 let vc = CXUserListController()
                 vc.action = self.userModel.followers_url
+                vc.title = "Followers"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             cell.followersCountDesLabel.addTapGesture { (tap) in
                 let vc = CXUserListController()
                 vc.action = self.userModel.followers_url
+                vc.title = "Followers"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
             cell.followingCountLabel.text = userModel.following
             cell.followingCountLabel.addTapGesture { (tap) in
                 let vc = CXUserListController()
-                vc.action = self.userModel.following_url
+                guard let currentLogin = self.userModel.login else {
+                    return
+                }
+                let url = "https://api.github.com/users" + "/\(String(describing: currentLogin))" + "/following"
+                vc.action = url
+                vc.title = "Following"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             cell.followingCountDesLabel.addTapGesture { (tap) in
                 let vc = CXUserListController()
-                vc.action = self.userModel.followers_url
+                guard let currentLogin = self.userModel.login else {
+                    return
+                }
+                let url = "https://api.github.com/users" + "/\(String(describing: currentLogin))" + "/following"
+                vc.action = url
+                vc.title = "Following"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             cell.locationLabel.text = userModel.location

@@ -1,0 +1,6 @@
+framework module Pods_CXHub {
+  umbrella header "Pods-CXHub-umbrella.h"
+
+  export *
+  module * { export * }
+}
