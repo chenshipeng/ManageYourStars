@@ -18,7 +18,7 @@ class CXLoginViewController: UIViewController {
         self.title = "Login"
         
         
-        let url = "https://github.com/login/oauth/authorize?client_id=d67855104c8fb56c68e0&redirect_uri=https://github.com/chenshipeng&scpoe=user,public_repo"
+        let url = "https://github.com/login/oauth/authorize?client_id=d67855104c8fb56c68e0&state=1995&redirect_uri=https://github.com/chenshipeng&scpoe=user,public_repo"
         let webView = UIWebView()
         webView.delegate = self
         view.addSubview(webView)
@@ -77,10 +77,10 @@ class CXLoginViewController: UIViewController {
         let params = ["client_id":"d67855104c8fb56c68e0",
                       "client_secret":"8ea0db7827776e711f65e6520f59b4a4c080af6d",
                       "redirect_uri":"https://github.com/chenshipeng",
-                      "code":code,"state":"1995"]
+                      "code":code,"state":"1"]
         
         SVProgressHUD.show()
-        Alamofire.request(url, method: .get, parameters: params).responseString { (response) in
+        Alamofire.request(url, method: .post, parameters: params).responseString { (response) in
             print(response)
             if (response.value) != nil {
                 SVProgressHUD.dismiss()

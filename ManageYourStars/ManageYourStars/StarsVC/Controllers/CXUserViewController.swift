@@ -21,7 +21,7 @@ class CXUserViewController: UIViewController {
        
         self.setupUI()
         self.firstLoadData()
-//        checkIfFollowing()
+        checkIfFollowing()
         
         
         
@@ -113,13 +113,14 @@ class CXUserViewController: UIViewController {
             guard let token = UserDefaults.standard.object(forKey: "access_token") ,let currentLogin = self.login  else {
                 return
             }
-            let url = "https://api.github.com/user/following" + "/\(String(describing: currentLogin))" + "?access_token=\(String(describing: token))"
-            
+            let url = "https://api.github.com/user/following" + "/\(String(describing: currentLogin))"
+            let params = ["access_token":UserDefaults.standard.object(forKey: "access_token")!]
+
             print("url is \(url)")
             
             SVProgressHUD.show()
             
-            Alamofire.request(url, method: .delete, parameters: nil,encoding: URLEncoding.queryString).responseString(completionHandler: { (response) in
+            Alamofire.request(url, method: .delete, parameters: params,encoding: URLEncoding.queryString).responseString(completionHandler: { (response) in
                 
                 if response.result.isSuccess {
                     SVProgressHUD.dismiss()
@@ -140,12 +141,13 @@ class CXUserViewController: UIViewController {
             guard let token = UserDefaults.standard.object(forKey: "access_token") ,let currentLogin = self.login  else {
                 return
             }
-            let url = "https://api.github.com/user/following" + "/\(String(describing: currentLogin))" + "?access_token=\(String(describing: token))"
-            
+            let url = "https://api.github.com/user/following" + "/\(String(describing: currentLogin))"
+            let params = ["access_token":UserDefaults.standard.object(forKey: "access_token")!]
+
             print("url is \(url)")
             
             SVProgressHUD.show()
-            Alamofire.request(url, method: .put, parameters: nil,encoding: URLEncoding.queryString).responseString(completionHandler: { (response) in
+            Alamofire.request(url, method: .put, parameters: params).responseString(completionHandler: { (response) in
                 
                 if response.result.isSuccess {
                     SVProgressHUD.dismiss()
