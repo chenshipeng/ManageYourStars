@@ -16,6 +16,7 @@ class RepositoryDetailViewController: UIViewController {
 
     public var starModel:Repo?
     private var readme:Readme?
+    var url:String?
     var starred = false
     private var tableView:UITableView = UITableView()
     
@@ -25,12 +26,35 @@ class RepositoryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupUI()
-//        checkIfStaredRepo()
+        view.backgroundColor = .white
+        getRepoInfo()
         getReadme()
 
         
+    }
+    func getRepoInfo(){
+        if let url = url
+        {
+            SVProgressHUD.show()
+            Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
+                if response.result.isSuccess {
+                    SVProgressHUD.dismiss()
+                    if let array = response.result.value as? Dictionary<String, Any> {
+                        if let repo = Repo.deserialize(from: array){
+                            self.starModel = repo
+                        }
+                    }
+                    self.setupUI()
+                    self.tableView.reloadData()
+                
+                }else{
+                    SVProgressHUD.dismiss()
+                    SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                    print("error is \(String(describing: response.result.error))")
+                    
+                }
+            })
+        }
     }
     func checkIfStaredRepo() {
         guard let currentLogin = self.starModel?.owner?.login,let name = starModel?.name ,let token=UserDefaults.standard.object(forKey: "access_token") as? String else {

@@ -120,7 +120,7 @@ class CXRepositoriesTableViewController: UITableViewController {
         let model:Repo = self.repositories[indexPath.row]!
 
         let vc = RepositoryDetailViewController()
-        vc.starModel = model
+        vc.url = model.url
 //        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

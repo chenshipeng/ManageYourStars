@@ -134,7 +134,7 @@ class CXRepositoriesListController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc: RepositoryDetailViewController = RepositoryDetailViewController()
         let model:Repo = self.repositories[indexPath.row]!
-        vc.starModel = model
+        vc.url = model.url
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         

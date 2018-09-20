@@ -110,10 +110,14 @@ class CXNewsController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CXUserViewController()
-        vc.login = userSvents[indexPath.row]?.actor?.login
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let model:Repo = self.userSvents[indexPath.row]?.repo{
+            let vc = RepositoryDetailViewController()
+            vc.url = model.url
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
     }
     
     
