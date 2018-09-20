@@ -90,6 +90,8 @@
 		9CDE52DC2151DD6D00B17E34 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDE52DB2151DD6D00B17E34 /* News.storyboard */; };
 		9CDE52DE2151DDC800B17E34 /* CXNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52DD2151DDC800B17E34 /* CXNewsController.swift */; };
 		9CDE52E02151EE3300B17E34 /* CXWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52DF2151EE3300B17E34 /* CXWebController.swift */; };
+		9CDE52E22153928800B17E34 /* CXTrendingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52E12153928800B17E34 /* CXTrendingController.swift */; };
+		9CDE52E42153A47B00B17E34 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52E32153A47B00B17E34 /* Trending.swift */; };
 		9CF6C0A91F638B350013A4BE /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0A71F638B350013A4BE /* RepositoryCell.swift */; };
 		9CF6C0AA1F638B350013A4BE /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */; };
 		9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */; };
@@ -187,6 +189,8 @@
 		9CDE52DB2151DD6D00B17E34 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		9CDE52DD2151DDC800B17E34 /* CXNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXNewsController.swift; sourceTree = "<group>"; };
 		9CDE52DF2151EE3300B17E34 /* CXWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXWebController.swift; sourceTree = "<group>"; };
+		9CDE52E12153928800B17E34 /* CXTrendingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXTrendingController.swift; sourceTree = "<group>"; };
+		9CDE52E32153A47B00B17E34 /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		9CF6C0A71F638B350013A4BE /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 			children = (
 				9C08E8951F59386E00F9F8F1 /* Discovery.storyboard */,
 				9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */,
+				9CDE52E32153A47B00B17E34 /* Trending.swift */,
+				9CDE52E12153928800B17E34 /* CXTrendingController.swift */,
 			);
 			path = DiscoveryVC;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CXHub/Pods-CXHub-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
@@ -532,6 +539,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwiftExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
@@ -585,6 +593,7 @@
 				9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */,
 				9C199CEF214639E70088E9EE /* EventMessage.swift in Sources */,
 				9C199CF5214673B20088E9EE /* PullRequest.swift in Sources */,
+				9CDE52E22153928800B17E34 /* CXTrendingController.swift in Sources */,
 				9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */,
 				9CDE52E02151EE3300B17E34 /* CXWebController.swift in Sources */,
 				9C199CD7214166C20088E9EE /* Actor.swift in Sources */,
@@ -608,6 +617,7 @@
 				9C3D391B1F48069A00920923 /* CXLoginViewController.swift in Sources */,
 				9CDE52DE2151DDC800B17E34 /* CXNewsController.swift in Sources */,
 				9C08E89B1F59397900F9F8F1 /* CXAboutMeViewController.swift in Sources */,
+				9CDE52E42153A47B00B17E34 /* Trending.swift in Sources */,
 				9C199D0721476D060088E9EE /* CXIssueListController.swift in Sources */,
 				9C0C1C001F49207500466385 /* CXProfileLoginTableViewCell.swift in Sources */,
 				9CA49E27214A387A00305063 /* CXCommitListCell.swift in Sources */,

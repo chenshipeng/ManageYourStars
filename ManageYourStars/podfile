@@ -17,6 +17,7 @@ pod 'SVProgressHUD'
 pod 'HandyJSON','~>4.2.0'
 pod 'MJRefresh'
 pod 'EZSwiftExtensions'
+pod 'BetterSegmentedControl', '~> 1.0'
 end
 post_install do |installer|
     installer.pods_project.targets.each do |target|
