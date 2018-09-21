@@ -23,7 +23,17 @@ class CXLoginViewController: UIViewController {
         webView.delegate = self
         view.addSubview(webView)
         webView.snp.makeConstraints { (make) in
-            make.edges.equalTo(view)
+            if #available(iOS 11.0, *){
+                make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+                make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
+                make.right.equalTo(self.view.safeAreaLayoutGuide.snp.right)
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(34)
+            }else{
+                make.edges.equalTo(view)
+            }
+        }
+        if #available(iOS 11.0, *) {
+            webView.scrollView.contentInsetAdjustmentBehavior = .never
         }
         webView.loadRequest(URLRequest(url: URL(string: url)!))
     }

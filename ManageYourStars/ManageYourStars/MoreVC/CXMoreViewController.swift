@@ -16,6 +16,7 @@ class CXMoreViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "More"
+        view.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = .black
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: self.navigationItem.backBarButtonItem?.style ?? .plain, target: nil, action: nil)
         
@@ -59,17 +60,21 @@ class CXMoreViewController: UITableViewController {
                     cell.imageView?.kf.setImage(with: URL(string:avatar_url as! String))
                     cell.imageView?.layer.cornerRadius = 22
                     cell.imageView?.layer.masksToBounds = true
+                    cell.accessoryType = .none
 
                 }
             }else{
                 cell.textLabel?.text = "Login"
                 cell.imageView?.image = nil
+                cell.accessoryType = .disclosureIndicator
 
             }
         case 1:
-            cell.textLabel?.text = "Anout Me"
+            cell.textLabel?.text = "About Me"
+            cell.accessoryType = .disclosureIndicator
         case 2:
             cell.textLabel?.text = "Logout"
+            cell.accessoryType = .disclosureIndicator
         default:
             cell.textLabel?.text = ""
         }
