@@ -27,6 +27,22 @@ class EventAction: NSObject {
             
             return str
         //            break
+        case "MemberEvent":
+            var str = ""
+            if let user = event.actor?.login {
+                str += user
+            }
+            let action = event.payload?.action
+            str += action ?? ""
+            
+            if let user = event.payload?.member?.login {
+                str +=  " " + user + " as a collabortor to"
+            }
+            if let branch = event.repo?.name {
+                str += branch
+            }
+            
+            return str
         case "IssuesEvent":
             var str = ""
             if let user = event.actor?.login{

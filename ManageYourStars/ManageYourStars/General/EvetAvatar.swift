@@ -25,6 +25,8 @@ class EventAvatar{
             return UIImage(named: "create")
         case "PullRequestEvent":
             return UIImage(named: "pull-request")
+        case "MemberEvent":
+            return UIImage(named: "team")
         default:
             return nil
         }

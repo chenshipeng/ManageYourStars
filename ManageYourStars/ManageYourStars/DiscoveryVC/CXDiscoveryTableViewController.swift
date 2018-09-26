@@ -13,13 +13,17 @@ import Alamofire
 import Kingfisher
 import MJRefresh
 class CXDiscoveryTableViewController: UITableViewController {
-    var stars = [Repo?]()
+    var stars = [Trending?]()
     
     var page = 1
-    var language = "swift"
+    var language = ""
     var isRefresh = false
+    var type = "daily"
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.object(forKey: "language") != nil{
+            language = UserDefaults.standard.object(forKey: "language") as! String
+        }
 
         self.navigationController?.navigationBar.tintColor = .black
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: self.navigationItem.backBarButtonItem?.style ?? .plain, target: nil, action: nil)
@@ -31,7 +35,7 @@ class CXDiscoveryTableViewController: UITableViewController {
                                             selectedFont: UIFont(name: "Avenir", size: 13.0)!,
                                             selectedTextColor: .white),
             options:[.backgroundColor(.darkGray),
-                     .indicatorViewBackgroundColor(.red),
+                     .indicatorViewBackgroundColor(UIColor(r: 160.0, g: 32.0, b: 24.0, a: 1.0)),
                      .cornerRadius(3.0),
                      .bouncesOnChange(false)])
         control.addTarget(self, action: #selector(CXDiscoveryTableViewController.controlValueChanged(control:)), for: .valueChanged)
@@ -40,22 +44,25 @@ class CXDiscoveryTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200
         self.tableView.tableFooterView = UIView()
-        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            self.refreshData(loadMore:false)
-        })
-        if UserDefaults.standard.object(forKey: "access_token") != nil {
-            self.refreshData(loadMore:false)
-            
-        }
+        self.refreshData(loadMore:false,type: "daily")
         
-        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-            self.refreshData(loadMore:true)
-        })
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Lanaguage", style: .plain, target: self, action: #selector(CXDiscoveryTableViewController.selectLanguage))
+
+    }
+    @objc func selectLanguage(){
+        let vc = CXLanguageSelectController()
+        vc.languageBlock = {str in
+            self.language = str
+            self.refreshData(loadMore:false,type: self.type)
+        }
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     @objc func controlValueChanged(control:BetterSegmentedControl){
-        
+        type = ["daily","weekly","monthly"][control.index.toInt]
+        self.refreshData(loadMore: false, type: ["daily","weekly","monthly"][control.index.toInt])
     }
-    func refreshData(loadMore:Bool){
+    func refreshData(loadMore:Bool,type:String){
         
         if isRefresh {
             return
@@ -71,14 +78,11 @@ class CXDiscoveryTableViewController: UITableViewController {
         if UserDefaults.standard.object(forKey: "access_token") != nil {
             
             SVProgressHUD.show()
-            let url = "http://trending.codehub-app.com/v2/trending" + "?language=\(language)" + "&page=\(page)"
+            let url = "http://trending.codehub-app.com/v2/trending" + "?language=\(language)&since=\(type)"
             print("stared url is \(url)")
             isRefresh = true
             
             Alamofire.request(url, method: .get, parameters: nil).responseJSON(completionHandler: { (response) in
-                
-                self.tableView.mj_header.endRefreshing()
-                self.tableView.mj_footer.endRefreshing()
                 
                 if response.result.isSuccess {
                     if !loadMore {
@@ -87,7 +91,7 @@ class CXDiscoveryTableViewController: UITableViewController {
                     SVProgressHUD.dismiss()
                     if let array = response.result.value as? Array<Any> {
                         print("\(array.count)")
-                        if let arr = [Repo].deserialize(from: response.result.value as? NSArray){
+                        if let arr = [Trending].deserialize(from: response.result.value as? Array<Any>){
                             self.stars.append(contentsOf: arr)
                         }
                         print("stars count is \(self.stars.count)")
@@ -128,21 +132,19 @@ class CXDiscoveryTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "starsCell", for: indexPath) as! CXStarTableViewCell
-        
-        let model:Repo = self.stars[indexPath.row]!
-        cell.starModel = model
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trendingCell", for: indexPath) as! CXTrendingListCell
+        let model:Trending = self.stars[indexPath.row]!
+        cell.trendingModel = model
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc: RepositoryDetailViewController = RepositoryDetailViewController()
-        let model:Repo = self.stars[indexPath.row]!
+        let model:Trending = self.stars[indexPath.row]!
         vc.url = model.url
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
-        
         
     }
     

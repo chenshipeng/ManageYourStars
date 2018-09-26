@@ -12,14 +12,14 @@ struct Trending: HandyJSON {
     var pulls_url: String?
     var subscribers_url: String?
     var tags_url: String?
-    var open_issues: Int?
+    var open_issues: String?
     var has_projects: Bool?
     var clone_url: String?
-    var size: Int?
+    var size: String?
     var git_url: String?
     var git_tags_url: String?
     var subscribers_count: Int?
-    var id: Int?
+    var id: String?
     var default_branch: String?
     var issue_events_url: String?
     var mirror_url: Any?
@@ -39,23 +39,23 @@ struct Trending: HandyJSON {
     var license: License?
     var notifications_url: String?
     var ssh_url: String?
-    var stargazers_count: Int?
+    var stargazers_count: String?
     var issue_comment_url: String?
     var compare_url: String?
     var languages_url: String?
-    var watchers: Int?
+    var watchers: String?
     var milestones_url: String?
     var branches_url: String?
     var collaborators_url: String?
     var has_issues: Bool?
-    var network_count: Int?
+    var network_count: String?
     var archive_url: String?
     var created_at: String?
-    var forks: Int?
-    var open_issues_count: Int?
+    var forks: String?
+    var open_issues_count: String?
     var assignees_url: String?
     var labels_url: String?
-    var forks_count: Int?
+    var forks_count: String?
     var events_url: String?
     var blobs_url: String?
     var has_downloads: Bool?
@@ -79,7 +79,7 @@ struct Trending: HandyJSON {
     var has_wiki: Bool?
     var git_commits_url: String?
     var commits_url: String?
-    var watchers_count: Int?
+    var watchers_count: String?
     var organization: Owner?
     var deployments_url: String?
     var merges_url: String?

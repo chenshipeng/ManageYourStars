@@ -92,6 +92,9 @@
 		9CDE52E02151EE3300B17E34 /* CXWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52DF2151EE3300B17E34 /* CXWebController.swift */; };
 		9CDE52E22153928800B17E34 /* CXTrendingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52E12153928800B17E34 /* CXTrendingController.swift */; };
 		9CDE52E42153A47B00B17E34 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52E32153A47B00B17E34 /* Trending.swift */; };
+		9CDE52E6215B727F00B17E34 /* CXTrendingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52E5215B727F00B17E34 /* CXTrendingListCell.swift */; };
+		9CDE52E8215B78A300B17E34 /* CXLanguageSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52E7215B78A300B17E34 /* CXLanguageSelectController.swift */; };
+		9CDE52EA215B814400B17E34 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDE52E9215B814400B17E34 /* Member.swift */; };
 		9CF6C0A91F638B350013A4BE /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0A71F638B350013A4BE /* RepositoryCell.swift */; };
 		9CF6C0AA1F638B350013A4BE /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */; };
 		9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */; };
@@ -191,6 +194,9 @@
 		9CDE52DF2151EE3300B17E34 /* CXWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXWebController.swift; sourceTree = "<group>"; };
 		9CDE52E12153928800B17E34 /* CXTrendingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXTrendingController.swift; sourceTree = "<group>"; };
 		9CDE52E32153A47B00B17E34 /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
+		9CDE52E5215B727F00B17E34 /* CXTrendingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXTrendingListCell.swift; sourceTree = "<group>"; };
+		9CDE52E7215B78A300B17E34 /* CXLanguageSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXLanguageSelectController.swift; sourceTree = "<group>"; };
+		9CDE52E9215B814400B17E34 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		9CF6C0A71F638B350013A4BE /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		9CF6C0A81F638B350013A4BE /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		9CF6C0AB1F6393E50013A4BE /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
@@ -349,6 +355,8 @@
 			children = (
 				9C08E8951F59386E00F9F8F1 /* Discovery.storyboard */,
 				9C0C1C031F492EFD00466385 /* CXDiscoveryTableViewController.swift */,
+				9CDE52E7215B78A300B17E34 /* CXLanguageSelectController.swift */,
+				9CDE52E5215B727F00B17E34 /* CXTrendingListCell.swift */,
 				9CDE52E32153A47B00B17E34 /* Trending.swift */,
 				9CDE52E12153928800B17E34 /* CXTrendingController.swift */,
 			);
@@ -409,6 +417,7 @@
 				9CA49E1D214A197C00305063 /* Tree.swift */,
 				9CA49E1F214A199B00305063 /* Parent.swift */,
 				9C199CD3214166C20088E9EE /* Commit.swift */,
+				9CDE52E9215B814400B17E34 /* Member.swift */,
 				9CA49E29214A3F7300305063 /* InnerCommit.swift */,
 				9C199CD6214166C20088E9EE /* Payload.swift */,
 				9C199CD5214166C20088E9EE /* Repo.swift */,
@@ -589,11 +598,13 @@
 				9C199CDC214166C20088E9EE /* Repo.swift in Sources */,
 				9C766218213F7F2200F4A8D3 /* CXUserTopCell.swift in Sources */,
 				9C199CE721425B640088E9EE /* TimeAgo.swift in Sources */,
+				9CDE52E8215B78A300B17E34 /* CXLanguageSelectController.swift in Sources */,
 				9CA49E14214A0A4F00305063 /* CXUserListController.swift in Sources */,
 				9C3D391D1F48085F00920923 /* CXYourStarsViewController.swift in Sources */,
 				9C199CEF214639E70088E9EE /* EventMessage.swift in Sources */,
 				9C199CF5214673B20088E9EE /* PullRequest.swift in Sources */,
 				9CDE52E22153928800B17E34 /* CXTrendingController.swift in Sources */,
+				9CDE52EA215B814400B17E34 /* Member.swift in Sources */,
 				9C64DC3C1F579E58005D6FB9 /* StarredModel.swift in Sources */,
 				9CDE52E02151EE3300B17E34 /* CXWebController.swift in Sources */,
 				9C199CD7214166C20088E9EE /* Actor.swift in Sources */,
@@ -627,6 +638,7 @@
 				9CF6C0AD1F6393E50013A4BE /* FollowCell.swift in Sources */,
 				9CA49E1C214A195A00305063 /* Committer.swift in Sources */,
 				9C6073E91F5E2F8B00D4C263 /* TabBarView.swift in Sources */,
+				9CDE52E6215B727F00B17E34 /* CXTrendingListCell.swift in Sources */,
 				9C199CDF21416F090088E9EE /* Issue.swift in Sources */,
 				9CA49E16214A157A00305063 /* CXBranchListController.swift in Sources */,
 				9C199CFD214759050088E9EE /* CXMemberListController.swift in Sources */,

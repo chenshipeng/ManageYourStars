@@ -28,7 +28,7 @@ class RepositoryDetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         getRepoInfo()
-        getReadme()
+        
 
         
     }
@@ -46,6 +46,7 @@ class RepositoryDetailViewController: UIViewController {
                     }
                     self.setupUI()
                     self.tableView.reloadData()
+                    self.getReadme()
                 
                 }else{
                     SVProgressHUD.dismiss()
