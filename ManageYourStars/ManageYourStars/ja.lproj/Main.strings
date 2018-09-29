@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "Repositories"; ObjectID = "0nW-pa-x46"; */
+"0nW-pa-x46.title" = "Repositories";
+
+/* Class = "UITabBarItem"; title = "News"; ObjectID = "1Ak-eG-KJc"; */
+"1Ak-eG-KJc.title" = "News";
+
+/* Class = "UITabBarItem"; title = "More"; ObjectID = "1Mq-pc-Dfs"; */
+"1Mq-pc-Dfs.title" = "More";
+
+/* Class = "UITabBarItem"; title = "Stars"; ObjectID = "G2O-jC-HvH"; */
+"G2O-jC-HvH.title" = "Stars";
+
+/* Class = "UITabBarItem"; title = "Discovery"; ObjectID = "GYV-cF-LY5"; */
+"GYV-cF-LY5.title" = "Discovery";

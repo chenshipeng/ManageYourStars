@@ -101,7 +101,6 @@
 		9CF6C0AE1F6393E50013A4BE /* FollowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6C0AC1F6393E50013A4BE /* FollowCell.xib */; };
 		9CF6C0B31F63B44A0013A4BE /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6C0B11F63B44A0013A4BE /* RepositoryDetailViewController.swift */; };
 		9CFBC17C1F3B0699000015F3 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFBC17B1F3B0698000015F3 /* NetworkRequest.swift */; };
-		F97EE8095EE4706B0207D72A /* Pods_ManageYourStars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CDF28B936BF7F936D6EBB0 /* Pods_ManageYourStars.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +182,13 @@
 		9CA49E25214A387A00305063 /* CXCommitListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXCommitListCell.swift; sourceTree = "<group>"; };
 		9CA49E26214A387A00305063 /* CXCommitListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXCommitListCell.xib; sourceTree = "<group>"; };
 		9CA49E29214A3F7300305063 /* InnerCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCommit.swift; sourceTree = "<group>"; };
+		9CAE359A215E22210061527B /* Directions.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; name = Directions.geojson; path = ../../../../Desktop/Directions.geojson; sourceTree = "<group>"; };
+		9CAE359B215E25A40061527B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		9CAE359C215E25A40061527B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9CAE359D215E25B80061527B /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		9CAE359E215E25B90061527B /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9CAE359F215E25C80061527B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		9CAE35A0215E25C80061527B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9CB5EF8D1F3AE7F600819E9F /* CXHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CXHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB5EF951F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -213,7 +219,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F97EE8095EE4706B0207D72A /* Pods_ManageYourStars.framework in Frameworks */,
 				8DE52C9A0E0B9F1DB35BF61F /* Pods_CXHub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +310,7 @@
 				9C5CE39B21494B3500EDDE83 /* CXPreLoginController.swift */,
 				9C199D09214772F80088E9EE /* General */,
 				9C766214213F76FD00F4A8D3 /* Assets.xcassets */,
+				9CAE359A215E22210061527B /* Directions.geojson */,
 				9CB5EF941F3AE7F700819E9F /* Main.storyboard */,
 				9CB5EF991F3AE7F700819E9F /* LaunchScreen.storyboard */,
 				9C5CE39921494B1800EDDE83 /* PreLogin.storyboard */,
@@ -677,6 +683,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CB5EF951F3AE7F700819E9F /* Base */,
+				9CAE359B215E25A40061527B /* zh-Hans */,
+				9CAE359D215E25B80061527B /* ko */,
+				9CAE359F215E25C80061527B /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -685,6 +694,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CB5EF9A1F3AE7F700819E9F /* Base */,
+				9CAE359C215E25A40061527B /* zh-Hans */,
+				9CAE359E215E25B90061527B /* ko */,
+				9CAE35A0215E25C80061527B /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -696,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -754,6 +767,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -807,12 +821,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = A823JDM22Y;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.csp.GitPocket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.csp.cxhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -825,12 +842,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = A823JDM22Y;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.csp.GitPocket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.csp.cxhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 			};

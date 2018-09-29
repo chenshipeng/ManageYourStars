@@ -13,13 +13,11 @@ import SnapKit
 class CXLoginViewController: UIViewController {
 
     var autoPop = true
+    let webView = UIWebView()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login"
         
-        
-        let url = "https://github.com/login/oauth/authorize?client_id=d67855104c8fb56c68e0&state=1995&redirect_uri=https://github.com/chenshipeng&scpoe=user,public_repo"
-        let webView = UIWebView()
         webView.delegate = self
         view.addSubview(webView)
         webView.snp.makeConstraints { (make) in
@@ -35,7 +33,13 @@ class CXLoginViewController: UIViewController {
         if #available(iOS 11.0, *) {
             webView.scrollView.contentInsetAdjustmentBehavior = .never
         }
+        loadData()
+    }
+    @objc func loadData(){
+        let url = "https://github.com/login/oauth/authorize?client_id=d67855104c8fb56c68e0&state=1995&redirect_uri=https://github.com/chenshipeng&scpoe=user,public_repo"
         webView.loadRequest(URLRequest(url: URL(string: url)!))
+
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -161,6 +165,7 @@ extension CXLoginViewController:UIWebViewDelegate{
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         print("web view did fail to load")
         SVProgressHUD.dismiss()
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(CXLoginViewController.loadData), userInfo: nil, repeats: false)
     }
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         return true
