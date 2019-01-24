@@ -42,7 +42,8 @@ class CXRespositoriesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        avatarImage.layer.cornerRadius =  30
+        avatarImage.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

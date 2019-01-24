@@ -19,7 +19,7 @@ class RepositoryDetailViewController: UIViewController {
     var url:String?
     var starred = false
     private var tableView:UITableView = UITableView()
-    
+    var rightBarItem = UIBarButtonItem()
     var contributors = [CXUserModel?]()
     var forks = [StarredModel?]()
     var stargazers = [CXUserModel?]()
@@ -28,9 +28,6 @@ class RepositoryDetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         getRepoInfo()
-        
-
-        
     }
     func getRepoInfo(){
         if let url = url
@@ -42,6 +39,7 @@ class RepositoryDetailViewController: UIViewController {
                     if let array = response.result.value as? Dictionary<String, Any> {
                         if let repo = Repo.deserialize(from: array){
                             self.starModel = repo
+                            self.checkIfStaredRepo()
                         }
                     }
                     self.setupUI()
@@ -75,10 +73,12 @@ class RepositoryDetailViewController: UIViewController {
                 SVProgressHUD.dismiss()
                 if response.response?.statusCode == 404 {
                     self.starred =  false
+                    self.addRightItem(with: self.starred)
                     
                 }
                 if response.response?.statusCode == 204 {
                     self.starred =  true
+                    self.addRightItem(with: self.starred)
                 }
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
@@ -126,10 +126,59 @@ class RepositoryDetailViewController: UIViewController {
         })
     }
     func addRightItem(with starred:Bool) {
-        let bar = UIBarButtonItem.init(title: "Star", style: .plain, target: self, action: #selector(starTheRepo))
-        navigationItem.rightBarButtonItem = bar
+        if starred{
+            rightBarItem = UIBarButtonItem.init(title: "Unstar", style: .plain, target: self, action: #selector(starTheRepo))
+        }else{
+            rightBarItem = UIBarButtonItem.init(title: "Star", style: .plain, target: self, action: #selector(starTheRepo))
+        }
+        
+        navigationItem.rightBarButtonItem = rightBarItem
     }
     @objc func starTheRepo(){
+        guard let token = UserDefaults.standard.object(forKey: "access_token") else { return }
+        var method = HTTPMethod.put
+        if starred {
+            method = .delete
+        }else{
+            method = .put
+        }
+        
+        guard let currentLogin = starModel?.owner?.login,let name = starModel?.name else {
+            return
+        }
+        
+        let url = "http://api.github.com/user/starred" + "/\(String(describing: currentLogin))" + "/\(name)"  + "?access_token=\(token)"
+        
+        print("url is \(url)")
+        
+        SVProgressHUD.show()
+        Alamofire.request(url, method: method, parameters: nil).responseString(completionHandler: { (response) in
+            
+            
+            
+            if response.result.isSuccess {
+                SVProgressHUD.dismiss()
+                if let code = response.response?.statusCode{
+                    print("status code is \(code)")
+                }
+                if response.response?.statusCode == 204 {
+                    if self.starred {
+                        self.rightBarItem.title = "Star"
+                    }else{
+                        self.rightBarItem.title = "Unstar"
+                    }
+                    self.starred = !self.starred
+                }
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+            }else{
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: String(describing: response.result.value))
+                print("error is \(String(describing: response.result.error))")
+                
+            }
+        })
         
     }
     override func viewWillAppear(_ animated: Bool) {

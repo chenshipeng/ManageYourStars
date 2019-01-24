@@ -142,6 +142,7 @@ class CXYourStarsViewController: UITableViewController {
         let vc: RepositoryDetailViewController = RepositoryDetailViewController()
         let model:Repo = self.stars[indexPath.row]!
         vc.url = model.url
+        vc.starModel = model
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
 
