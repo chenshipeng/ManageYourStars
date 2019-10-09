@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F71-9h-9kr">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F71-9h-9kr">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +15,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SWd-h5-GRe">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -42,11 +40,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="152"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S2T-pt-jEd" id="Vji-ya-5pp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="151.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFb-8g-WRh">
-                                            <rect key="frame" x="82" y="5" width="42" height="54.5"/>
+                                            <rect key="frame" x="82" y="5" width="42" height="55"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -58,12 +56,12 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isS-NP-5dp">
-                                            <rect key="frame" x="82" y="69.5" width="283" height="17"/>
+                                            <rect key="frame" x="82" y="70" width="283" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ql7-L7-XET">
-                                            <rect key="frame" x="82" y="96.5" width="278" height="40"/>
+                                            <rect key="frame" x="82" y="97" width="278" height="40"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ee6-nn-NgZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="278" height="20"/>
@@ -85,7 +83,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="W6K-W6-OMc" firstAttribute="centerY" secondItem="xhN-tE-t0Y" secondAttribute="centerY" id="MOT-nC-IuS"/>
                                                                 <constraint firstItem="ipJ-Jh-xEP" firstAttribute="centerY" secondItem="xhN-tE-t0Y" secondAttribute="centerY" id="MgD-Hd-5e2"/>
@@ -110,7 +108,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="5tr-0n-CXg" firstAttribute="centerY" secondItem="sMa-sE-DK1" secondAttribute="centerY" id="iOL-A2-WyX"/>
                                                                 <constraint firstItem="dqm-QT-XaD" firstAttribute="centerY" secondItem="sMa-sE-DK1" secondAttribute="centerY" id="kmT-S3-VzH"/>
@@ -144,7 +142,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="nf4-bj-hpH" firstAttribute="centerY" secondItem="UUa-Nt-bRn" secondAttribute="centerY" id="Fam-rN-OZs"/>
                                                                 <constraint firstItem="0IK-t3-1Ge" firstAttribute="leading" secondItem="nf4-bj-hpH" secondAttribute="trailing" constant="3" id="WLO-G2-pft"/>
@@ -169,7 +167,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="hkC-Be-UB5" firstAttribute="leading" secondItem="b4I-iv-67D" secondAttribute="leading" id="HpN-Aj-EZp"/>
                                                                 <constraint firstItem="hkC-Be-UB5" firstAttribute="centerY" secondItem="b4I-iv-67D" secondAttribute="centerY" id="O0o-CK-2jw"/>

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "E2B3A739-6F40-488D-8658-1A66F7906FC7"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B5D10419-38D9-4F81-93FF-7D82D74E9A0C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -13,8 +15,8 @@
             timestampString = "559647146.889962"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "refreshData(loadMore:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -22,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "182DA207-77C3-4623-AFED-79D025CFF1F8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -29,8 +32,8 @@
             timestampString = "559647146.89033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "refreshData(loadMore:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -38,6 +41,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6099D489-F230-42EF-BF1A-E272E0564148"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -45,8 +49,8 @@
             timestampString = "559647146.8904231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "refreshData(loadMore:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,6 +58,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1E4DA87E-D43A-491C-8A17-62D1780216AD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -61,8 +66,8 @@
             timestampString = "559647146.8904999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "refreshData(loadMore:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -70,6 +75,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
+            uuid = "6F8E7D2A-8890-403F-95D8-B6533625D70D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -80,6 +86,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6F8D0E52-C61C-4165-ACD4-ED04D87A7E5F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -87,8 +94,8 @@
             timestampString = "559647146.890581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "selectLanguage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -96,6 +103,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FA314398-F33A-410B-A7B8-ECE8C0F20F3A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -103,15 +111,16 @@
             timestampString = "559647146.8906471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "selectLanguage()"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E81285C4-1DDB-487A-9CF1-CAD2208CF456"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -119,20 +128,38 @@
             timestampString = "559647146.890717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5433AA40-31D9-4257-B91D-1B56FE46FCB9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ManageYourStars/StarsVC/Controllers/RepositoryDetailViewController.swift"
             timestampString = "559647146.891019"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "getReadme()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7ABFF46-D461-4336-A9AB-3E694B4297D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ManageYourStars/StarsVC/Controllers/RepositoryDetailViewController.swift"
+            timestampString = "559647146.891089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -144,22 +171,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ManageYourStars/StarsVC/Controllers/RepositoryDetailViewController.swift"
-            timestampString = "559647146.891089"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "getReadme()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
+            uuid = "093B8760-A725-44E5-B150-DF16C8D3EFFB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -167,8 +179,8 @@
             timestampString = "559647146.891151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "getReadme()"
             landmarkType = "7">
          </BreakpointContent>
@@ -176,6 +188,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "EB827D2C-7A00-4371-A051-CB60EA91EF81"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -183,8 +196,8 @@
             timestampString = "559647146.891212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "getReadme()"
             landmarkType = "7">
          </BreakpointContent>
@@ -192,6 +205,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C79C1CE2-4433-487A-8B29-9692FE1E6CCF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -199,8 +213,8 @@
             timestampString = "559647146.89127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "getReadme()"
             landmarkType = "7">
          </BreakpointContent>

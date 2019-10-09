@@ -16,8 +16,17 @@ class CXMoreViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "More"
-        view.backgroundColor = .white
-        self.navigationController?.navigationBar.tintColor = .black
+        if #available(iOS 13.0,*)  {
+            self.navigationController?.navigationBar.tintColor = UIColor.init(dynamicProvider: { (train) -> UIColor in
+                if train.userInterfaceStyle == .dark{
+                    return .white
+                }else{
+                    return .black
+                }
+            })
+        }else{
+            self.navigationController?.navigationBar.tintColor = .black
+        }
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: self.navigationItem.backBarButtonItem?.style ?? .plain, target: nil, action: nil)
         
         self.tableView.register(CXProfileLoginTableViewCell.self, forCellReuseIdentifier: "moreCell")

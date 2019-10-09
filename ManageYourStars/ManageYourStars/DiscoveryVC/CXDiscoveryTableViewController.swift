@@ -25,7 +25,17 @@ class CXDiscoveryTableViewController: UITableViewController {
             language = UserDefaults.standard.object(forKey: "language") as! String
         }
 
-        self.navigationController?.navigationBar.tintColor = .black
+        if #available(iOS 13.0,*)  {
+            self.navigationController?.navigationBar.tintColor = UIColor.init(dynamicProvider: { (train) -> UIColor in
+                if train.userInterfaceStyle == .dark{
+                    return .white
+                }else{
+                    return .black
+                }
+            })
+        }else{
+            self.navigationController?.navigationBar.tintColor = .black
+        }
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: self.navigationItem.backBarButtonItem?.style ?? .plain, target: nil, action: nil)
         let control = BetterSegmentedControl(
             frame: CGRect(x: 35.0, y: 40.0, width: 200.0, height: 30.0),

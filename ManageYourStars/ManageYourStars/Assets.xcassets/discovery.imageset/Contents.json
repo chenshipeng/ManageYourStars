@@ -6,12 +6,44 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "discovery@2x.png",
+      "scale" : "1x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "discovery.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "discovery@3x.png",
+      "filename" : "discovery (1).png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "discovery (3).png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "discovery (2).png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "scale" : "3x"
     }
   ],

@@ -26,7 +26,11 @@ class RepositoryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        }else{
+            view.backgroundColor = .white
+        }
         getRepoInfo()
     }
     func getRepoInfo(){
@@ -238,7 +242,13 @@ extension RepositoryDetailViewController:UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section > 0 {
             let header = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 10))
-            header.backgroundColor = UIColor(red: 231.0/255.0, green: 231.0/255.0, blue: 231.0/255.0, alpha: 0.5)
+            if #available(iOS 13.0, *) {
+                header.backgroundColor = UIColor.init(dynamicProvider: { (traintCollection) -> UIColor in
+                    return UIColor.separator
+                });
+            }else{
+                header.backgroundColor = UIColor(red: 231.0/255.0, green: 231.0/255.0, blue: 231.0/255.0, alpha: 0.5)
+            }
             return header
         }
         return nil

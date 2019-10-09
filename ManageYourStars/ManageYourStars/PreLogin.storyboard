@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ybU-Iw-1pA">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ybU-Iw-1pA">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Pre Login Controller-->
         <scene sceneID="1f8-4o-Zmh">
             <objects>
-                <viewController id="ybU-Iw-1pA" customClass="CXPreLoginController" customModule="ManageYourStars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ybU-Iw-1pA" customClass="CXPreLoginController" customModule="CXHub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fgb-q0-4ZO"/>
                         <viewControllerLayoutGuide type="bottom" id="hl9-Kd-K6O"/>
@@ -33,13 +31,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYr-FN-xOe">
-                                <rect key="frame" x="170" y="285.5" width="35.5" height="17"/>
+                                <rect key="frame" x="170" y="285" width="35.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OYr-FN-xOe" firstAttribute="centerY" secondItem="Y3E-DT-e2K" secondAttribute="centerY" constant="-40" id="8bv-0J-5Bx"/>
                             <constraint firstItem="sCR-fx-ivO" firstAttribute="centerX" secondItem="Y3E-DT-e2K" secondAttribute="centerX" id="DUS-Hp-bYK"/>

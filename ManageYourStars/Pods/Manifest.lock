@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.7.2)
   - BetterSegmentedControl (1.0)
   - EZSwiftExtensions (2.0)
-  - HandyJSON (4.2.0)
+  - HandyJSON (5.0.0-beta.1)
   - Hero (1.2.0)
   - ImageViewer (5.0.0)
   - Kingfisher (4.8.0)
@@ -26,7 +26,7 @@ DEPENDENCIES:
   - Alamofire
   - BetterSegmentedControl (~> 1.0)
   - EZSwiftExtensions
-  - HandyJSON (~> 4.2.0)
+  - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`, branch `dev_for_swift5.0`)
   - Hero
   - ImageViewer
   - Kingfisher
@@ -45,7 +45,6 @@ SPEC REPOS:
     - Alamofire
     - BetterSegmentedControl
     - EZSwiftExtensions
-    - HandyJSON
     - Hero
     - ImageViewer
     - Kingfisher
@@ -59,11 +58,21 @@ SPEC REPOS:
     - SwiftyJSON
     - SwiftyUserDefaults
 
+EXTERNAL SOURCES:
+  HandyJSON:
+    :branch: dev_for_swift5.0
+    :git: https://github.com/alibaba/HandyJSON.git
+
+CHECKOUT OPTIONS:
+  HandyJSON:
+    :commit: a2ba4e537711ae1fcd9183679c4db878eb171a78
+    :git: https://github.com/alibaba/HandyJSON.git
+
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   BetterSegmentedControl: 92555f980e4273ec414d6187acc5b811659a9abf
   EZSwiftExtensions: f73648a591e529a1dbd83c22b19fd3e57df6fb7d
-  HandyJSON: 9dfc026c7d7adc1f0f8ba8b181495f0e0763b0f4
+  HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   ImageViewer: 3def6e39c6979ce3e9d001c78eec0d8b895f2f73
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
@@ -77,6 +86,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 4f385176df75393c4863a2b4c0de26ba13de38fe
+PODFILE CHECKSUM: 5b279aee2bde306c23eaeb495ff66fef340d2064
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.1

@@ -15,8 +15,18 @@ class CXReadmeController: UIViewController {
     var webView = UIWebView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        }else{
+            view.backgroundColor = .white
+        }
         title = "README"
         webView.delegate = self
+        if #available(iOS 13.0, *) {
+            webView.backgroundColor = .systemBackground
+        }else{
+            webView.backgroundColor = .white
+        }
         view.addSubview(webView)
         webView.snp.makeConstraints { (make) in
             if #available(iOS 11.0, *){
@@ -36,7 +46,10 @@ class CXReadmeController: UIViewController {
         }
         
     }
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SVProgressHUD.dismiss()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

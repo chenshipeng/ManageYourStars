@@ -6,13 +6,43 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "tab-stars@2x.png",
+      "scale" : "1x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "stars.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tab-stars@3x.png",
+      "filename" : "stars (1).png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
     }
   ],
   "info" : {
