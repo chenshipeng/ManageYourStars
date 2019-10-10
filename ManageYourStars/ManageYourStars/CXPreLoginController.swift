@@ -21,7 +21,7 @@ class CXPreLoginController: UIViewController {
         loginBtn.layer.cornerRadius = 5
     }
     @IBAction func loginBtnClicked(_ sender: UIButton) {
-        if let username = usernameTF.text,let password = passwordTF.text {
+        if let username = usernameTF.text,username.length > 0,let password = passwordTF.text,password.length > 0 {
             var headers:HTTPHeaders = [:]
             if let authorizationHeader = Request.authorizationHeader(user: username, password: password){
                 headers[authorizationHeader.key] = authorizationHeader.value
@@ -110,7 +110,7 @@ extension CXPreLoginController:UITextFieldDelegate{
         if textField == usernameTF {
             passwordTF.becomeFirstResponder()
         }else{
-            if let username = usernameTF.text,let password = passwordTF.text {
+            if let username = usernameTF.text,username.length > 0,let password = passwordTF.text,password.length > 0{
                 var headers:HTTPHeaders = [:]
                 if let authorizationHeader = Request.authorizationHeader(user: username, password: password){
                     headers[authorizationHeader.key] = authorizationHeader.value
