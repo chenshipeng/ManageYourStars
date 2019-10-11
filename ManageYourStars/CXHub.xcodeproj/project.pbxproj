@@ -183,12 +183,6 @@
 		9CA49E26214A387A00305063 /* CXCommitListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CXCommitListCell.xib; sourceTree = "<group>"; };
 		9CA49E29214A3F7300305063 /* InnerCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCommit.swift; sourceTree = "<group>"; };
 		9CAE359A215E22210061527B /* Directions.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; name = Directions.geojson; path = ../../../../Desktop/Directions.geojson; sourceTree = "<group>"; };
-		9CAE359B215E25A40061527B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		9CAE359C215E25A40061527B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		9CAE359D215E25B80061527B /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
-		9CAE359E215E25B90061527B /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		9CAE359F215E25C80061527B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		9CAE35A0215E25C80061527B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9CB5EF8D1F3AE7F600819E9F /* CXHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CXHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB5EF901F3AE7F700819E9F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CB5EF951F3AE7F700819E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -486,9 +480,6 @@
 				English,
 				en,
 				Base,
-				"zh-Hans",
-				ko,
-				ja,
 			);
 			mainGroup = 9CB5EF841F3AE7F600819E9F;
 			productRefGroup = 9CB5EF8E1F3AE7F600819E9F /* Products */;
@@ -687,9 +678,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CB5EF951F3AE7F700819E9F /* Base */,
-				9CAE359B215E25A40061527B /* zh-Hans */,
-				9CAE359D215E25B80061527B /* ko */,
-				9CAE359F215E25C80061527B /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -698,9 +686,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CB5EF9A1F3AE7F700819E9F /* Base */,
-				9CAE359C215E25A40061527B /* zh-Hans */,
-				9CAE359E215E25B90061527B /* ko */,
-				9CAE35A0215E25C80061527B /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -827,7 +812,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -850,7 +835,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = Y49TT6VJ7T;
 				INFOPLIST_FILE = ManageYourStars/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
