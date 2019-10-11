@@ -57,12 +57,15 @@ class CXDiscoveryTableViewController: UITableViewController {
         self.refreshData(loadMore:false,type: "daily")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Lanaguage", style: .plain, target: self, action: #selector(CXDiscoveryTableViewController.selectLanguage))
-
+        if language.length > 0{
+            self.navigationItem.rightBarButtonItem?.title = self.language;
+        }
     }
     @objc func selectLanguage(){
         let vc = CXLanguageSelectController()
         vc.languageBlock = {str in
             self.language = str
+            self.navigationItem.rightBarButtonItem?.title = self.language;
             self.refreshData(loadMore:false,type: self.type)
         }
         vc.hidesBottomBarWhenPushed = true
