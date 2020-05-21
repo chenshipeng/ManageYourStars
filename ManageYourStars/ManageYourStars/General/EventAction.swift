@@ -107,7 +107,7 @@ class EventAction: NSObject {
             if let user = event.actor?.login{
                 str += user
             }
-            let action = " crate "
+            let action = " create "
             str += action
             if let source = event.repo?.name {
                 str += " " + source

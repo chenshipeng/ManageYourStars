@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FEJ-X9-jKM">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -234,6 +234,6 @@
         <image name="language" width="48" height="48"/>
         <image name="owner" width="48" height="48"/>
         <image name="stars" width="48" height="48"/>
-        <image name="tab-stars" width="21" height="21"/>
+        <image name="tab-stars" width="24" height="24"/>
     </resources>
 </document>
